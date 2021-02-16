@@ -1,0 +1,37 @@
+{
+  "MemberEnteredSkills": [
+    {
+      "userId": 100004,
+      "handleLower": "greg_b",
+      "updatedBy": "40338595",
+      "skills": "{\"105\":{\"hidden\":false},\"130\":{\"hidden\":false},\"132\":{\"hidden\":false},\"167\":{\"hidden\":false},\"190\":{\"hidden\":false},\"200\":{\"hidden\":false},\"202\":{\"hidden\":false},\"247\":{\"hidden\":false},\"311\":{\"hidden\":false},\"316\":{\"hidden\":false},\"334\":{\"hidden\":false},\"347\":{\"hidden\":false},\"353\":{\"hidden\":false},\"360\":{\"hidden\":false}}",
+      "userHandle": "Greg_B"
+    },
+    {
+      "userId": 105900,
+      "handleLower": "rohs",
+      "updatedBy": "40338595",
+      "skills": "{\"105\":{\"hidden\":false},\"130\":{\"hidden\":false},\"132\":{\"hidden\":false},\"167\":{\"hidden\":false},\"190\":{\"hidden\":false},\"200\":{\"hidden\":false},\"202\":{\"hidden\":false},\"247\":{\"hidden\":false},\"311\":{\"hidden\":false},\"316\":{\"hidden\":false},\"334\":{\"hidden\":false},\"347\":{\"hidden\":false},\"353\":{\"hidden\":false},\"360\":{\"hidden\":false}}",
+      "userHandle": "RoHs"
+    }
+  ],
+  "ExternalsStackoverflow": [
+    {
+      "userId": 300004,
+      "topTags": "javascript,php,jquery,linux,command-line,facebook,html,css,facebook-graph-api,loops,java,settimeout,header,html5,redirect,location,c#,input,file,arrays,c++,onchange,algorithm,asp.net,string,syntax,python,html-validation,long-integer,c",
+      "questions": 7,
+      "answers": 368,
+      "profileUrl": "http://stackoverflow.com/users/200410/soufiane-hassou",
+      "name": "Hne Asda",
+      "socialId": "200410",
+      "reputation": 11616
+    },
+    {
+      "userId": 105900,
+      "topTags": "php,c#",
+      "questions": 100,
+      "answers": 330012,
+      "reputation": 1002301
+    }
+  ]
+}

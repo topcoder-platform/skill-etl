@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  informix:
+    image: ibmcom/informix-developer-database:latest
+    environment:
+      LICENSE: accept
+      INIT_FILE: init-database.sql
+    ports:
+      - "9088-9089:9088-9089"
+      - "2022:2022"
+      - "27018:27018"
+      - "27017:27017"
+      - "27883:27883"
+    tty: true
+    volumes:
+      - "./informix-init/init-database.sql:/opt/ibm/config/init-database.sql"
+  dynamo:
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
+  init-dynamodb:
+    build: ..
+    image: topcoder-skills-etl:latest
+    command:
+      - "/app/scripts/init-dynamodb.js"
+    environment:
+      DYNAMODB_ENDPOINT: http://dynamo:8000
+      AWS_ACCESS_KEY_ID: fake_access_key_id
+      AWS_SECRET_ACCESS_KEY: fake_secret_access_key
+    volumes:
+      - "../scripts/dynamodb-data.json:/app/scripts/dynamodb-data.json"
+    depends_on:
+      - dynamo
+    restart: on-failure

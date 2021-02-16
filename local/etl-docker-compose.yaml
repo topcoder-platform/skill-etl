@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  etl-app:
+    build: ..
+    image: topcoder-skills-etl:latest
+    command:
+      - "/app/index.js"
+    environment:
+      INFORMIX_HOST: informix
+      DYNAMODB_ENDPOINT: http://dynamo:8000
+      AWS_ACCESS_KEY_ID: fake_access_key_id
+      AWS_SECRET_ACCESS_KEY: fake_secret_access_key
+  list-results:
+    build: ..
+    image: topcoder-skills-etl:latest
+    command:
+      - "/app/scripts/list-aggregated-skills.js"
+    environment:
+      DYNAMODB_ENDPOINT: http://dynamo:8000
+      AWS_ACCESS_KEY_ID: fake_access_key_id
+      AWS_SECRET_ACCESS_KEY: fake_secret_access_key
