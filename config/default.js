@@ -17,8 +17,9 @@ module.exports = {
   },
   DYNAMODB: {
     endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000',
-    region: process.env.AWS_REGION || 'fake-region',
+    region: process.env.AWS_REGION || 'fake-region'
   },
-  TAGS_MAP_FILE: process.env.TAGS_MAP_FILE || path.join(__dirname, '../data/tagsMap.txt'),
+  S3_BUCKET: process.env.S3_BUCKET || 'skills-etl',
+  S3_TAGS_MAP_KEY: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt',
   MAX_DAYS_FOR_CHALLENGE_SKILLS: parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1
 }
