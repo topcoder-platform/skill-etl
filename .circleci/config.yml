@@ -93,23 +93,6 @@ jobs:
             source buildenvvar
             ./master_deploy.sh -d ECS -e PROD -t latest -s prod_skills_etl_taskvar -i communityapp
 
-  # Test job for the cases when we do not need deployment. It just rapidly
-  # installs (updates) app dependencies, and runs tests (ESLint, Stylelint,
-  # Jest unit-tests).
-  test:
-    docker:
-      - image: circleci/node:8.11.1
-    steps:
-      - checkout
-      - restore_cache:
-          key: test-node-modules-{{ checksum "package-lock.json" }}
-      - run: npm install
-      - save_cache:
-          key: test-node-modules-{{ checksum "package-lock.json" }}
-          paths:
-            - node_modules
-      - run: npm test
-
 workflows:
   version: 2
   build:
@@ -135,8 +118,4 @@ workflows:
                 - master    
       # Simple testing is executed for any branch other than "develop" and
       # "master".
-      - test:
-          filters:
-            branches:
-              ignore:
-                - develop
+     
