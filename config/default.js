@@ -16,8 +16,7 @@ module.exports = {
     timeout: parseInt(process.env.TIMEOUT, 10) || 30000
   },
   DYNAMODB: {
-    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000',
-    region: process.env.AWS_REGION || 'fake-region',
+    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000'
   },
   TAGS_MAP_FILE: process.env.TAGS_MAP_FILE || path.join(__dirname, '../data/tagsMap.txt'),
   MAX_DAYS_FOR_CHALLENGE_SKILLS: parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1
