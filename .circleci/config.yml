@@ -91,7 +91,7 @@ jobs:
           command: |
             source awsenvconf
             source buildenvvar
-            ./master_deploy.sh -d ECS -e PROD -t latest -s prod_skills_etl_taskvar -i skills-etl
+            ./master_deploy.sh -d ECS -e PROD -t latest -s prod_skills_etl_taskvar -i skills-etl -p FARGATE
 
 workflows:
   version: 2
