@@ -62,7 +62,7 @@ jobs:
           command: |
             source buildenvvar
             source awsenvconf
-            ./master_deploy.sh -d ECS -e DEV -t latest -s dev_skills_etl_taskvar -i skills-etl
+            ./master_deploy.sh -d ECS -e DEV -t latest -s dev_skills_etl_taskvar -i skills-etl -p FARGATE 
 
   
   # Build & Deploy against production backend
