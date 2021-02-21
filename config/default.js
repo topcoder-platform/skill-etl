@@ -16,8 +16,7 @@ module.exports = {
     timeout: parseInt(process.env.TIMEOUT, 10) || 30000
   },
   DYNAMODB: {
-    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000',
-    region: process.env.AWS_REGION || 'fake-region'
+    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000'
   },
   S3_BUCKET: process.env.S3_BUCKET || 'skills-etl',
   S3_TAGS_MAP_KEY: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt',
