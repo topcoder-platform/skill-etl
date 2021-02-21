@@ -44,5 +44,5 @@ fi
 
 if [ "$UPDATE_CACHE" == 1 ]
 then
-  docker cp app:/opt/app/node_modules .
+  docker cp app:/app/node_modules .
 fi
