@@ -45,7 +45,6 @@ COPY package-lock.json .
 RUN npm install
 
 COPY ./config ./config
-COPY ./data ./data
 COPY ./scripts ./scripts
 COPY ./src ./src
 COPY ./index.js ./index.js
