@@ -37,15 +37,17 @@ async function getConnection () {
  * @param params - query params array, [{type, value}].
  * @returns {Promise<[*]>}
  */
-async function executeQuery (c, sql, params) {
+async function executeQuery (c, sql) {
   logger.debug('******** SQL *********')
-  logger.debug(sql)
-  logger.debug(params)
+  logger.debug(sql)  
   return new Promise((resolve, reject) => {
-    c.executePreparedQuery(sql, (err, data) => {
-      if (err) reject(err)
-      else resolve(data)
-    }, params)
+    c.executeQuery(sql,(err, data) => {
+        logger.debug("Query result");
+        logger.debug(JSON.stringify(data));
+        if (err) reject(err);
+        else resolve(data);
+      }
+    );
   })
 }
 
