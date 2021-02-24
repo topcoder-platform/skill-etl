@@ -22,7 +22,7 @@ module.exports = {
   S3: {
     useLocal: process.env.S3_USELOCAL || 'true',
     endpoint: process.env.S3_ENDPOINT || 'http://localhost:4566',
-    bucket: process.env.S3_BUCKET || 'skills-etl',
+    bucket: process.env.S3_BUCKET || 'tc-platform-dev',
     tagsMapKey: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt'
   },
   MAX_DAYS_FOR_CHALLENGE_SKILLS: parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1
