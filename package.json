@@ -17,6 +17,7 @@
     "dynamodb": "^1.3.0",
     "informix-wrapper": "git+https://github.com/appirio-tech/informix-wrapper.git",
     "joi": "^17.4.0",
+    "moment": "^2.29.1",
     "underscore": "^1.12.0",
     "winston": "^3.3.3"
   },

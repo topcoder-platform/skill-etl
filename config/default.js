@@ -18,7 +18,7 @@ module.exports = {
   DYNAMODB: {
     endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000'
   },
-  S3_BUCKET: process.env.S3_BUCKET || 'skills-etl',
+  S3_BUCKET: process.env.S3_BUCKET || 'tc-platform-dev',
   S3_TAGS_MAP_KEY: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt',
   MAX_DAYS_FOR_CHALLENGE_SKILLS: parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1
 }
