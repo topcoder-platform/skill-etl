@@ -116,10 +116,12 @@ npm run lint:fix
 - `IDLETIMEOUT` - connection idle time in seconds, default: `3600`
 - `TIMEOUT` - connection timeout in seconds, default: `30000`
 
-- `DYNAMODB_ENDPOINT` - dynamodb endpoint, default: `http://localhost:8000`
+- `DYNAMODB_ENDPOINT` - dynamodb endpoint, default: `http://localhost:4566`
 - `AWS_REGION` - aws region, default: `fake-region`
 - `AWS_ACCESS_KEY_ID` - aws access key id.
 - `AWS_SECRET_ACCESS_KEY` - aws secret access key.
+- `S3_USELOCAL` - using local s3 service, default: `true`
+- `S3_ENDPOINT` - s3 endpoint, default: `http://localhost:4566`
 - `S3_BUCKET` - s3 bucket of tags map file, default: `skills-etl`
 - `S3_TAGS_MAP_KEY` - s3 key of tags map file, default: `tagsMap.txt`
 - `MAX_DAYS_FOR_CHALLENGE_SKILLS` - max days in the past to query for the challenge skills, default: `2`

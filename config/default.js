@@ -16,9 +16,14 @@ module.exports = {
     timeout: parseInt(process.env.TIMEOUT, 10) || 30000
   },
   DYNAMODB: {
-    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000'
+    endpoint: process.env.DYNAMODB_ENDPOINT || 'http://localhost:4566',
+    region: process.env.AWS_REGION || 'fake-region'
   },
-  S3_BUCKET: process.env.S3_BUCKET || 'skills-etl',
-  S3_TAGS_MAP_KEY: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt',
+  S3: {
+    useLocal: process.env.S3_USELOCAL || 'true',
+    endpoint: process.env.S3_ENDPOINT || 'http://localhost:4566',
+    bucket: process.env.S3_BUCKET || 'skills-etl',
+    tagsMapKey: process.env.S3_TAGS_MAP_KEY || 'tagsMap.txt'
+  },
   MAX_DAYS_FOR_CHALLENGE_SKILLS: parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1
 }

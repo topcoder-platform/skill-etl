@@ -8,18 +8,22 @@ services:
       - "/app/index.js"
     environment:
       INFORMIX_HOST: informix
-      DYNAMODB_ENDPOINT: http://dynamo:8000
+      S3_ENDPOINT: http://localstack:4566
+      DYNAMODB_ENDPOINT: http://localstack:4566
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
   list-results:
     build: ..
     image: topcoder-skills-etl:latest
     command:
       - "/app/scripts/list-aggregated-skills.js"
     environment:
-      DYNAMODB_ENDPOINT: http://dynamo:8000
+      S3_ENDPOINT: http://localstack:4566
+      DYNAMODB_ENDPOINT: http://localstack:4566
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
 
 networks:
   default:
