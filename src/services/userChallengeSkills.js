@@ -8,40 +8,6 @@ const { getConnection, executeQuery } = require('../common/informix')
 const { SOURCES } = require('../common/constants')
 
 /**
- * Convert challenge skill object {userid, challengeid, name} to mapped skill object.
- * @param challengeSkill
- * @param tagsMap
- * @returns {{skills: {}, userId: *}}
- */
-function toMappedSkill(challengeSkill, tagsMap) { 
-  //logger.debug(tagsMap)
-  //debugger;
-  const skillsName = challengeSkill.name.toLowerCase();
-  logger.debug("skillsName : " + skillsName)  
-  // tagsMap = JSON.parse(tagsMap);
-  //logger.debug(typeof tagsMap)
-  //logger.debug(JSON.stringify(tagsMap));
-  const tagId = tagsMap[skillsName];
-
-  //const { [skillsName]: key } = tagsMap; 
-  logger.debug("tagId : " + tagId);
- 
-  if (tagId) {
-     return {
-       userId: challengeSkill.userid,
-       skills: {
-         [tagId]: {
-           sources: [SOURCES.CHALLENGE],
-           hidden: false,
-           score: 1.0,
-           skillsName: skillsName,
-         },
-       },
-     };
-  }
-}
-
-/**
  * SQL query to select user challenge input.
  * @type {string}
  */
@@ -80,8 +46,7 @@ async function getUserSkills (maxDaysBefore, tagsMap) {
     logger.info(`Query all challenge user skills from ${date}.`)
     const users = await executeQuery(conn, USER_CHALLENGE_SKILL_QUERY)
     logger.info(`Found ${users.length} users.`)
-    //const skills = _.filter(_.map(users, user => toMappedSkill(user, tagsMap)), mapped => _.isObject(mapped))
-    return groupSkillsByUser(users);
+     return groupSkillsByUser(users);
   } finally {
     conn.disconnect()
   }
