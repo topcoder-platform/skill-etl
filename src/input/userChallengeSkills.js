@@ -13,19 +13,31 @@ const { SOURCES } = require('../common/constants')
  * @param tagsMap
  * @returns {{skills: {}, userId: *}}
  */
-function toMappedSkill (challengeSkill, tagsMap) {
-  const tagId = tagsMap[challengeSkill.name.toLowerCase()]
+function toMappedSkill(challengeSkill, tagsMap) { 
+  //logger.debug(tagsMap)
+  //debugger;
+  const skillsName = challengeSkill.name.toLowerCase();
+  logger.debug("skillsName : " + skillsName)  
+  // tagsMap = JSON.parse(tagsMap);
+  //logger.debug(typeof tagsMap)
+  //logger.debug(JSON.stringify(tagsMap));
+  const tagId = tagsMap[skillsName];
+
+  //const { [skillsName]: key } = tagsMap; 
+  logger.debug("tagId : " + tagId);
+ 
   if (tagId) {
-    return {
-      userId: challengeSkill.userid,
-      skills: {
-        [tagId]: {
-          sources: [SOURCES.CHALLENGE],
-          hidden: false,
-          score: 1.0
-        }
-      }
-    }
+     return {
+       userId: challengeSkill.userid,
+       skills: {
+         [tagId]: {
+           sources: [SOURCES.CHALLENGE],
+           hidden: false,
+           score: 1.0,
+           skillsName: skillsName,
+         },
+       },
+     };
   }
 }
 
@@ -40,6 +52,21 @@ const USER_CHALLENGE_SKILL_QUERY = `SELECT  pr.user_id as userId,
         INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
         INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
         WHERE pr.passed_review_ind = 1 AND pr.review_complete_timestamp > (CURRENT -  500 UNITS DAY)`;
+
+function groupSkillsByUser(users) {
+  let grouped = {};
+  let name = "";
+  for (const u of users) {
+    name = u.name.toLowerCase();
+    if (grouped[u.userid]) {
+      grouped[u.userid].push(name);
+    } else {
+      grouped[u.userid] = [name];
+    }
+  }
+  return grouped;
+}
+
 /**
  * Query user challenge input.
  * @param maxDaysBefore - only fetch the input where project_result.review_complete_timestamp is within the given days in the past.
@@ -48,12 +75,13 @@ const USER_CHALLENGE_SKILL_QUERY = `SELECT  pr.user_id as userId,
  */
 async function getUserSkills (maxDaysBefore, tagsMap) {
   const conn = await getConnection()
-  try {
+  try {    
     const date = 3;//new Date(new Date().getTime() - maxDaysBefore * 24 * 3600 * 1000).toISOString().replace(/Z$/, '+0000')
     logger.info(`Query all challenge user skills from ${date}.`)
     const users = await executeQuery(conn, USER_CHALLENGE_SKILL_QUERY)
     logger.info(`Found ${users.length} users.`)
-    return _.filter(_.map(users, user => toMappedSkill(user, tagsMap)), mapped => _.isObject(mapped))
+    //const skills = _.filter(_.map(users, user => toMappedSkill(user, tagsMap)), mapped => _.isObject(mapped))
+    return groupSkillsByUser(users);
   } finally {
     conn.disconnect()
   }
