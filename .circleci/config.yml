@@ -104,7 +104,7 @@ workflows:
             branches:
               only:
                 - develop
-                -  circleci-project-setup     
+                - circleci-project-setup     
       # Production builds are exectuted 
       # when PR is merged to the master
       # Don't change anything in this configuration

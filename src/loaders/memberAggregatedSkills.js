@@ -5,7 +5,9 @@
 const _ = require('underscore')
 const logger = require('../common/logger')
 const { MemberAggregatedSkills } = require('../models/dynamodb')
+const userChallengeSkills = require('../services/userChallengeSkills')
 const { SOURCES } = require("../common/constants");
+const config = require("config");
 
 async function writeAggregatedSkills(skills) {
   for (const skill of skills) {
@@ -92,7 +94,7 @@ async function updateChallengeSkills(tags) {
   logger.info(`Writing ${userSkills.length} items to MemberAggregatedSkills table.`);
   console.log( `\n----------------------- final skills -------------------------------------------"` );
   console.log(JSON.stringify(userSkills));
-  await writeAggregatedSkills(userSkills);
+  //await writeAggregatedSkills(userSkills);
 }
 
 module.exports = {
