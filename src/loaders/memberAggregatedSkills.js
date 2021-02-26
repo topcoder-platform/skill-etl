@@ -64,8 +64,8 @@ async function getMemberAggregatedSkills(userId) {
 }
 
 async function updateChallengeSkills(tags) {
-  const usersWithNewSkills = { 251184: [".net"] }; //, "114853": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
-  //const usersWithNewSkills = await userChallengeSkills.getUserSkills(config.get('MAX_DAYS_FOR_CHALLENGE_SKILLS'), tags)
+  //const usersWithNewSkills = { 251184: [".net"] }; //, "114853": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
+  const usersWithNewSkills = await userChallengeSkills.getUserSkills(config.get('MAX_DAYS_FOR_CHALLENGE_SKILLS'), tags)
   let userSkills = [];
   if (usersWithNewSkills && usersWithNewSkills.length === 0) {
     logger.info(`No new users with updated skills.`);
