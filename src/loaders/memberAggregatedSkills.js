@@ -94,7 +94,7 @@ async function updateChallengeSkills(tags) {
   logger.info(`Writing ${userSkills.length} items to MemberAggregatedSkills table.`);
   console.log( `\n----------------------- final skills -------------------------------------------"` );
   console.log(JSON.stringify(userSkills));
-  //await writeAggregatedSkills(userSkills);
+  await writeAggregatedSkills(userSkills);
 }
 
 module.exports = {
