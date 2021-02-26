@@ -8,8 +8,8 @@ async function main () {
   const tags = await tagsMap.loadTagsMap();  
   logger.info(`Loaded ${Object.keys(tags).length} tags.`);
   updateChallengeSkills(tags);
-  updateUserEnteredSkills(tags);
-  updateStackOverflowSkills(tags);
+  //updateUserEnteredSkills(tags);
+  //updateStackOverflowSkills(tags);
 }
 
 main().catch(err => console.error(err))
