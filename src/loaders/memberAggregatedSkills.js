@@ -23,25 +23,27 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
   let finalSkills = Object.assign({}, existingSkills);
   for (const tag of newUserSkills) {
     const tagId = tagsMap[tag];
-    let e = existingSkills ? existingSkills[tagId] : null;
-    if (e) {
-      const isSourceRepeating =
-        SOURCES.CHALLENGE.localeCompare(e.sources) === 0;
-      if (isSourceRepeating) {
-        e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
+    if (tagId) {
+      let e = existingSkills ? existingSkills[tagId] : null;
+      if (e) {
+        const isSourceRepeating =
+          SOURCES.CHALLENGE.localeCompare(e.sources) === 0;
+        if (isSourceRepeating) {
+          e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
+        } else {
+          e.sources = e.sources.concat(e.sources);
+        }
+        e.hidden = e.hidden;
+        finalSkills[tagId] = e;
       } else {
-        e.sources = e.sources.concat(e.sources);
+        finalSkills[tagId] = {
+          sources: [SOURCES.CHALLENGE],
+          score: 1,
+          hidden: false,
+          scoreV2: 1,
+        };
+        finalSkills[tagId].name = tag;
       }
-      e.hidden = e.hidden;
-      finalSkills[tagId] = e;
-    } else {
-      finalSkills[tagId] = {
-        sources: [SOURCES.CHALLENGE],
-        score: 1,
-        hidden: false,
-        scoreV2: 1,
-      };
-      finalSkills[tagId].name = tag;
     }
   }
   return finalSkills;
