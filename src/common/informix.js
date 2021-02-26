@@ -42,8 +42,8 @@ async function executeQuery (c, sql) {
   logger.debug(sql)  
   return new Promise((resolve, reject) => {
     c.executeQuery(sql,(err, data) => {
-        logger.debug("Query result");
-        logger.debug(JSON.stringify(data));
+        //logger.debug("Query result");
+        //logger.debug(JSON.stringify(data));
         if (err) reject(err);
         else resolve(data);
       }

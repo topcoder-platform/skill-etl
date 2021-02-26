@@ -5,7 +5,7 @@
 const _ = require('underscore')
 const logger = require('../common/logger')
 const { SOURCES } = require('../common/constants')
-const { ExternalsStackoverflow } = require('../common/dynamodb')
+const { ExternalsStackoverflow } = require('../models/dynamodb')
 
 /**
  * Convert a list of tags to a skills object, with tagId as keys.
@@ -43,10 +43,17 @@ async function getStackoverflowSkills (userId, tagsMap) {
   } else {
     logger.info(`No ExternalsStackoverflow item found ${userId}`)
   }
-
   return toMappedSkills(tags, tagsMap)
 }
 
-module.exports = {
-  getStackoverflowSkills
+function updateStackOverflowSkills(tags) {
+  /* const stackoverflowTags = await stackoverflow.getStackoverflowSkills(r.userId,tags);
+     logger.debug(`External stackoverflow skills: ${Object.keys(stackoverflowTags).length}.`);
+     r.skills = mergeSkills(r.skills, stackoverflowTags);
+     logger.debug(`Updated skills: ${JSON.stringify(r.skills)}.`);*/
 }
+
+module.exports = {
+  getStackoverflowSkills,
+  updateStackOverflowSkills,
+};

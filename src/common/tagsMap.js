@@ -18,12 +18,12 @@ async function loadTagsMap () {
       .createReadStream()
       .pipe(csv({ separator: '|', headers: ['key', 'name', 'aliases'] }))
       .on('data', (data) => {
-        logger.debug(`Skill Id: ${data.key}, Name: ${data.name}.`)
+        //logger.debug(`Skill Id: ${data.key}, Name: ${data.name}.`)
         results[data.name.toLowerCase()] = data.key
         if (data.aliases && !_.isEmpty(data.aliases)) {
           const names = JSON.parse(data.aliases)
           for (const name of names) {
-            logger.debug(`Skill Id: ${data.key}, Synonym: ${data.name}.`)
+            //logger.debug(`Skill Id: ${data.key}, Synonym: ${data.name}.`)
             results[name.toLowerCase()] = data.key
           }
         }
