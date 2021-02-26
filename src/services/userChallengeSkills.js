@@ -17,7 +17,7 @@ const USER_CHALLENGE_SKILL_QUERY = `SELECT  pr.user_id as userId,
         FROM tcs_dw:project_result pr
         INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
         INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
-        WHERE pr.passed_review_ind = 1 AND pr.review_complete_timestamp > (CURRENT -  500 UNITS DAY)`;
+        WHERE pr.passed_review_ind = 1 AND pr.review_complete_timestamp > (CURRENT -  15 UNITS DAY)`;
 
 function groupSkillsByUser(users) {
   let grouped = {};
