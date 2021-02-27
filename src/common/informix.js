@@ -12,7 +12,7 @@ const logger = require('./logger')
  */
 async function getConnection () {
   return new Promise((resolve, reject) => {
-    logger.debug("Acquiring Informix Connection")
+    logger.debug('Acquiring Informix Connection')
     const conn = new InformixWrapper(config.get('INFORMIX'), logger.debug.bind(logger))
     conn.on('error', (err) => {
       conn.disconnect()
@@ -24,7 +24,7 @@ async function getConnection () {
         reject(err)
       } else {
         resolve(conn)
-        logger.debug("Aquired Informix Connection")
+        logger.debug('Aquired Informix Connection')
       }
     })
   })
@@ -37,15 +37,17 @@ async function getConnection () {
  * @param params - query params array, [{type, value}].
  * @returns {Promise<[*]>}
  */
-async function executeQuery (c, sql, params) {
-  logger.debug("******** SQL *********")
-  logger.debug(sql)
-  logger.debug(params)
+async function executeQuery (c, sql) {
+  logger.debug('******** SQL *********')
+  logger.debug(sql)  
   return new Promise((resolve, reject) => {
-    c.executePreparedQuery(sql, (err, data) => {
-      if (err) reject(err)
-      else resolve(data)
-    }, params)
+    c.executeQuery(sql,(err, data) => {
+        //logger.debug("Query result");
+        //logger.debug(JSON.stringify(data));
+        if (err) reject(err);
+        else resolve(data);
+      }
+    );
   })
 }
 

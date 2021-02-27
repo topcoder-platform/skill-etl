@@ -4,7 +4,7 @@
 
 const _ = require('underscore')
 const logger = require('../common/logger')
-const { MemberEnteredSkills } = require('../common/dynamodb')
+const { MemberEnteredSkills } = require('../models/dynamodb')
 const { SOURCES } = require('../common/constants')
 
 /**
@@ -28,6 +28,25 @@ async function getMemberEnteredSkills (userId) {
   })
 }
 
-module.exports = {
-  getMemberEnteredSkills
+function mergeUserEnteredSkills(existingSkills, enteredSkills) {
+  let finalSkills = Object.assign({}, existingSkills);
+  for (const tagId in enteredSkills) {
+    let skill = existingSkills[tagId];
+    if (!skill) {
+      finalSkills[tagId] = enteredSkills[tagId];
+    }
+  }
+  return finalSkills;
 }
+
+function updateUserEnteredSkills(tags) {
+  //const userEnteredSkills = await memberEntered.getMemberEnteredSkills(userId);
+  //logger.debug(`User entered skills:\n ${Object.keys(userEnteredSkills).length}.`);
+  //r.skills = mergeSkills(r.skills, enteredSkills);
+  //updatedSkills = mergeUserEnteredSkills(updatedSkills, userEnteredSkills);
+}
+
+module.exports = {
+  getMemberEnteredSkills,
+  updateUserEnteredSkills,
+};

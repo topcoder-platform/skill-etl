@@ -13,6 +13,8 @@ and tables.
 
 Run the following command to start the databases in docker:
 
+Note: Since dynamodb connection uses `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, you should set them. Your local instance or your docker based instance, either will then use the same user for connecting.
+
 ```
 docker-compose -f local/db-docker-compose.yaml up -d
 ```
@@ -118,7 +120,8 @@ npm run lint:fix
 - `AWS_REGION` - aws region, default: `fake-region`
 - `AWS_ACCESS_KEY_ID` - aws access key id.
 - `AWS_SECRET_ACCESS_KEY` - aws secret access key.
-- `TAGS_MAP_FILE` - path to the tags map file, default: `data/tagsMap.txt`
+- `S3_BUCKET` - s3 bucket of tags map file, default: `skills-etl`
+- `S3_TAGS_MAP_KEY` - s3 key of tags map file, default: `tagsMap.txt`
 - `MAX_DAYS_FOR_CHALLENGE_SKILLS` - max days in the past to query for the challenge skills, default: `2`
 
 ## Implementation Note [confirmed in Forum](https://discussions.topcoder.com/discussion/2638/approach-confirmation)
@@ -128,4 +131,3 @@ The hadoop app loads and transforms three sources of data into one aggregated ta
 The requirement to only extract skills from no more than two days ago may help with this situation. The problem is, the other two sources do not have a timestamp limit.
 
 In this implementation, the etl tool first load the skills from Informix, then query the other DynamoDB tables to update the skills. Possible drawback is the app essentially will miss skills that exist in the DynamoDB tables but not in Informix.
-

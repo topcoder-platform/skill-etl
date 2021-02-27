@@ -26,10 +26,14 @@ services:
       - "/app/scripts/init-dynamodb.js"
     environment:
       DYNAMODB_ENDPOINT: http://dynamo:8000
-      AWS_ACCESS_KEY_ID: fake_access_key_id
-      AWS_SECRET_ACCESS_KEY: fake_secret_access_key
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     volumes:
       - "../scripts/dynamodb-data.json:/app/scripts/dynamodb-data.json"
     depends_on:
       - dynamo
     restart: on-failure
+
+networks:
+  default:
+    name: skills-etl
