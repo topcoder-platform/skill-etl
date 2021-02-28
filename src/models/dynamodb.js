@@ -47,7 +47,6 @@ const MemberEnteredSkills = dynamo.define('MemberEnteredSkills', {
  */
 const MemberAggregatedSkills = dynamo.define("MemberAggregatedSkills", {
   hashKey: "userId",
-  timestamps: true,
   schema: {
     userId: joi.number().integer().required(),
     skills: joi.string(),
