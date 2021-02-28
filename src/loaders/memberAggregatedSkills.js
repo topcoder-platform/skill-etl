@@ -41,9 +41,7 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
         finalSkills[tagId] = {
           sources: [SOURCES.CHALLENGE],
           score: 1,
-          hidden: false,
-          scoreV2: 1,
-        };
+          hidden: false,        };
         //finalSkills[tagId].name = tag;
       }
     }
