@@ -28,21 +28,22 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
       if (e) {
         e.sources = e.sources?e.sources:[]
         const isSourceRepeating = e.sources.includes(SOURCES.CHALLENGE);
-        if (isSourceRepeating) {
-          e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
+        if (isSourceRepeating) {          
+          //do not score
+          //e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
         } else {
-          e.sources = e.sources.concat(e.sources);
+          e.sources = e.sources.concat(e.sources);          
         }
+        e.sources = [...new Set(e.sources)];
         e.hidden = e.hidden;
         finalSkills[tagId] = e;
       } else {
         finalSkills[tagId] = {
           sources: [SOURCES.CHALLENGE],
           score: 1,
-          hidden: false,
-          scoreV2: 1,
+          hidden: false
         };
-        finalSkills[tagId].name = tag;
+        //finalSkills[tagId].name = tag;
       }
     }
   }
