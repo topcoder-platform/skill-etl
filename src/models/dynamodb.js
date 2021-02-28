@@ -45,15 +45,15 @@ const MemberEnteredSkills = dynamo.define('MemberEnteredSkills', {
 /**
  * The member aggregated input model.
  */
-const MemberAggregatedSkills = dynamo.define('MemberAggregatedSkillsNewETL', {
-  hashKey: 'userId',
+const MemberAggregatedSkills = dynamo.define("MemberAggregatedSkills", {
+  hashKey: "userId",
   timestamps: true,
   schema: {
     userId: joi.number().integer().required(),
-    skills: joi.string()
+    skills: joi.string(),
   },
-  tableName: 'MemberAggregatedSkillsNewETL'
-})
+  tableName: "MemberAggregatedSkills",
+});
 
 module.exports = {
   ExternalsStackoverflow,
