@@ -27,7 +27,7 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
       let e = existingSkills ? existingSkills[tagId] : null;
       if (e) {
         e.sources = e.sources?e.sources:[]
-        const isSourceRepeating = e.sources.includes(SOURCES.CHALLENGE) === 0;
+        const isSourceRepeating = e.sources.includes(SOURCES.CHALLENGE);
         if (isSourceRepeating) {
           e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
         } else {
