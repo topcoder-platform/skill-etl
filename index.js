@@ -1,7 +1,5 @@
 const logger = require('./src/common/logger')
 const tagsMap = require('./src/common/tagsMap')
-const {updateUserEnteredSkills} = require('./src/loaders/memberEnteredSkills')
-const {updateStackOverflowSkills} = require('./src/loaders/stackoverflowSkills')
 const {updateChallengeSkills} = require("./src/loaders/memberAggregatedSkills");
 
 async function main () {
