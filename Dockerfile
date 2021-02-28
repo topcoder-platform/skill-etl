@@ -49,4 +49,4 @@ COPY ./scripts ./scripts
 COPY ./src ./src
 COPY ./index.js ./index.js
 
-ENTRYPOINT ["node", "index"]
+ENTRYPOINT ["node"]

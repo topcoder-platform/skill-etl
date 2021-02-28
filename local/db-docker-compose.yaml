@@ -15,23 +15,43 @@ services:
     tty: true
     volumes:
       - "./informix-init/init-database.sql:/opt/ibm/config/init-database.sql"
-  dynamo:
-    image: amazon/dynamodb-local
+  localstack:
+    image: localstack/localstack:latest
     ports:
-      - "8000:8000"
+      - "4566:4566"
+    environment:
+      SERVICES: dynamodb,s3
   init-dynamodb:
     build: ..
     image: topcoder-skills-etl:latest
     command:
       - "/app/scripts/init-dynamodb.js"
     environment:
-      DYNAMODB_ENDPOINT: http://dynamo:8000
+      S3_ENDPOINT: http://localstack:4566
+      DYNAMODB_ENDPOINT: http://localstack:4566
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
     volumes:
       - "../scripts/dynamodb-data.json:/app/scripts/dynamodb-data.json"
     depends_on:
-      - dynamo
+      - localstack
+    restart: on-failure
+  init-s3:
+    build: ..
+    image: topcoder-skills-etl:latest
+    command:
+      - "/app/scripts/init-s3.js"
+    environment:
+      S3_ENDPOINT: http://localstack:4566
+      DYNAMODB_ENDPOINT: http://localstack:4566
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
+    volumes:
+      - "../scripts/tagsMap.txt:/app/scripts/tagsMap.txt"
+    depends_on:
+      - localstack
     restart: on-failure
 
 networks:
