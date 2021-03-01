@@ -103,8 +103,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
-                - switching-to-original-table    
+                - develop    
       # Production builds are exectuted 
       # when PR is merged to the master
       # Don't change anything in this configuration
@@ -116,7 +115,8 @@ workflows:
           filters:
             branches:
               only:
-                - master    
+                - master
+                - with-dummy-table  
       # Simple testing is executed for any branch other than "develop" and
       # "master".
      
