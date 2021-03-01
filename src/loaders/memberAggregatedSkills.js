@@ -29,10 +29,10 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
         e.sources = e.sources?e.sources:[]
         const isSourceRepeating = e.sources.includes(SOURCES.CHALLENGE);
         if (isSourceRepeating) {          
-          //do not score
+          //do not score for now
           //e.scoreV2 = (e.scoreV2 ? e.scoreV2 : 0) + 1;
         } else {
-          e.sources = e.sources.concat(e.sources);          
+          e.sources = e.sources.concat(SOURCES.CHALLENGE);          
         }
         e.sources = [...new Set(e.sources)];
         e.hidden = e.hidden;
@@ -69,34 +69,29 @@ async function getMemberAggregatedSkills(userId) {
 }
 
 async function updateChallengeSkills(tags) {
-  //const usersWithNewSkills = { 251184: [".net"] }; //, "114853": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
-  const usersWithNewSkills = await userChallengeSkills.getUserSkills(config.get('MAX_DAYS_FOR_CHALLENGE_SKILLS'), tags)
+  //const usersWithNewSkills = {40623428: ["docker", "aws", "node.js"],22778049: ["axure", "node.js", "user testing"]}; //, "88774597": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
+  const usersWithNewSkills = await userChallengeSkills.getUserSkills(config.get("MAX_DAYS_FOR_CHALLENGE_SKILLS"),tags);
   let userSkills = [];
-  if (usersWithNewSkills && usersWithNewSkills.length === 0) {
-    logger.info(`No new users with updated skills.`);
-    return;
-  }
+  if (usersWithNewSkills && usersWithNewSkills.length === 0) { logger.info(`No new users with updated skills.`); return; }
   logger.info( `Found ${ Object.keys(usersWithNewSkills).length } new users with updated skills.` );
-  logger.debug(`Users with new skills:\n ${JSON.stringify(usersWithNewSkills)}.`);
-
+  logger.debug( `Users with new skills:\n ${JSON.stringify(usersWithNewSkills)}.` );
   for (const id in usersWithNewSkills) {
     let updatedSkills = {},
     userId = parseInt(id);
     logger.debug(`Getting existing skills for user: ${userId}.`);
     const existingSkills = await getMemberAggregatedSkills(userId);
     logger.debug(`existingSkills:\n ${JSON.stringify(existingSkills)}.`);
-    updatedSkills = mergeChallengeSkills( existingSkills, usersWithNewSkills[userId], tags );
-    //logger.debug(`Processing user skills for user: ${userId}.`);
+    updatedSkills = mergeChallengeSkills( existingSkills, usersWithNewSkills[userId], tags ); //logger.debug(`Processing user skills for user: ${userId}.`);
     //logger.debug(`User challenge skills: ${Object.keys(r.skills).length}.`);
 
     logger.debug(`Updated skills:\n ${JSON.stringify(updatedSkills)}.`);
     logger.debug( `\n------------------------------------------------------------------"` );
     userSkills.push({ userId: userId, skills: updatedSkills });
   }
-  
+
   logger.info(`Writing ${userSkills.length} items to MemberAggregatedSkills table.`);
-  console.log( `\n----------------------- final skills -------------------------------------------"` );
-  console.log(JSON.stringify(userSkills));
+  logger.debug( `\n----------------------- final skills -------------------------------------------"` );
+  logger.debug(JSON.stringify(userSkills));
   await writeAggregatedSkills(userSkills);
 }
 
