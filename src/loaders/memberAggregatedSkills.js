@@ -109,4 +109,5 @@ async function updateChallengeSkills(tags) {
 module.exports = {
   getMemberAggregatedSkills,
   updateChallengeSkills,
+  mergeChallengeSkills,
 };

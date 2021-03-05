@@ -1,0 +1,2831 @@
+2021-03-05T12:26:12.066Z - debug:  ** Skills Loader Started **
+2021-03-05T12:26:12.068Z - debug: *******************************************
+2021-03-05T12:26:12.068Z - debug: Updating new user batch starting from 2021-01-01 to 2021-02-26, each batch consists of 20 days
+2021-03-05T12:26:15.345Z - debug: Loaded 586 tags.
+2021-03-05T12:26:15.438Z - debug: Acquiring Informix Connection
+2021-03-05T12:26:15.477Z - debug: Initialized pool for url - jdbc:informix-sqli://localhost:2021/topcoder_dw:INFORMIXSERVER=datawarehouse_tcp;INFORMIXCONRETRY=1;INFORMIXCONTIME=300;
+Connecting topcoder_dw
+2021-03-05T12:26:20.878Z - debug: Aquired Informix Connection
+2021-03-05T12:26:20.879Z - info: Query all challenge user skills, between 2021-01-01 and 2021-01-20 days.
+SELECT  pr.user_id as userId,
+        pr.project_id as challengeId,
+        pt.name as name, pr.review_complete_timestamp
+        FROM tcs_dw:project_result pr
+        INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
+        INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
+        WHERE  pr.passed_review_ind = 1 AND pr.review_complete_timestamp BETWEEN DATE("2021-01-01") and (DATE("2021-01-20") + 1)
+executeQuery - start   0.3929093255337628
+executeQuery - success 0.3929093255337628
+Disconnecting topcoder_dw
+2021-03-05T12:26:24.585Z - debug: *******************************************
+2021-03-05T12:26:24.586Z - debug: Updating batch starting from 2021-01-01 to 2021-01-20
+2021-03-05T12:26:24.586Z - debug: [object Object]
+2021-03-05T12:26:24.586Z - debug: Found 138 new users with updated skills.
+2021-03-05T12:26:24.587Z - debug: Getting existing skills for user: 151743.
+2021-03-05T12:26:24.587Z - info: Querying MemberAggregatedSkills for userId=151743
+Closed the database connection
+2021-03-05T12:26:26.174Z - info: No MemberAggregatedSkills item found 151743
+2021-03-05T12:26:26.174Z - debug: Updated 0 skills for 151743
+2021-03-05T12:26:26.174Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:26.174Z - debug: Getting existing skills for user: 310233.
+2021-03-05T12:26:26.174Z - info: Querying MemberAggregatedSkills for userId=310233
+2021-03-05T12:26:27.130Z - info: No MemberAggregatedSkills item found 310233
+2021-03-05T12:26:27.136Z - debug: Updated 0 skills for 310233
+2021-03-05T12:26:27.136Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:27.136Z - debug: Getting existing skills for user: 7463987.
+2021-03-05T12:26:27.136Z - info: Querying MemberAggregatedSkills for userId=7463987
+2021-03-05T12:26:28.088Z - info: No MemberAggregatedSkills item found 7463987
+2021-03-05T12:26:28.088Z - debug: Updated 0 skills for 7463987
+2021-03-05T12:26:28.089Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:28.089Z - debug: Getting existing skills for user: 8544935.
+2021-03-05T12:26:28.089Z - info: Querying MemberAggregatedSkills for userId=8544935
+2021-03-05T12:26:29.087Z - info: MemberAggregatedSkills item found 8544935.
+2021-03-05T12:26:29.087Z - debug: Updated 0 skills for 8544935
+2021-03-05T12:26:29.087Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:29.087Z - debug: Getting existing skills for user: 9916266.
+2021-03-05T12:26:29.087Z - info: Querying MemberAggregatedSkills for userId=9916266
+2021-03-05T12:26:30.019Z - info: No MemberAggregatedSkills item found 9916266
+2021-03-05T12:26:30.019Z - debug: Updated 0 skills for 9916266
+2021-03-05T12:26:30.020Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:30.021Z - debug: Getting existing skills for user: 11950083.
+2021-03-05T12:26:30.022Z - info: Querying MemberAggregatedSkills for userId=11950083
+2021-03-05T12:26:31.002Z - info: No MemberAggregatedSkills item found 11950083
+2021-03-05T12:26:31.002Z - debug: Updated 0 skills for 11950083
+2021-03-05T12:26:31.003Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:31.003Z - debug: Getting existing skills for user: 15763205.
+2021-03-05T12:26:31.003Z - info: Querying MemberAggregatedSkills for userId=15763205
+2021-03-05T12:26:31.959Z - info: No MemberAggregatedSkills item found 15763205
+2021-03-05T12:26:31.959Z - debug: Updated 0 skills for 15763205
+2021-03-05T12:26:31.959Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:31.959Z - debug: Getting existing skills for user: 20095816.
+2021-03-05T12:26:31.959Z - info: Querying MemberAggregatedSkills for userId=20095816
+2021-03-05T12:26:32.892Z - info: MemberAggregatedSkills item found 20095816.
+2021-03-05T12:26:32.894Z - debug: Updated 0 skills for 20095816
+2021-03-05T12:26:32.894Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:32.894Z - debug: Getting existing skills for user: 20337184.
+2021-03-05T12:26:32.894Z - info: Querying MemberAggregatedSkills for userId=20337184
+2021-03-05T12:26:33.859Z - info: No MemberAggregatedSkills item found 20337184
+2021-03-05T12:26:33.859Z - debug: Updated 0 skills for 20337184
+2021-03-05T12:26:33.860Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:33.860Z - debug: Getting existing skills for user: 22652995.
+2021-03-05T12:26:33.860Z - info: Querying MemberAggregatedSkills for userId=22652995
+2021-03-05T12:26:34.839Z - info: No MemberAggregatedSkills item found 22652995
+2021-03-05T12:26:34.839Z - debug: Updated 0 skills for 22652995
+2021-03-05T12:26:34.839Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:34.839Z - debug: Getting existing skills for user: 22654954.
+2021-03-05T12:26:34.839Z - info: Querying MemberAggregatedSkills for userId=22654954
+2021-03-05T12:26:35.789Z - info: No MemberAggregatedSkills item found 22654954
+2021-03-05T12:26:35.789Z - debug: Updated 0 skills for 22654954
+2021-03-05T12:26:35.789Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:35.789Z - debug: Getting existing skills for user: 22655076.
+2021-03-05T12:26:35.789Z - info: Querying MemberAggregatedSkills for userId=22655076
+2021-03-05T12:26:36.723Z - info: No MemberAggregatedSkills item found 22655076
+2021-03-05T12:26:36.723Z - debug: Updated 0 skills for 22655076
+2021-03-05T12:26:36.724Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:36.724Z - debug: Getting existing skills for user: 22678883.
+2021-03-05T12:26:36.724Z - info: Querying MemberAggregatedSkills for userId=22678883
+2021-03-05T12:26:37.694Z - info: No MemberAggregatedSkills item found 22678883
+2021-03-05T12:26:37.699Z - debug: Updated 0 skills for 22678883
+2021-03-05T12:26:37.699Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:37.700Z - debug: Getting existing skills for user: 22680616.
+2021-03-05T12:26:37.700Z - info: Querying MemberAggregatedSkills for userId=22680616
+2021-03-05T12:26:38.700Z - info: No MemberAggregatedSkills item found 22680616
+2021-03-05T12:26:38.700Z - debug: Updated 0 skills for 22680616
+2021-03-05T12:26:38.700Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:38.700Z - debug: Getting existing skills for user: 22688113.
+2021-03-05T12:26:38.700Z - info: Querying MemberAggregatedSkills for userId=22688113
+2021-03-05T12:26:39.658Z - info: No MemberAggregatedSkills item found 22688113
+2021-03-05T12:26:39.658Z - debug: Updated 0 skills for 22688113
+2021-03-05T12:26:39.658Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:39.658Z - debug: Getting existing skills for user: 22691991.
+2021-03-05T12:26:39.658Z - info: Querying MemberAggregatedSkills for userId=22691991
+2021-03-05T12:26:40.718Z - info: No MemberAggregatedSkills item found 22691991
+2021-03-05T12:26:40.718Z - debug: Updated 0 skills for 22691991
+2021-03-05T12:26:40.718Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:40.718Z - debug: Getting existing skills for user: 22697646.
+2021-03-05T12:26:40.718Z - info: Querying MemberAggregatedSkills for userId=22697646
+2021-03-05T12:26:42.315Z - info: No MemberAggregatedSkills item found 22697646
+2021-03-05T12:26:42.315Z - debug: Updated 0 skills for 22697646
+2021-03-05T12:26:42.315Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:42.315Z - debug: Getting existing skills for user: 22706873.
+2021-03-05T12:26:42.315Z - info: Querying MemberAggregatedSkills for userId=22706873
+2021-03-05T12:26:43.279Z - info: No MemberAggregatedSkills item found 22706873
+2021-03-05T12:26:43.279Z - debug: Updated 0 skills for 22706873
+2021-03-05T12:26:43.279Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:43.279Z - debug: Getting existing skills for user: 22721181.
+2021-03-05T12:26:43.279Z - info: Querying MemberAggregatedSkills for userId=22721181
+2021-03-05T12:26:44.228Z - info: MemberAggregatedSkills item found 22721181.
+2021-03-05T12:26:44.228Z - debug: Updated 0 skills for 22721181
+2021-03-05T12:26:44.228Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:44.228Z - debug: Getting existing skills for user: 22757234.
+2021-03-05T12:26:44.228Z - info: Querying MemberAggregatedSkills for userId=22757234
+2021-03-05T12:26:45.172Z - info: No MemberAggregatedSkills item found 22757234
+2021-03-05T12:26:45.173Z - debug: Updated 0 skills for 22757234
+2021-03-05T12:26:45.173Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:45.173Z - debug: Getting existing skills for user: 22763515.
+2021-03-05T12:26:45.173Z - info: Querying MemberAggregatedSkills for userId=22763515
+2021-03-05T12:26:46.174Z - info: No MemberAggregatedSkills item found 22763515
+2021-03-05T12:26:46.174Z - debug: Updated 0 skills for 22763515
+2021-03-05T12:26:46.174Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:46.175Z - debug: Getting existing skills for user: 22786480.
+2021-03-05T12:26:46.175Z - info: Querying MemberAggregatedSkills for userId=22786480
+2021-03-05T12:26:47.126Z - info: MemberAggregatedSkills item found 22786480.
+2021-03-05T12:26:47.126Z - debug: Updated 0 skills for 22786480
+2021-03-05T12:26:47.126Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:47.126Z - debug: Getting existing skills for user: 22827332.
+2021-03-05T12:26:47.126Z - info: Querying MemberAggregatedSkills for userId=22827332
+2021-03-05T12:26:48.070Z - info: No MemberAggregatedSkills item found 22827332
+2021-03-05T12:26:48.070Z - debug: Updated 0 skills for 22827332
+2021-03-05T12:26:48.070Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:48.070Z - debug: Getting existing skills for user: 22827870.
+2021-03-05T12:26:48.070Z - info: Querying MemberAggregatedSkills for userId=22827870
+2021-03-05T12:26:49.015Z - info: No MemberAggregatedSkills item found 22827870
+2021-03-05T12:26:49.016Z - debug: Updated 0 skills for 22827870
+2021-03-05T12:26:49.016Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:49.016Z - debug: Getting existing skills for user: 22836207.
+2021-03-05T12:26:49.016Z - info: Querying MemberAggregatedSkills for userId=22836207
+2021-03-05T12:26:49.926Z - info: No MemberAggregatedSkills item found 22836207
+2021-03-05T12:26:49.926Z - debug: Updated 0 skills for 22836207
+2021-03-05T12:26:49.927Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:49.927Z - debug: Getting existing skills for user: 22836338.
+2021-03-05T12:26:49.927Z - info: Querying MemberAggregatedSkills for userId=22836338
+2021-03-05T12:26:50.875Z - info: No MemberAggregatedSkills item found 22836338
+2021-03-05T12:26:50.875Z - debug: Updated 0 skills for 22836338
+2021-03-05T12:26:50.875Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:50.875Z - debug: Getting existing skills for user: 22836556.
+2021-03-05T12:26:50.875Z - info: Querying MemberAggregatedSkills for userId=22836556
+2021-03-05T12:26:51.843Z - info: No MemberAggregatedSkills item found 22836556
+2021-03-05T12:26:51.844Z - debug: Updated 0 skills for 22836556
+2021-03-05T12:26:51.844Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:51.844Z - debug: Getting existing skills for user: 22852822.
+2021-03-05T12:26:51.844Z - info: Querying MemberAggregatedSkills for userId=22852822
+2021-03-05T12:26:52.814Z - info: No MemberAggregatedSkills item found 22852822
+2021-03-05T12:26:52.814Z - debug: Updated 0 skills for 22852822
+2021-03-05T12:26:52.814Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:52.814Z - debug: Getting existing skills for user: 22866415.
+2021-03-05T12:26:52.814Z - info: Querying MemberAggregatedSkills for userId=22866415
+2021-03-05T12:26:53.760Z - info: MemberAggregatedSkills item found 22866415.
+2021-03-05T12:26:53.760Z - debug: Updated 0 skills for 22866415
+2021-03-05T12:26:53.760Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:53.760Z - debug: Getting existing skills for user: 22874592.
+2021-03-05T12:26:53.761Z - info: Querying MemberAggregatedSkills for userId=22874592
+2021-03-05T12:26:54.703Z - info: No MemberAggregatedSkills item found 22874592
+2021-03-05T12:26:54.704Z - debug: Updated 0 skills for 22874592
+2021-03-05T12:26:54.704Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:54.704Z - debug: Getting existing skills for user: 22903535.
+2021-03-05T12:26:54.704Z - info: Querying MemberAggregatedSkills for userId=22903535
+2021-03-05T12:26:55.674Z - info: No MemberAggregatedSkills item found 22903535
+2021-03-05T12:26:55.675Z - debug: Updated 0 skills for 22903535
+2021-03-05T12:26:55.675Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:55.675Z - debug: Getting existing skills for user: 22923055.
+2021-03-05T12:26:55.675Z - info: Querying MemberAggregatedSkills for userId=22923055
+2021-03-05T12:26:56.646Z - info: No MemberAggregatedSkills item found 22923055
+2021-03-05T12:26:56.647Z - debug: Updated 0 skills for 22923055
+2021-03-05T12:26:56.647Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:56.647Z - debug: Getting existing skills for user: 22931325.
+2021-03-05T12:26:56.647Z - info: Querying MemberAggregatedSkills for userId=22931325
+2021-03-05T12:26:58.229Z - info: No MemberAggregatedSkills item found 22931325
+2021-03-05T12:26:58.229Z - debug: Updated 0 skills for 22931325
+2021-03-05T12:26:58.229Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:58.229Z - debug: Getting existing skills for user: 23011713.
+2021-03-05T12:26:58.229Z - info: Querying MemberAggregatedSkills for userId=23011713
+2021-03-05T12:26:59.212Z - info: No MemberAggregatedSkills item found 23011713
+2021-03-05T12:26:59.212Z - debug: Updated 0 skills for 23011713
+2021-03-05T12:26:59.212Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:26:59.212Z - debug: Getting existing skills for user: 23030940.
+2021-03-05T12:26:59.212Z - info: Querying MemberAggregatedSkills for userId=23030940
+2021-03-05T12:27:00.179Z - info: No MemberAggregatedSkills item found 23030940
+2021-03-05T12:27:00.179Z - debug: Updated 0 skills for 23030940
+2021-03-05T12:27:00.179Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:00.179Z - debug: Getting existing skills for user: 23039197.
+2021-03-05T12:27:00.179Z - info: Querying MemberAggregatedSkills for userId=23039197
+2021-03-05T12:27:01.109Z - info: No MemberAggregatedSkills item found 23039197
+2021-03-05T12:27:01.109Z - debug: Updated 0 skills for 23039197
+2021-03-05T12:27:01.109Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:01.109Z - debug: Getting existing skills for user: 23043934.
+2021-03-05T12:27:01.109Z - info: Querying MemberAggregatedSkills for userId=23043934
+2021-03-05T12:27:02.212Z - info: No MemberAggregatedSkills item found 23043934
+2021-03-05T12:27:02.213Z - debug: Updated 0 skills for 23043934
+2021-03-05T12:27:02.213Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:02.213Z - debug: Getting existing skills for user: 23050055.
+2021-03-05T12:27:02.213Z - info: Querying MemberAggregatedSkills for userId=23050055
+2021-03-05T12:27:03.205Z - info: MemberAggregatedSkills item found 23050055.
+2021-03-05T12:27:03.205Z - debug: Updated 0 skills for 23050055
+2021-03-05T12:27:03.205Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:03.205Z - debug: Getting existing skills for user: 23093194.
+2021-03-05T12:27:03.205Z - info: Querying MemberAggregatedSkills for userId=23093194
+2021-03-05T12:27:04.169Z - info: No MemberAggregatedSkills item found 23093194
+2021-03-05T12:27:04.169Z - debug: Updated 0 skills for 23093194
+2021-03-05T12:27:04.169Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:04.170Z - debug: Getting existing skills for user: 23102829.
+2021-03-05T12:27:04.170Z - info: Querying MemberAggregatedSkills for userId=23102829
+2021-03-05T12:27:05.124Z - info: MemberAggregatedSkills item found 23102829.
+2021-03-05T12:27:05.124Z - debug: Updated 0 skills for 23102829
+2021-03-05T12:27:05.124Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:05.124Z - debug: Getting existing skills for user: 23124329.
+2021-03-05T12:27:05.125Z - info: Querying MemberAggregatedSkills for userId=23124329
+2021-03-05T12:27:06.098Z - info: No MemberAggregatedSkills item found 23124329
+2021-03-05T12:27:06.098Z - debug: Updated 0 skills for 23124329
+2021-03-05T12:27:06.098Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:06.098Z - debug: Getting existing skills for user: 23131895.
+2021-03-05T12:27:06.098Z - info: Querying MemberAggregatedSkills for userId=23131895
+2021-03-05T12:27:07.058Z - info: No MemberAggregatedSkills item found 23131895
+2021-03-05T12:27:07.058Z - debug: Updated 0 skills for 23131895
+2021-03-05T12:27:07.058Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:07.058Z - debug: Getting existing skills for user: 23148299.
+2021-03-05T12:27:07.058Z - info: Querying MemberAggregatedSkills for userId=23148299
+2021-03-05T12:27:08.009Z - info: No MemberAggregatedSkills item found 23148299
+2021-03-05T12:27:08.009Z - debug: Updated 0 skills for 23148299
+2021-03-05T12:27:08.010Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:08.010Z - debug: Getting existing skills for user: 23154661.
+2021-03-05T12:27:08.010Z - info: Querying MemberAggregatedSkills for userId=23154661
+2021-03-05T12:27:09.021Z - info: MemberAggregatedSkills item found 23154661.
+2021-03-05T12:27:09.021Z - debug: Updated 0 skills for 23154661
+2021-03-05T12:27:09.021Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:09.021Z - debug: Getting existing skills for user: 23166766.
+2021-03-05T12:27:09.022Z - info: Querying MemberAggregatedSkills for userId=23166766
+2021-03-05T12:27:10.017Z - info: MemberAggregatedSkills item found 23166766.
+2021-03-05T12:27:10.017Z - debug: Updated 0 skills for 23166766
+2021-03-05T12:27:10.018Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:10.018Z - debug: Getting existing skills for user: 23189218.
+2021-03-05T12:27:10.018Z - info: Querying MemberAggregatedSkills for userId=23189218
+2021-03-05T12:27:11.157Z - info: MemberAggregatedSkills item found 23189218.
+2021-03-05T12:27:11.157Z - debug: Updated 0 skills for 23189218
+2021-03-05T12:27:11.158Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:11.158Z - debug: Getting existing skills for user: 23200120.
+2021-03-05T12:27:11.158Z - info: Querying MemberAggregatedSkills for userId=23200120
+2021-03-05T12:27:12.328Z - info: MemberAggregatedSkills item found 23200120.
+2021-03-05T12:27:12.328Z - debug: Updated 0 skills for 23200120
+2021-03-05T12:27:12.328Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:12.328Z - debug: Getting existing skills for user: 23278999.
+2021-03-05T12:27:12.328Z - info: Querying MemberAggregatedSkills for userId=23278999
+2021-03-05T12:27:14.142Z - info: MemberAggregatedSkills item found 23278999.
+2021-03-05T12:27:14.143Z - debug: Updated 0 skills for 23278999
+2021-03-05T12:27:14.143Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:14.143Z - debug: Getting existing skills for user: 23285787.
+2021-03-05T12:27:14.143Z - info: Querying MemberAggregatedSkills for userId=23285787
+2021-03-05T12:27:15.108Z - info: MemberAggregatedSkills item found 23285787.
+2021-03-05T12:27:15.108Z - debug: Updated 0 skills for 23285787
+2021-03-05T12:27:15.108Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:15.109Z - debug: Getting existing skills for user: 23290237.
+2021-03-05T12:27:15.109Z - info: Querying MemberAggregatedSkills for userId=23290237
+2021-03-05T12:27:16.131Z - info: No MemberAggregatedSkills item found 23290237
+2021-03-05T12:27:16.131Z - debug: Updated 0 skills for 23290237
+2021-03-05T12:27:16.131Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:16.131Z - debug: Getting existing skills for user: 40019198.
+2021-03-05T12:27:16.131Z - info: Querying MemberAggregatedSkills for userId=40019198
+2021-03-05T12:27:17.125Z - info: No MemberAggregatedSkills item found 40019198
+2021-03-05T12:27:17.125Z - debug: Updated 0 skills for 40019198
+2021-03-05T12:27:17.125Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:17.125Z - debug: Getting existing skills for user: 40026260.
+2021-03-05T12:27:17.125Z - info: Querying MemberAggregatedSkills for userId=40026260
+2021-03-05T12:27:18.076Z - info: No MemberAggregatedSkills item found 40026260
+2021-03-05T12:27:18.076Z - debug: Updated 0 skills for 40026260
+2021-03-05T12:27:18.076Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:18.077Z - debug: Getting existing skills for user: 40035291.
+2021-03-05T12:27:18.077Z - info: Querying MemberAggregatedSkills for userId=40035291
+2021-03-05T12:27:19.014Z - info: No MemberAggregatedSkills item found 40035291
+2021-03-05T12:27:19.014Z - debug: Updated 0 skills for 40035291
+2021-03-05T12:27:19.015Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:19.015Z - debug: Getting existing skills for user: 40107271.
+2021-03-05T12:27:19.015Z - info: Querying MemberAggregatedSkills for userId=40107271
+2021-03-05T12:27:20.019Z - info: No MemberAggregatedSkills item found 40107271
+2021-03-05T12:27:20.019Z - debug: Updated 0 skills for 40107271
+2021-03-05T12:27:20.019Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:20.019Z - debug: Getting existing skills for user: 40140108.
+2021-03-05T12:27:20.020Z - info: Querying MemberAggregatedSkills for userId=40140108
+2021-03-05T12:27:20.982Z - info: No MemberAggregatedSkills item found 40140108
+2021-03-05T12:27:20.982Z - debug: Updated 0 skills for 40140108
+2021-03-05T12:27:20.982Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:20.983Z - debug: Getting existing skills for user: 40142774.
+2021-03-05T12:27:20.983Z - info: Querying MemberAggregatedSkills for userId=40142774
+2021-03-05T12:27:21.931Z - info: No MemberAggregatedSkills item found 40142774
+2021-03-05T12:27:21.931Z - debug: Updated 0 skills for 40142774
+2021-03-05T12:27:21.931Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:21.931Z - debug: Getting existing skills for user: 40162040.
+2021-03-05T12:27:21.931Z - info: Querying MemberAggregatedSkills for userId=40162040
+2021-03-05T12:27:22.885Z - info: No MemberAggregatedSkills item found 40162040
+2021-03-05T12:27:22.885Z - debug: Updated 0 skills for 40162040
+2021-03-05T12:27:22.885Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:22.885Z - debug: Getting existing skills for user: 40165501.
+2021-03-05T12:27:22.885Z - info: Querying MemberAggregatedSkills for userId=40165501
+2021-03-05T12:27:23.890Z - info: No MemberAggregatedSkills item found 40165501
+2021-03-05T12:27:23.891Z - debug: Updated 0 skills for 40165501
+2021-03-05T12:27:23.891Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:23.891Z - debug: Getting existing skills for user: 40239799.
+2021-03-05T12:27:23.891Z - info: Querying MemberAggregatedSkills for userId=40239799
+2021-03-05T12:27:24.915Z - info: No MemberAggregatedSkills item found 40239799
+2021-03-05T12:27:24.915Z - debug: Updated 0 skills for 40239799
+2021-03-05T12:27:24.915Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:24.915Z - debug: Getting existing skills for user: 40240522.
+2021-03-05T12:27:24.916Z - info: Querying MemberAggregatedSkills for userId=40240522
+2021-03-05T12:27:25.939Z - info: MemberAggregatedSkills item found 40240522.
+2021-03-05T12:27:25.939Z - debug: Updated 0 skills for 40240522
+2021-03-05T12:27:25.939Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:25.939Z - debug: Getting existing skills for user: 40325205.
+2021-03-05T12:27:25.940Z - info: Querying MemberAggregatedSkills for userId=40325205
+2021-03-05T12:27:26.962Z - info: MemberAggregatedSkills item found 40325205.
+2021-03-05T12:27:26.962Z - debug: Updated 0 skills for 40325205
+2021-03-05T12:27:26.962Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:26.962Z - debug: Getting existing skills for user: 40395691.
+2021-03-05T12:27:26.962Z - info: Querying MemberAggregatedSkills for userId=40395691
+2021-03-05T12:27:27.987Z - info: No MemberAggregatedSkills item found 40395691
+2021-03-05T12:27:27.987Z - debug: Updated 0 skills for 40395691
+2021-03-05T12:27:27.987Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:27.988Z - debug: Getting existing skills for user: 40456600.
+2021-03-05T12:27:27.988Z - info: Querying MemberAggregatedSkills for userId=40456600
+2021-03-05T12:27:29.571Z - info: No MemberAggregatedSkills item found 40456600
+2021-03-05T12:27:29.571Z - debug: Updated 0 skills for 40456600
+2021-03-05T12:27:29.571Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:29.571Z - debug: Getting existing skills for user: 40493705.
+2021-03-05T12:27:29.571Z - info: Querying MemberAggregatedSkills for userId=40493705
+2021-03-05T12:27:30.563Z - info: No MemberAggregatedSkills item found 40493705
+2021-03-05T12:27:30.564Z - debug: Updated 0 skills for 40493705
+2021-03-05T12:27:30.564Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:30.564Z - debug: Getting existing skills for user: 40499358.
+2021-03-05T12:27:30.564Z - info: Querying MemberAggregatedSkills for userId=40499358
+2021-03-05T12:27:31.505Z - info: No MemberAggregatedSkills item found 40499358
+2021-03-05T12:27:31.506Z - debug: Updated 0 skills for 40499358
+2021-03-05T12:27:31.506Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:31.506Z - debug: Getting existing skills for user: 40525589.
+2021-03-05T12:27:31.506Z - info: Querying MemberAggregatedSkills for userId=40525589
+2021-03-05T12:27:32.493Z - info: No MemberAggregatedSkills item found 40525589
+2021-03-05T12:27:32.493Z - debug: Updated 0 skills for 40525589
+2021-03-05T12:27:32.493Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:32.493Z - debug: Getting existing skills for user: 40570643.
+2021-03-05T12:27:32.493Z - info: Querying MemberAggregatedSkills for userId=40570643
+2021-03-05T12:27:33.428Z - info: No MemberAggregatedSkills item found 40570643
+2021-03-05T12:27:33.428Z - debug: Updated 0 skills for 40570643
+2021-03-05T12:27:33.428Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:33.428Z - debug: Getting existing skills for user: 40572147.
+2021-03-05T12:27:33.428Z - info: Querying MemberAggregatedSkills for userId=40572147
+2021-03-05T12:27:34.375Z - info: MemberAggregatedSkills item found 40572147.
+2021-03-05T12:27:34.376Z - debug: Updated 0 skills for 40572147
+2021-03-05T12:27:34.376Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:34.376Z - debug: Getting existing skills for user: 40579993.
+2021-03-05T12:27:34.376Z - info: Querying MemberAggregatedSkills for userId=40579993
+2021-03-05T12:27:35.328Z - info: No MemberAggregatedSkills item found 40579993
+2021-03-05T12:27:35.328Z - debug: Updated 0 skills for 40579993
+2021-03-05T12:27:35.328Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:35.328Z - debug: Getting existing skills for user: 40587359.
+2021-03-05T12:27:35.328Z - info: Querying MemberAggregatedSkills for userId=40587359
+2021-03-05T12:27:36.271Z - info: No MemberAggregatedSkills item found 40587359
+2021-03-05T12:27:36.271Z - debug: Updated 0 skills for 40587359
+2021-03-05T12:27:36.271Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:36.271Z - debug: Getting existing skills for user: 40587818.
+2021-03-05T12:27:36.271Z - info: Querying MemberAggregatedSkills for userId=40587818
+2021-03-05T12:27:37.261Z - info: No MemberAggregatedSkills item found 40587818
+2021-03-05T12:27:37.261Z - debug: Updated 0 skills for 40587818
+2021-03-05T12:27:37.261Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:37.261Z - debug: Getting existing skills for user: 40604338.
+2021-03-05T12:27:37.261Z - info: Querying MemberAggregatedSkills for userId=40604338
+2021-03-05T12:27:38.208Z - info: No MemberAggregatedSkills item found 40604338
+2021-03-05T12:27:38.208Z - debug: Updated 0 skills for 40604338
+2021-03-05T12:27:38.215Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:38.215Z - debug: Getting existing skills for user: 40608418.
+2021-03-05T12:27:38.215Z - info: Querying MemberAggregatedSkills for userId=40608418
+2021-03-05T12:27:39.201Z - info: No MemberAggregatedSkills item found 40608418
+2021-03-05T12:27:39.202Z - debug: Updated 0 skills for 40608418
+2021-03-05T12:27:39.202Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:39.202Z - debug: Getting existing skills for user: 40612623.
+2021-03-05T12:27:39.202Z - info: Querying MemberAggregatedSkills for userId=40612623
+2021-03-05T12:27:40.159Z - info: MemberAggregatedSkills item found 40612623.
+2021-03-05T12:27:40.160Z - debug: Updated 0 skills for 40612623
+2021-03-05T12:27:40.160Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:40.160Z - debug: Getting existing skills for user: 40627047.
+2021-03-05T12:27:40.160Z - info: Querying MemberAggregatedSkills for userId=40627047
+2021-03-05T12:27:41.157Z - info: No MemberAggregatedSkills item found 40627047
+2021-03-05T12:27:41.157Z - debug: Updated 0 skills for 40627047
+2021-03-05T12:27:41.157Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:41.157Z - debug: Getting existing skills for user: 40628681.
+2021-03-05T12:27:41.157Z - info: Querying MemberAggregatedSkills for userId=40628681
+2021-03-05T12:27:42.112Z - info: MemberAggregatedSkills item found 40628681.
+2021-03-05T12:27:42.112Z - debug: Updated 0 skills for 40628681
+2021-03-05T12:27:42.112Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:42.112Z - debug: Getting existing skills for user: 40632304.
+2021-03-05T12:27:42.113Z - info: Querying MemberAggregatedSkills for userId=40632304
+2021-03-05T12:27:43.663Z - info: MemberAggregatedSkills item found 40632304.
+2021-03-05T12:27:43.664Z - debug: Updated 0 skills for 40632304
+2021-03-05T12:27:43.664Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:43.664Z - debug: Getting existing skills for user: 40639688.
+2021-03-05T12:27:43.664Z - info: Querying MemberAggregatedSkills for userId=40639688
+2021-03-05T12:27:44.580Z - info: MemberAggregatedSkills item found 40639688.
+2021-03-05T12:27:44.580Z - debug: Updated 0 skills for 40639688
+2021-03-05T12:27:44.580Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:44.580Z - debug: Getting existing skills for user: 40645710.
+2021-03-05T12:27:44.580Z - info: Querying MemberAggregatedSkills for userId=40645710
+2021-03-05T12:27:45.526Z - info: No MemberAggregatedSkills item found 40645710
+2021-03-05T12:27:45.526Z - debug: Updated 0 skills for 40645710
+2021-03-05T12:27:45.527Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:45.527Z - debug: Getting existing skills for user: 40646499.
+2021-03-05T12:27:45.527Z - info: Querying MemberAggregatedSkills for userId=40646499
+2021-03-05T12:27:46.496Z - info: No MemberAggregatedSkills item found 40646499
+2021-03-05T12:27:46.496Z - debug: Updated 0 skills for 40646499
+2021-03-05T12:27:46.496Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:46.496Z - debug: Getting existing skills for user: 40649345.
+2021-03-05T12:27:46.496Z - info: Querying MemberAggregatedSkills for userId=40649345
+2021-03-05T12:27:47.445Z - info: MemberAggregatedSkills item found 40649345.
+2021-03-05T12:27:47.445Z - debug: Updated 0 skills for 40649345
+2021-03-05T12:27:47.445Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:47.445Z - debug: Getting existing skills for user: 40655052.
+2021-03-05T12:27:47.445Z - info: Querying MemberAggregatedSkills for userId=40655052
+2021-03-05T12:27:48.390Z - info: No MemberAggregatedSkills item found 40655052
+2021-03-05T12:27:48.391Z - debug: Updated 0 skills for 40655052
+2021-03-05T12:27:48.391Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:48.391Z - debug: Getting existing skills for user: 40671293.
+2021-03-05T12:27:48.391Z - info: Querying MemberAggregatedSkills for userId=40671293
+2021-03-05T12:27:49.351Z - info: No MemberAggregatedSkills item found 40671293
+2021-03-05T12:27:49.351Z - debug: Updated 0 skills for 40671293
+2021-03-05T12:27:49.351Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:49.351Z - debug: Getting existing skills for user: 40697084.
+2021-03-05T12:27:49.351Z - info: Querying MemberAggregatedSkills for userId=40697084
+2021-03-05T12:27:50.269Z - info: No MemberAggregatedSkills item found 40697084
+2021-03-05T12:27:50.269Z - debug: Updated 0 skills for 40697084
+2021-03-05T12:27:50.270Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:50.270Z - debug: Getting existing skills for user: 40699617.
+2021-03-05T12:27:50.270Z - info: Querying MemberAggregatedSkills for userId=40699617
+2021-03-05T12:27:51.196Z - info: No MemberAggregatedSkills item found 40699617
+2021-03-05T12:27:51.196Z - debug: Updated 0 skills for 40699617
+2021-03-05T12:27:51.196Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:51.196Z - debug: Getting existing skills for user: 40710016.
+2021-03-05T12:27:51.196Z - info: Querying MemberAggregatedSkills for userId=40710016
+2021-03-05T12:27:52.096Z - info: No MemberAggregatedSkills item found 40710016
+2021-03-05T12:27:52.097Z - debug: Updated 0 skills for 40710016
+2021-03-05T12:27:52.097Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:52.097Z - debug: Getting existing skills for user: 40731433.
+2021-03-05T12:27:52.097Z - info: Querying MemberAggregatedSkills for userId=40731433
+2021-03-05T12:27:53.012Z - info: No MemberAggregatedSkills item found 40731433
+2021-03-05T12:27:53.012Z - debug: Updated 0 skills for 40731433
+2021-03-05T12:27:53.012Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:53.013Z - debug: Getting existing skills for user: 40792455.
+2021-03-05T12:27:53.013Z - info: Querying MemberAggregatedSkills for userId=40792455
+2021-03-05T12:27:53.949Z - info: MemberAggregatedSkills item found 40792455.
+2021-03-05T12:27:53.949Z - debug: Updated 0 skills for 40792455
+2021-03-05T12:27:53.949Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:53.949Z - debug: Getting existing skills for user: 40793658.
+2021-03-05T12:27:53.949Z - info: Querying MemberAggregatedSkills for userId=40793658
+2021-03-05T12:27:54.874Z - info: No MemberAggregatedSkills item found 40793658
+2021-03-05T12:27:54.874Z - debug: Updated 0 skills for 40793658
+2021-03-05T12:27:54.874Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:54.874Z - debug: Getting existing skills for user: 40798695.
+2021-03-05T12:27:54.874Z - info: Querying MemberAggregatedSkills for userId=40798695
+2021-03-05T12:27:55.785Z - info: No MemberAggregatedSkills item found 40798695
+2021-03-05T12:27:55.785Z - debug: Updated 0 skills for 40798695
+2021-03-05T12:27:55.785Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:55.785Z - debug: Getting existing skills for user: 40808944.
+2021-03-05T12:27:55.785Z - info: Querying MemberAggregatedSkills for userId=40808944
+2021-03-05T12:27:56.704Z - info: No MemberAggregatedSkills item found 40808944
+2021-03-05T12:27:56.705Z - debug: Updated 0 skills for 40808944
+2021-03-05T12:27:56.705Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:56.705Z - debug: Getting existing skills for user: 40827476.
+2021-03-05T12:27:56.705Z - info: Querying MemberAggregatedSkills for userId=40827476
+2021-03-05T12:27:57.653Z - info: No MemberAggregatedSkills item found 40827476
+2021-03-05T12:27:57.653Z - debug: Updated 0 skills for 40827476
+2021-03-05T12:27:57.653Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:57.654Z - debug: Getting existing skills for user: 40847996.
+2021-03-05T12:27:57.654Z - info: Querying MemberAggregatedSkills for userId=40847996
+2021-03-05T12:27:59.226Z - info: MemberAggregatedSkills item found 40847996.
+2021-03-05T12:27:59.226Z - debug: Updated 0 skills for 40847996
+2021-03-05T12:27:59.226Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:27:59.226Z - debug: Getting existing skills for user: 40862418.
+2021-03-05T12:27:59.226Z - info: Querying MemberAggregatedSkills for userId=40862418
+2021-03-05T12:28:00.245Z - info: No MemberAggregatedSkills item found 40862418
+2021-03-05T12:28:00.245Z - debug: Updated 0 skills for 40862418
+2021-03-05T12:28:00.245Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:00.246Z - debug: Getting existing skills for user: 40870143.
+2021-03-05T12:28:00.246Z - info: Querying MemberAggregatedSkills for userId=40870143
+2021-03-05T12:28:01.199Z - info: No MemberAggregatedSkills item found 40870143
+2021-03-05T12:28:01.199Z - debug: Updated 0 skills for 40870143
+2021-03-05T12:28:01.200Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:01.200Z - debug: Getting existing skills for user: 40872380.
+2021-03-05T12:28:01.200Z - info: Querying MemberAggregatedSkills for userId=40872380
+2021-03-05T12:28:02.152Z - info: No MemberAggregatedSkills item found 40872380
+2021-03-05T12:28:02.152Z - debug: Updated 0 skills for 40872380
+2021-03-05T12:28:02.152Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:02.152Z - debug: Getting existing skills for user: 40879740.
+2021-03-05T12:28:02.152Z - info: Querying MemberAggregatedSkills for userId=40879740
+2021-03-05T12:28:03.108Z - info: MemberAggregatedSkills item found 40879740.
+2021-03-05T12:28:03.108Z - debug: Updated 0 skills for 40879740
+2021-03-05T12:28:03.108Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:03.108Z - debug: Getting existing skills for user: 40882797.
+2021-03-05T12:28:03.108Z - info: Querying MemberAggregatedSkills for userId=40882797
+2021-03-05T12:28:04.034Z - info: No MemberAggregatedSkills item found 40882797
+2021-03-05T12:28:04.035Z - debug: Updated 0 skills for 40882797
+2021-03-05T12:28:04.035Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:04.035Z - debug: Getting existing skills for user: 40883378.
+2021-03-05T12:28:04.035Z - info: Querying MemberAggregatedSkills for userId=40883378
+2021-03-05T12:28:04.980Z - info: No MemberAggregatedSkills item found 40883378
+2021-03-05T12:28:04.980Z - debug: Updated 0 skills for 40883378
+2021-03-05T12:28:04.980Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:04.981Z - debug: Getting existing skills for user: 40895550.
+2021-03-05T12:28:04.981Z - info: Querying MemberAggregatedSkills for userId=40895550
+2021-03-05T12:28:05.902Z - info: No MemberAggregatedSkills item found 40895550
+2021-03-05T12:28:05.902Z - debug: Updated 0 skills for 40895550
+2021-03-05T12:28:05.902Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:05.902Z - debug: Getting existing skills for user: 40903447.
+2021-03-05T12:28:05.902Z - info: Querying MemberAggregatedSkills for userId=40903447
+2021-03-05T12:28:06.882Z - info: No MemberAggregatedSkills item found 40903447
+2021-03-05T12:28:06.882Z - debug: Updated 0 skills for 40903447
+2021-03-05T12:28:06.882Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:06.882Z - debug: Getting existing skills for user: 40905395.
+2021-03-05T12:28:06.882Z - info: Querying MemberAggregatedSkills for userId=40905395
+2021-03-05T12:28:07.806Z - info: No MemberAggregatedSkills item found 40905395
+2021-03-05T12:28:07.815Z - debug: Updated 0 skills for 40905395
+2021-03-05T12:28:07.815Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:07.815Z - debug: Getting existing skills for user: 40908633.
+2021-03-05T12:28:07.816Z - info: Querying MemberAggregatedSkills for userId=40908633
+2021-03-05T12:28:08.759Z - info: MemberAggregatedSkills item found 40908633.
+2021-03-05T12:28:08.760Z - debug: Updated 0 skills for 40908633
+2021-03-05T12:28:08.760Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:08.760Z - debug: Getting existing skills for user: 40911679.
+2021-03-05T12:28:08.760Z - info: Querying MemberAggregatedSkills for userId=40911679
+2021-03-05T12:28:09.717Z - info: No MemberAggregatedSkills item found 40911679
+2021-03-05T12:28:09.717Z - debug: Updated 0 skills for 40911679
+2021-03-05T12:28:09.717Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:09.717Z - debug: Getting existing skills for user: 40918427.
+2021-03-05T12:28:09.717Z - info: Querying MemberAggregatedSkills for userId=40918427
+2021-03-05T12:28:10.665Z - info: MemberAggregatedSkills item found 40918427.
+2021-03-05T12:28:10.665Z - debug: Updated 0 skills for 40918427
+2021-03-05T12:28:10.665Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:10.665Z - debug: Getting existing skills for user: 40921340.
+2021-03-05T12:28:10.665Z - info: Querying MemberAggregatedSkills for userId=40921340
+2021-03-05T12:28:11.848Z - info: MemberAggregatedSkills item found 40921340.
+2021-03-05T12:28:11.849Z - debug: Updated 0 skills for 40921340
+2021-03-05T12:28:11.849Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:11.849Z - debug: Getting existing skills for user: 40929475.
+2021-03-05T12:28:11.849Z - info: Querying MemberAggregatedSkills for userId=40929475
+2021-03-05T12:28:12.973Z - info: No MemberAggregatedSkills item found 40929475
+2021-03-05T12:28:12.973Z - debug: Updated 0 skills for 40929475
+2021-03-05T12:28:12.973Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:12.973Z - debug: Getting existing skills for user: 40938695.
+2021-03-05T12:28:12.973Z - info: Querying MemberAggregatedSkills for userId=40938695
+2021-03-05T12:28:14.659Z - info: No MemberAggregatedSkills item found 40938695
+2021-03-05T12:28:14.660Z - debug: Updated 0 skills for 40938695
+2021-03-05T12:28:14.660Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:14.660Z - debug: Getting existing skills for user: 40941433.
+2021-03-05T12:28:14.660Z - info: Querying MemberAggregatedSkills for userId=40941433
+2021-03-05T12:28:15.575Z - info: No MemberAggregatedSkills item found 40941433
+2021-03-05T12:28:15.575Z - debug: Updated 0 skills for 40941433
+2021-03-05T12:28:15.575Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:15.575Z - debug: Getting existing skills for user: 40961422.
+2021-03-05T12:28:15.575Z - info: Querying MemberAggregatedSkills for userId=40961422
+2021-03-05T12:28:16.528Z - info: No MemberAggregatedSkills item found 40961422
+2021-03-05T12:28:16.528Z - debug: Updated 0 skills for 40961422
+2021-03-05T12:28:16.528Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:16.528Z - debug: Getting existing skills for user: 40963044.
+2021-03-05T12:28:16.528Z - info: Querying MemberAggregatedSkills for userId=40963044
+2021-03-05T12:28:17.484Z - info: No MemberAggregatedSkills item found 40963044
+2021-03-05T12:28:17.484Z - debug: Updated 0 skills for 40963044
+2021-03-05T12:28:17.484Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:17.484Z - debug: Getting existing skills for user: 40976108.
+2021-03-05T12:28:17.484Z - info: Querying MemberAggregatedSkills for userId=40976108
+2021-03-05T12:28:18.444Z - info: No MemberAggregatedSkills item found 40976108
+2021-03-05T12:28:18.444Z - debug: Updated 0 skills for 40976108
+2021-03-05T12:28:18.445Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:18.445Z - debug: Getting existing skills for user: 40979055.
+2021-03-05T12:28:18.445Z - info: Querying MemberAggregatedSkills for userId=40979055
+2021-03-05T12:28:19.424Z - info: No MemberAggregatedSkills item found 40979055
+2021-03-05T12:28:19.424Z - debug: Updated 0 skills for 40979055
+2021-03-05T12:28:19.424Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:19.424Z - debug: Getting existing skills for user: 40983243.
+2021-03-05T12:28:19.424Z - info: Querying MemberAggregatedSkills for userId=40983243
+2021-03-05T12:28:20.407Z - info: No MemberAggregatedSkills item found 40983243
+2021-03-05T12:28:20.407Z - debug: Updated 0 skills for 40983243
+2021-03-05T12:28:20.407Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:20.407Z - debug: Getting existing skills for user: 40986693.
+2021-03-05T12:28:20.407Z - info: Querying MemberAggregatedSkills for userId=40986693
+2021-03-05T12:28:21.385Z - info: MemberAggregatedSkills item found 40986693.
+2021-03-05T12:28:21.385Z - debug: Updated 0 skills for 40986693
+2021-03-05T12:28:21.385Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:21.385Z - debug: Getting existing skills for user: 40989810.
+2021-03-05T12:28:21.385Z - info: Querying MemberAggregatedSkills for userId=40989810
+2021-03-05T12:28:22.495Z - info: MemberAggregatedSkills item found 40989810.
+2021-03-05T12:28:22.496Z - debug: Updated 0 skills for 40989810
+2021-03-05T12:28:22.496Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:22.496Z - debug: Getting existing skills for user: 40999853.
+2021-03-05T12:28:22.496Z - info: Querying MemberAggregatedSkills for userId=40999853
+2021-03-05T12:28:23.466Z - info: MemberAggregatedSkills item found 40999853.
+2021-03-05T12:28:23.466Z - debug: Updated 0 skills for 40999853
+2021-03-05T12:28:23.466Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:23.466Z - debug: Getting existing skills for user: 41015985.
+2021-03-05T12:28:23.466Z - info: Querying MemberAggregatedSkills for userId=41015985
+2021-03-05T12:28:24.558Z - info: No MemberAggregatedSkills item found 41015985
+2021-03-05T12:28:24.558Z - debug: Updated 0 skills for 41015985
+2021-03-05T12:28:24.558Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:24.558Z - debug: Getting existing skills for user: 41027165.
+2021-03-05T12:28:24.558Z - info: Querying MemberAggregatedSkills for userId=41027165
+2021-03-05T12:28:25.535Z - info: No MemberAggregatedSkills item found 41027165
+2021-03-05T12:28:25.535Z - debug: Updated 0 skills for 41027165
+2021-03-05T12:28:25.535Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:25.536Z - debug: Getting existing skills for user: 41027699.
+2021-03-05T12:28:25.536Z - info: Querying MemberAggregatedSkills for userId=41027699
+2021-03-05T12:28:26.566Z - info: No MemberAggregatedSkills item found 41027699
+2021-03-05T12:28:26.566Z - debug: Updated 0 skills for 41027699
+2021-03-05T12:28:26.566Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:26.566Z - debug: Getting existing skills for user: 41052792.
+2021-03-05T12:28:26.566Z - info: Querying MemberAggregatedSkills for userId=41052792
+2021-03-05T12:28:27.545Z - info: No MemberAggregatedSkills item found 41052792
+2021-03-05T12:28:27.545Z - debug: Updated 0 skills for 41052792
+2021-03-05T12:28:27.545Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:27.545Z - debug: Getting existing skills for user: 41065697.
+2021-03-05T12:28:27.545Z - info: Querying MemberAggregatedSkills for userId=41065697
+2021-03-05T12:28:28.528Z - info: MemberAggregatedSkills item found 41065697.
+2021-03-05T12:28:28.528Z - debug: Updated 0 skills for 41065697
+2021-03-05T12:28:28.528Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:28.529Z - debug: Getting existing skills for user: 90002084.
+2021-03-05T12:28:28.529Z - info: Querying MemberAggregatedSkills for userId=90002084
+2021-03-05T12:28:30.450Z - info: No MemberAggregatedSkills item found 90002084
+2021-03-05T12:28:30.450Z - debug: Updated 0 skills for 90002084
+2021-03-05T12:28:30.450Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:30.450Z - debug: Getting existing skills for user: 90002391.
+2021-03-05T12:28:30.450Z - info: Querying MemberAggregatedSkills for userId=90002391
+2021-03-05T12:28:31.679Z - info: No MemberAggregatedSkills item found 90002391
+2021-03-05T12:28:31.679Z - debug: Updated 0 skills for 90002391
+2021-03-05T12:28:31.679Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:31.679Z - debug: Getting existing skills for user: 90014010.
+2021-03-05T12:28:31.680Z - info: Querying MemberAggregatedSkills for userId=90014010
+2021-03-05T12:28:32.630Z - info: No MemberAggregatedSkills item found 90014010
+2021-03-05T12:28:32.630Z - debug: Updated 0 skills for 90014010
+2021-03-05T12:28:32.631Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:32.631Z - debug: Getting existing skills for user: 90017572.
+2021-03-05T12:28:32.631Z - info: Querying MemberAggregatedSkills for userId=90017572
+2021-03-05T12:28:33.605Z - info: No MemberAggregatedSkills item found 90017572
+2021-03-05T12:28:33.605Z - debug: Updated 0 skills for 90017572
+2021-03-05T12:28:33.606Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:33.606Z - debug: Getting existing skills for user: 90018264.
+2021-03-05T12:28:33.606Z - info: Querying MemberAggregatedSkills for userId=90018264
+2021-03-05T12:28:34.553Z - info: No MemberAggregatedSkills item found 90018264
+2021-03-05T12:28:34.553Z - debug: Updated 0 skills for 90018264
+2021-03-05T12:28:34.553Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:34.553Z - debug: Getting existing skills for user: 90018406.
+2021-03-05T12:28:34.554Z - info: Querying MemberAggregatedSkills for userId=90018406
+2021-03-05T12:28:35.524Z - info: No MemberAggregatedSkills item found 90018406
+2021-03-05T12:28:35.524Z - debug: Updated 0 skills for 90018406
+2021-03-05T12:28:35.524Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:35.524Z - debug: Getting existing skills for user: 90026113.
+2021-03-05T12:28:35.524Z - info: Querying MemberAggregatedSkills for userId=90026113
+2021-03-05T12:28:36.484Z - info: No MemberAggregatedSkills item found 90026113
+2021-03-05T12:28:36.484Z - debug: Updated 0 skills for 90026113
+2021-03-05T12:28:36.484Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:36.484Z - debug: Getting existing skills for user: 90032686.
+2021-03-05T12:28:36.484Z - info: Querying MemberAggregatedSkills for userId=90032686
+2021-03-05T12:28:37.437Z - info: MemberAggregatedSkills item found 90032686.
+2021-03-05T12:28:37.437Z - debug: Updated 0 skills for 90032686
+2021-03-05T12:28:37.437Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:37.437Z - debug: Getting existing skills for user: 90036076.
+2021-03-05T12:28:37.437Z - info: Querying MemberAggregatedSkills for userId=90036076
+2021-03-05T12:28:38.528Z - info: No MemberAggregatedSkills item found 90036076
+2021-03-05T12:28:38.528Z - debug: Updated 0 skills for 90036076
+2021-03-05T12:28:38.529Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:38.529Z - debug: Getting existing skills for user: 90036262.
+2021-03-05T12:28:38.529Z - info: Querying MemberAggregatedSkills for userId=90036262
+2021-03-05T12:28:39.485Z - info: No MemberAggregatedSkills item found 90036262
+2021-03-05T12:28:39.486Z - debug: Updated 0 skills for 90036262
+2021-03-05T12:28:39.486Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:39.486Z - debug: Getting existing skills for user: 90044144.
+2021-03-05T12:28:39.486Z - info: Querying MemberAggregatedSkills for userId=90044144
+2021-03-05T12:28:40.522Z - info: No MemberAggregatedSkills item found 90044144
+2021-03-05T12:28:40.522Z - debug: Updated 0 skills for 90044144
+2021-03-05T12:28:40.522Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:40.522Z - debug: Getting existing skills for user: 90045599.
+2021-03-05T12:28:40.523Z - info: Querying MemberAggregatedSkills for userId=90045599
+2021-03-05T12:28:41.557Z - info: No MemberAggregatedSkills item found 90045599
+2021-03-05T12:28:41.558Z - debug: Updated 0 skills for 90045599
+2021-03-05T12:28:41.558Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:41.558Z - debug: Getting existing skills for user: 90046869.
+2021-03-05T12:28:41.558Z - info: Querying MemberAggregatedSkills for userId=90046869
+2021-03-05T12:28:42.522Z - info: No MemberAggregatedSkills item found 90046869
+2021-03-05T12:28:42.522Z - debug: Updated 0 skills for 90046869
+2021-03-05T12:28:42.522Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:42.522Z - debug: Getting existing skills for user: 90059161.
+2021-03-05T12:28:42.522Z - info: Querying MemberAggregatedSkills for userId=90059161
+2021-03-05T12:28:43.465Z - info: No MemberAggregatedSkills item found 90059161
+2021-03-05T12:28:43.465Z - debug: Updated 0 skills for 90059161
+2021-03-05T12:28:43.465Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:43.465Z - debug: Getting existing skills for user: 90062549.
+2021-03-05T12:28:43.465Z - info: Querying MemberAggregatedSkills for userId=90062549
+2021-03-05T12:28:44.406Z - info: MemberAggregatedSkills item found 90062549.
+2021-03-05T12:28:44.406Z - debug: Updated 0 skills for 90062549
+2021-03-05T12:28:44.406Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:44.407Z - debug: Getting existing skills for user: 90066271.
+2021-03-05T12:28:44.407Z - info: Querying MemberAggregatedSkills for userId=90066271
+2021-03-05T12:28:46.025Z - info: No MemberAggregatedSkills item found 90066271
+2021-03-05T12:28:46.025Z - debug: Updated 0 skills for 90066271
+2021-03-05T12:28:46.025Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:46.034Z - info: Writing rest of the 138 items of size 9619
+2021-03-05T12:28:46.035Z - debug: Acquiring Informix Connection
+Connecting topcoder_dw
+2021-03-05T12:28:47.654Z - debug: Aquired Informix Connection
+2021-03-05T12:28:47.655Z - info: Query all challenge user skills, between 2021-01-21 and 2021-02-09 days.
+SELECT  pr.user_id as userId,
+        pr.project_id as challengeId,
+        pt.name as name, pr.review_complete_timestamp
+        FROM tcs_dw:project_result pr
+        INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
+        INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
+        WHERE  pr.passed_review_ind = 1 AND pr.review_complete_timestamp BETWEEN DATE("2021-01-21") and (DATE("2021-02-09") + 1)
+executeQuery - start   0.833289298045016
+executeQuery - success 0.833289298045016
+Disconnecting topcoder_dw
+2021-03-05T12:28:52.287Z - debug: *******************************************
+2021-03-05T12:28:52.287Z - debug: Updating batch starting from 2021-01-21 to 2021-02-09
+2021-03-05T12:28:52.287Z - debug: [object Object]
+2021-03-05T12:28:52.289Z - debug: Found 154 new users with updated skills.
+2021-03-05T12:28:52.290Z - debug: Getting existing skills for user: 151743.
+2021-03-05T12:28:52.290Z - info: Querying MemberAggregatedSkills for userId=151743
+Closed the database connection
+2021-03-05T12:28:53.341Z - info: No MemberAggregatedSkills item found 151743
+2021-03-05T12:28:53.341Z - debug: Updated 0 skills for 151743
+2021-03-05T12:28:53.341Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:53.344Z - debug: Getting existing skills for user: 310233.
+2021-03-05T12:28:53.344Z - info: Querying MemberAggregatedSkills for userId=310233
+2021-03-05T12:28:54.278Z - info: No MemberAggregatedSkills item found 310233
+2021-03-05T12:28:54.278Z - debug: Updated 0 skills for 310233
+2021-03-05T12:28:54.278Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:54.278Z - debug: Getting existing skills for user: 7463987.
+2021-03-05T12:28:54.279Z - info: Querying MemberAggregatedSkills for userId=7463987
+2021-03-05T12:28:55.276Z - info: No MemberAggregatedSkills item found 7463987
+2021-03-05T12:28:55.276Z - debug: Updated 0 skills for 7463987
+2021-03-05T12:28:55.276Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:55.277Z - debug: Getting existing skills for user: 8544935.
+2021-03-05T12:28:55.277Z - info: Querying MemberAggregatedSkills for userId=8544935
+2021-03-05T12:28:56.460Z - info: MemberAggregatedSkills item found 8544935.
+2021-03-05T12:28:56.460Z - debug: Updated 0 skills for 8544935
+2021-03-05T12:28:56.460Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:56.460Z - debug: Getting existing skills for user: 10697386.
+2021-03-05T12:28:56.460Z - info: Querying MemberAggregatedSkills for userId=10697386
+2021-03-05T12:28:57.688Z - info: No MemberAggregatedSkills item found 10697386
+2021-03-05T12:28:57.688Z - debug: Updated 0 skills for 10697386
+2021-03-05T12:28:57.688Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:57.688Z - debug: Getting existing skills for user: 14787447.
+2021-03-05T12:28:57.688Z - info: Querying MemberAggregatedSkills for userId=14787447
+2021-03-05T12:28:58.686Z - info: No MemberAggregatedSkills item found 14787447
+2021-03-05T12:28:58.687Z - debug: Updated 0 skills for 14787447
+2021-03-05T12:28:58.687Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:58.687Z - debug: Getting existing skills for user: 15763205.
+2021-03-05T12:28:58.687Z - info: Querying MemberAggregatedSkills for userId=15763205
+2021-03-05T12:28:59.736Z - info: No MemberAggregatedSkills item found 15763205
+2021-03-05T12:28:59.736Z - debug: Updated 0 skills for 15763205
+2021-03-05T12:28:59.736Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:28:59.736Z - debug: Getting existing skills for user: 20095816.
+2021-03-05T12:28:59.736Z - info: Querying MemberAggregatedSkills for userId=20095816
+2021-03-05T12:29:01.376Z - info: MemberAggregatedSkills item found 20095816.
+2021-03-05T12:29:01.376Z - debug: Updated 0 skills for 20095816
+2021-03-05T12:29:01.376Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:01.376Z - debug: Getting existing skills for user: 22503298.
+2021-03-05T12:29:01.376Z - info: Querying MemberAggregatedSkills for userId=22503298
+2021-03-05T12:29:02.525Z - info: No MemberAggregatedSkills item found 22503298
+2021-03-05T12:29:02.525Z - debug: Updated 0 skills for 22503298
+2021-03-05T12:29:02.525Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:02.525Z - debug: Getting existing skills for user: 22652995.
+2021-03-05T12:29:02.526Z - info: Querying MemberAggregatedSkills for userId=22652995
+2021-03-05T12:29:03.602Z - info: No MemberAggregatedSkills item found 22652995
+2021-03-05T12:29:03.603Z - debug: Updated 0 skills for 22652995
+2021-03-05T12:29:03.603Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:03.603Z - debug: Getting existing skills for user: 22654954.
+2021-03-05T12:29:03.603Z - info: Querying MemberAggregatedSkills for userId=22654954
+2021-03-05T12:29:04.545Z - info: No MemberAggregatedSkills item found 22654954
+2021-03-05T12:29:04.545Z - debug: Updated 0 skills for 22654954
+2021-03-05T12:29:04.545Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:04.545Z - debug: Getting existing skills for user: 22678883.
+2021-03-05T12:29:04.545Z - info: Querying MemberAggregatedSkills for userId=22678883
+2021-03-05T12:29:05.516Z - info: No MemberAggregatedSkills item found 22678883
+2021-03-05T12:29:05.516Z - debug: Updated 0 skills for 22678883
+2021-03-05T12:29:05.516Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:05.516Z - debug: Getting existing skills for user: 22680616.
+2021-03-05T12:29:05.516Z - info: Querying MemberAggregatedSkills for userId=22680616
+2021-03-05T12:29:06.591Z - info: No MemberAggregatedSkills item found 22680616
+2021-03-05T12:29:06.592Z - debug: Updated 0 skills for 22680616
+2021-03-05T12:29:06.592Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:06.592Z - debug: Getting existing skills for user: 22688113.
+2021-03-05T12:29:06.592Z - info: Querying MemberAggregatedSkills for userId=22688113
+2021-03-05T12:29:07.541Z - info: No MemberAggregatedSkills item found 22688113
+2021-03-05T12:29:07.541Z - debug: Updated 0 skills for 22688113
+2021-03-05T12:29:07.541Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:07.541Z - debug: Getting existing skills for user: 22697646.
+2021-03-05T12:29:07.541Z - info: Querying MemberAggregatedSkills for userId=22697646
+2021-03-05T12:29:08.578Z - info: No MemberAggregatedSkills item found 22697646
+2021-03-05T12:29:08.587Z - debug: Updated 0 skills for 22697646
+2021-03-05T12:29:08.587Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:08.587Z - debug: Getting existing skills for user: 22721181.
+2021-03-05T12:29:08.587Z - info: Querying MemberAggregatedSkills for userId=22721181
+2021-03-05T12:29:09.567Z - info: MemberAggregatedSkills item found 22721181.
+2021-03-05T12:29:09.567Z - debug: Updated 0 skills for 22721181
+2021-03-05T12:29:09.567Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:09.567Z - debug: Getting existing skills for user: 22742764.
+2021-03-05T12:29:09.567Z - info: Querying MemberAggregatedSkills for userId=22742764
+2021-03-05T12:29:10.612Z - info: No MemberAggregatedSkills item found 22742764
+2021-03-05T12:29:10.613Z - debug: Updated 0 skills for 22742764
+2021-03-05T12:29:10.613Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:10.613Z - debug: Getting existing skills for user: 22776011.
+2021-03-05T12:29:10.613Z - info: Querying MemberAggregatedSkills for userId=22776011
+2021-03-05T12:29:11.677Z - info: No MemberAggregatedSkills item found 22776011
+2021-03-05T12:29:11.678Z - debug: Updated 0 skills for 22776011
+2021-03-05T12:29:11.678Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:11.678Z - debug: Getting existing skills for user: 22786480.
+2021-03-05T12:29:11.678Z - info: Querying MemberAggregatedSkills for userId=22786480
+2021-03-05T12:29:12.671Z - info: MemberAggregatedSkills item found 22786480.
+2021-03-05T12:29:12.672Z - debug: Updated 0 skills for 22786480
+2021-03-05T12:29:12.672Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:12.672Z - debug: Getting existing skills for user: 22836207.
+2021-03-05T12:29:12.672Z - info: Querying MemberAggregatedSkills for userId=22836207
+2021-03-05T12:29:13.671Z - info: No MemberAggregatedSkills item found 22836207
+2021-03-05T12:29:13.671Z - debug: Updated 0 skills for 22836207
+2021-03-05T12:29:13.671Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:13.671Z - debug: Getting existing skills for user: 22852794.
+2021-03-05T12:29:13.671Z - info: Querying MemberAggregatedSkills for userId=22852794
+2021-03-05T12:29:14.853Z - info: No MemberAggregatedSkills item found 22852794
+2021-03-05T12:29:14.853Z - debug: Updated 0 skills for 22852794
+2021-03-05T12:29:14.853Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:14.853Z - debug: Getting existing skills for user: 22852822.
+2021-03-05T12:29:14.853Z - info: Querying MemberAggregatedSkills for userId=22852822
+2021-03-05T12:29:15.793Z - info: No MemberAggregatedSkills item found 22852822
+2021-03-05T12:29:15.793Z - debug: Updated 0 skills for 22852822
+2021-03-05T12:29:15.793Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:15.793Z - debug: Getting existing skills for user: 22854046.
+2021-03-05T12:29:15.794Z - info: Querying MemberAggregatedSkills for userId=22854046
+2021-03-05T12:29:17.368Z - info: MemberAggregatedSkills item found 22854046.
+2021-03-05T12:29:17.369Z - debug: Updated 0 skills for 22854046
+2021-03-05T12:29:17.369Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:17.369Z - debug: Getting existing skills for user: 22866415.
+2021-03-05T12:29:17.369Z - info: Querying MemberAggregatedSkills for userId=22866415
+2021-03-05T12:29:18.480Z - info: MemberAggregatedSkills item found 22866415.
+2021-03-05T12:29:18.480Z - debug: Updated 0 skills for 22866415
+2021-03-05T12:29:18.480Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:18.481Z - debug: Getting existing skills for user: 22874592.
+2021-03-05T12:29:18.481Z - info: Querying MemberAggregatedSkills for userId=22874592
+2021-03-05T12:29:19.396Z - info: No MemberAggregatedSkills item found 22874592
+2021-03-05T12:29:19.397Z - debug: Updated 0 skills for 22874592
+2021-03-05T12:29:19.397Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:19.397Z - debug: Getting existing skills for user: 22880988.
+2021-03-05T12:29:19.397Z - info: Querying MemberAggregatedSkills for userId=22880988
+2021-03-05T12:29:20.308Z - info: No MemberAggregatedSkills item found 22880988
+2021-03-05T12:29:20.308Z - debug: Updated 0 skills for 22880988
+2021-03-05T12:29:20.308Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:20.308Z - debug: Getting existing skills for user: 22887344.
+2021-03-05T12:29:20.308Z - info: Querying MemberAggregatedSkills for userId=22887344
+2021-03-05T12:29:21.241Z - info: No MemberAggregatedSkills item found 22887344
+2021-03-05T12:29:21.241Z - debug: Updated 0 skills for 22887344
+2021-03-05T12:29:21.241Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:21.242Z - debug: Getting existing skills for user: 22903535.
+2021-03-05T12:29:21.242Z - info: Querying MemberAggregatedSkills for userId=22903535
+2021-03-05T12:29:22.377Z - info: No MemberAggregatedSkills item found 22903535
+2021-03-05T12:29:22.377Z - debug: Updated 0 skills for 22903535
+2021-03-05T12:29:22.378Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:22.378Z - debug: Getting existing skills for user: 22923055.
+2021-03-05T12:29:22.378Z - info: Querying MemberAggregatedSkills for userId=22923055
+2021-03-05T12:29:23.292Z - info: No MemberAggregatedSkills item found 22923055
+2021-03-05T12:29:23.293Z - debug: Updated 0 skills for 22923055
+2021-03-05T12:29:23.293Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:23.293Z - debug: Getting existing skills for user: 23007392.
+2021-03-05T12:29:23.293Z - info: Querying MemberAggregatedSkills for userId=23007392
+2021-03-05T12:29:24.312Z - info: No MemberAggregatedSkills item found 23007392
+2021-03-05T12:29:24.312Z - debug: Updated 0 skills for 23007392
+2021-03-05T12:29:24.312Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:24.313Z - debug: Getting existing skills for user: 23011713.
+2021-03-05T12:29:24.313Z - info: Querying MemberAggregatedSkills for userId=23011713
+2021-03-05T12:29:25.262Z - info: No MemberAggregatedSkills item found 23011713
+2021-03-05T12:29:25.263Z - debug: Updated 0 skills for 23011713
+2021-03-05T12:29:25.263Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:25.263Z - debug: Getting existing skills for user: 23030940.
+2021-03-05T12:29:25.263Z - info: Querying MemberAggregatedSkills for userId=23030940
+2021-03-05T12:29:26.241Z - info: No MemberAggregatedSkills item found 23030940
+2021-03-05T12:29:26.251Z - debug: Updated 0 skills for 23030940
+2021-03-05T12:29:26.251Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:26.251Z - debug: Getting existing skills for user: 23039197.
+2021-03-05T12:29:26.251Z - info: Querying MemberAggregatedSkills for userId=23039197
+2021-03-05T12:29:27.259Z - info: No MemberAggregatedSkills item found 23039197
+2021-03-05T12:29:27.259Z - debug: Updated 0 skills for 23039197
+2021-03-05T12:29:27.259Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:27.259Z - debug: Getting existing skills for user: 23050055.
+2021-03-05T12:29:27.259Z - info: Querying MemberAggregatedSkills for userId=23050055
+2021-03-05T12:29:28.182Z - info: MemberAggregatedSkills item found 23050055.
+2021-03-05T12:29:28.182Z - debug: Updated 0 skills for 23050055
+2021-03-05T12:29:28.182Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:28.183Z - debug: Getting existing skills for user: 23050755.
+2021-03-05T12:29:28.183Z - info: Querying MemberAggregatedSkills for userId=23050755
+2021-03-05T12:29:29.098Z - info: No MemberAggregatedSkills item found 23050755
+2021-03-05T12:29:29.099Z - debug: Updated 0 skills for 23050755
+2021-03-05T12:29:29.099Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:29.099Z - debug: Getting existing skills for user: 23093194.
+2021-03-05T12:29:29.099Z - info: Querying MemberAggregatedSkills for userId=23093194
+2021-03-05T12:29:31.122Z - info: No MemberAggregatedSkills item found 23093194
+2021-03-05T12:29:31.122Z - debug: Updated 0 skills for 23093194
+2021-03-05T12:29:31.122Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:31.122Z - debug: Getting existing skills for user: 23102829.
+2021-03-05T12:29:31.122Z - info: Querying MemberAggregatedSkills for userId=23102829
+2021-03-05T12:29:32.620Z - info: MemberAggregatedSkills item found 23102829.
+2021-03-05T12:29:32.620Z - debug: Updated 0 skills for 23102829
+2021-03-05T12:29:32.620Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:32.620Z - debug: Getting existing skills for user: 23124329.
+2021-03-05T12:29:32.620Z - info: Querying MemberAggregatedSkills for userId=23124329
+2021-03-05T12:29:33.538Z - info: No MemberAggregatedSkills item found 23124329
+2021-03-05T12:29:33.538Z - debug: Updated 0 skills for 23124329
+2021-03-05T12:29:33.538Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:33.538Z - debug: Getting existing skills for user: 23131895.
+2021-03-05T12:29:33.538Z - info: Querying MemberAggregatedSkills for userId=23131895
+2021-03-05T12:29:34.426Z - info: No MemberAggregatedSkills item found 23131895
+2021-03-05T12:29:34.426Z - debug: Updated 0 skills for 23131895
+2021-03-05T12:29:34.427Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:34.427Z - debug: Getting existing skills for user: 23154661.
+2021-03-05T12:29:34.427Z - info: Querying MemberAggregatedSkills for userId=23154661
+2021-03-05T12:29:35.313Z - info: MemberAggregatedSkills item found 23154661.
+2021-03-05T12:29:35.314Z - debug: Updated 0 skills for 23154661
+2021-03-05T12:29:35.314Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:35.314Z - debug: Getting existing skills for user: 23166766.
+2021-03-05T12:29:35.314Z - info: Querying MemberAggregatedSkills for userId=23166766
+2021-03-05T12:29:36.192Z - info: MemberAggregatedSkills item found 23166766.
+2021-03-05T12:29:36.193Z - debug: Updated 0 skills for 23166766
+2021-03-05T12:29:36.193Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:36.193Z - debug: Getting existing skills for user: 23188548.
+2021-03-05T12:29:36.193Z - info: Querying MemberAggregatedSkills for userId=23188548
+2021-03-05T12:29:37.107Z - info: No MemberAggregatedSkills item found 23188548
+2021-03-05T12:29:37.108Z - debug: Updated 0 skills for 23188548
+2021-03-05T12:29:37.108Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:37.108Z - debug: Getting existing skills for user: 23193045.
+2021-03-05T12:29:37.108Z - info: Querying MemberAggregatedSkills for userId=23193045
+2021-03-05T12:29:38.024Z - info: No MemberAggregatedSkills item found 23193045
+2021-03-05T12:29:38.034Z - debug: Updated 0 skills for 23193045
+2021-03-05T12:29:38.035Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:38.035Z - debug: Getting existing skills for user: 23200120.
+2021-03-05T12:29:38.035Z - info: Querying MemberAggregatedSkills for userId=23200120
+2021-03-05T12:29:38.963Z - info: MemberAggregatedSkills item found 23200120.
+2021-03-05T12:29:38.968Z - debug: Updated 0 skills for 23200120
+2021-03-05T12:29:38.968Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:38.968Z - debug: Getting existing skills for user: 23270826.
+2021-03-05T12:29:38.968Z - info: Querying MemberAggregatedSkills for userId=23270826
+2021-03-05T12:29:39.906Z - info: No MemberAggregatedSkills item found 23270826
+2021-03-05T12:29:39.906Z - debug: Updated 0 skills for 23270826
+2021-03-05T12:29:39.906Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:39.906Z - debug: Getting existing skills for user: 23278999.
+2021-03-05T12:29:39.906Z - info: Querying MemberAggregatedSkills for userId=23278999
+2021-03-05T12:29:40.798Z - info: MemberAggregatedSkills item found 23278999.
+2021-03-05T12:29:40.800Z - debug: Updated 0 skills for 23278999
+2021-03-05T12:29:40.800Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:40.800Z - debug: Getting existing skills for user: 23285787.
+2021-03-05T12:29:40.801Z - info: Querying MemberAggregatedSkills for userId=23285787
+2021-03-05T12:29:41.698Z - info: MemberAggregatedSkills item found 23285787.
+2021-03-05T12:29:41.698Z - debug: Updated 0 skills for 23285787
+2021-03-05T12:29:41.698Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:41.699Z - debug: Getting existing skills for user: 23306361.
+2021-03-05T12:29:41.699Z - info: Querying MemberAggregatedSkills for userId=23306361
+2021-03-05T12:29:42.641Z - info: No MemberAggregatedSkills item found 23306361
+2021-03-05T12:29:42.641Z - debug: Updated 0 skills for 23306361
+2021-03-05T12:29:42.642Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:42.642Z - debug: Getting existing skills for user: 40001257.
+2021-03-05T12:29:42.642Z - info: Querying MemberAggregatedSkills for userId=40001257
+2021-03-05T12:29:43.546Z - info: No MemberAggregatedSkills item found 40001257
+2021-03-05T12:29:43.546Z - debug: Updated 0 skills for 40001257
+2021-03-05T12:29:43.546Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:43.547Z - debug: Getting existing skills for user: 40004273.
+2021-03-05T12:29:43.547Z - info: Querying MemberAggregatedSkills for userId=40004273
+2021-03-05T12:29:44.424Z - info: No MemberAggregatedSkills item found 40004273
+2021-03-05T12:29:44.424Z - debug: Updated 0 skills for 40004273
+2021-03-05T12:29:44.424Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:44.424Z - debug: Getting existing skills for user: 40007407.
+2021-03-05T12:29:44.424Z - info: Querying MemberAggregatedSkills for userId=40007407
+2021-03-05T12:29:45.329Z - info: No MemberAggregatedSkills item found 40007407
+2021-03-05T12:29:45.329Z - debug: Updated 0 skills for 40007407
+2021-03-05T12:29:45.329Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:45.330Z - debug: Getting existing skills for user: 40026260.
+2021-03-05T12:29:45.330Z - info: Querying MemberAggregatedSkills for userId=40026260
+2021-03-05T12:29:46.220Z - info: No MemberAggregatedSkills item found 40026260
+2021-03-05T12:29:46.220Z - debug: Updated 0 skills for 40026260
+2021-03-05T12:29:46.221Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:46.221Z - debug: Getting existing skills for user: 40042161.
+2021-03-05T12:29:46.221Z - info: Querying MemberAggregatedSkills for userId=40042161
+2021-03-05T12:29:47.102Z - info: No MemberAggregatedSkills item found 40042161
+2021-03-05T12:29:47.102Z - debug: Updated 0 skills for 40042161
+2021-03-05T12:29:47.102Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:47.102Z - debug: Getting existing skills for user: 40056188.
+2021-03-05T12:29:47.102Z - info: Querying MemberAggregatedSkills for userId=40056188
+2021-03-05T12:29:48.717Z - info: No MemberAggregatedSkills item found 40056188
+2021-03-05T12:29:48.717Z - debug: Updated 0 skills for 40056188
+2021-03-05T12:29:48.717Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:48.717Z - debug: Getting existing skills for user: 40066152.
+2021-03-05T12:29:48.717Z - info: Querying MemberAggregatedSkills for userId=40066152
+2021-03-05T12:29:49.617Z - info: No MemberAggregatedSkills item found 40066152
+2021-03-05T12:29:49.617Z - debug: Updated 0 skills for 40066152
+2021-03-05T12:29:49.617Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:49.617Z - debug: Getting existing skills for user: 40107974.
+2021-03-05T12:29:49.617Z - info: Querying MemberAggregatedSkills for userId=40107974
+2021-03-05T12:29:50.576Z - info: No MemberAggregatedSkills item found 40107974
+2021-03-05T12:29:50.576Z - debug: Updated 0 skills for 40107974
+2021-03-05T12:29:50.576Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:50.576Z - debug: Getting existing skills for user: 40144969.
+2021-03-05T12:29:50.576Z - info: Querying MemberAggregatedSkills for userId=40144969
+2021-03-05T12:29:51.552Z - info: No MemberAggregatedSkills item found 40144969
+2021-03-05T12:29:51.552Z - debug: Updated 0 skills for 40144969
+2021-03-05T12:29:51.553Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:51.553Z - debug: Getting existing skills for user: 40162040.
+2021-03-05T12:29:51.553Z - info: Querying MemberAggregatedSkills for userId=40162040
+2021-03-05T12:29:52.448Z - info: No MemberAggregatedSkills item found 40162040
+2021-03-05T12:29:52.448Z - debug: Updated 0 skills for 40162040
+2021-03-05T12:29:52.448Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:52.448Z - debug: Getting existing skills for user: 40191782.
+2021-03-05T12:29:52.448Z - info: Querying MemberAggregatedSkills for userId=40191782
+2021-03-05T12:29:53.523Z - info: No MemberAggregatedSkills item found 40191782
+2021-03-05T12:29:53.523Z - debug: Updated 0 skills for 40191782
+2021-03-05T12:29:53.523Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:53.524Z - debug: Getting existing skills for user: 40239799.
+2021-03-05T12:29:53.524Z - info: Querying MemberAggregatedSkills for userId=40239799
+2021-03-05T12:29:54.429Z - info: No MemberAggregatedSkills item found 40239799
+2021-03-05T12:29:54.430Z - debug: Updated 0 skills for 40239799
+2021-03-05T12:29:54.430Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:54.430Z - debug: Getting existing skills for user: 40240522.
+2021-03-05T12:29:54.430Z - info: Querying MemberAggregatedSkills for userId=40240522
+2021-03-05T12:29:55.442Z - info: MemberAggregatedSkills item found 40240522.
+2021-03-05T12:29:55.442Z - debug: Updated 0 skills for 40240522
+2021-03-05T12:29:55.442Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:55.443Z - debug: Getting existing skills for user: 40309246.
+2021-03-05T12:29:55.443Z - info: Querying MemberAggregatedSkills for userId=40309246
+2021-03-05T12:29:56.369Z - info: No MemberAggregatedSkills item found 40309246
+2021-03-05T12:29:56.369Z - debug: Updated 0 skills for 40309246
+2021-03-05T12:29:56.369Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:56.369Z - debug: Getting existing skills for user: 40325205.
+2021-03-05T12:29:56.369Z - info: Querying MemberAggregatedSkills for userId=40325205
+2021-03-05T12:29:57.397Z - info: MemberAggregatedSkills item found 40325205.
+2021-03-05T12:29:57.397Z - debug: Updated 0 skills for 40325205
+2021-03-05T12:29:57.398Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:57.398Z - debug: Getting existing skills for user: 40360512.
+2021-03-05T12:29:57.398Z - info: Querying MemberAggregatedSkills for userId=40360512
+2021-03-05T12:29:58.515Z - info: No MemberAggregatedSkills item found 40360512
+2021-03-05T12:29:58.515Z - debug: Updated 0 skills for 40360512
+2021-03-05T12:29:58.515Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:58.516Z - debug: Getting existing skills for user: 40361537.
+2021-03-05T12:29:58.516Z - info: Querying MemberAggregatedSkills for userId=40361537
+2021-03-05T12:29:59.539Z - info: No MemberAggregatedSkills item found 40361537
+2021-03-05T12:29:59.539Z - debug: Updated 0 skills for 40361537
+2021-03-05T12:29:59.539Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:29:59.539Z - debug: Getting existing skills for user: 40441394.
+2021-03-05T12:29:59.539Z - info: Querying MemberAggregatedSkills for userId=40441394
+2021-03-05T12:30:00.500Z - info: No MemberAggregatedSkills item found 40441394
+2021-03-05T12:30:00.500Z - debug: Updated 0 skills for 40441394
+2021-03-05T12:30:00.500Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:00.500Z - debug: Getting existing skills for user: 40488611.
+2021-03-05T12:30:00.501Z - info: Querying MemberAggregatedSkills for userId=40488611
+2021-03-05T12:30:01.509Z - info: No MemberAggregatedSkills item found 40488611
+2021-03-05T12:30:01.510Z - debug: Updated 0 skills for 40488611
+2021-03-05T12:30:01.510Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:01.510Z - debug: Getting existing skills for user: 40499358.
+2021-03-05T12:30:01.510Z - info: Querying MemberAggregatedSkills for userId=40499358
+2021-03-05T12:30:02.633Z - info: No MemberAggregatedSkills item found 40499358
+2021-03-05T12:30:02.633Z - debug: Updated 0 skills for 40499358
+2021-03-05T12:30:02.633Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:02.633Z - debug: Getting existing skills for user: 40541889.
+2021-03-05T12:30:02.633Z - info: Querying MemberAggregatedSkills for userId=40541889
+2021-03-05T12:30:04.658Z - info: No MemberAggregatedSkills item found 40541889
+2021-03-05T12:30:04.658Z - debug: Updated 0 skills for 40541889
+2021-03-05T12:30:04.658Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:04.659Z - debug: Getting existing skills for user: 40571635.
+2021-03-05T12:30:04.659Z - info: Querying MemberAggregatedSkills for userId=40571635
+2021-03-05T12:30:05.683Z - info: No MemberAggregatedSkills item found 40571635
+2021-03-05T12:30:05.683Z - debug: Updated 0 skills for 40571635
+2021-03-05T12:30:05.684Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:05.684Z - debug: Getting existing skills for user: 40572147.
+2021-03-05T12:30:05.684Z - info: Querying MemberAggregatedSkills for userId=40572147
+2021-03-05T12:30:06.574Z - info: MemberAggregatedSkills item found 40572147.
+2021-03-05T12:30:06.574Z - debug: Updated 0 skills for 40572147
+2021-03-05T12:30:06.574Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:06.575Z - debug: Getting existing skills for user: 40579993.
+2021-03-05T12:30:06.575Z - info: Querying MemberAggregatedSkills for userId=40579993
+2021-03-05T12:30:07.477Z - info: No MemberAggregatedSkills item found 40579993
+2021-03-05T12:30:07.477Z - debug: Updated 0 skills for 40579993
+2021-03-05T12:30:07.477Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:07.478Z - debug: Getting existing skills for user: 40582286.
+2021-03-05T12:30:07.478Z - info: Querying MemberAggregatedSkills for userId=40582286
+2021-03-05T12:30:08.488Z - info: No MemberAggregatedSkills item found 40582286
+2021-03-05T12:30:08.498Z - debug: Updated 0 skills for 40582286
+2021-03-05T12:30:08.498Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:08.498Z - debug: Getting existing skills for user: 40587818.
+2021-03-05T12:30:08.498Z - info: Querying MemberAggregatedSkills for userId=40587818
+2021-03-05T12:30:09.431Z - info: No MemberAggregatedSkills item found 40587818
+2021-03-05T12:30:09.431Z - debug: Updated 0 skills for 40587818
+2021-03-05T12:30:09.431Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:09.431Z - debug: Getting existing skills for user: 40598280.
+2021-03-05T12:30:09.431Z - info: Querying MemberAggregatedSkills for userId=40598280
+2021-03-05T12:30:10.389Z - info: No MemberAggregatedSkills item found 40598280
+2021-03-05T12:30:10.389Z - debug: Updated 0 skills for 40598280
+2021-03-05T12:30:10.389Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:10.389Z - debug: Getting existing skills for user: 40612623.
+2021-03-05T12:30:10.390Z - info: Querying MemberAggregatedSkills for userId=40612623
+2021-03-05T12:30:11.394Z - info: MemberAggregatedSkills item found 40612623.
+2021-03-05T12:30:11.402Z - debug: Updated 0 skills for 40612623
+2021-03-05T12:30:11.402Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:11.402Z - debug: Getting existing skills for user: 40616778.
+2021-03-05T12:30:11.402Z - info: Querying MemberAggregatedSkills for userId=40616778
+2021-03-05T12:30:12.758Z - info: No MemberAggregatedSkills item found 40616778
+2021-03-05T12:30:12.758Z - debug: Updated 0 skills for 40616778
+2021-03-05T12:30:12.758Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:12.758Z - debug: Getting existing skills for user: 40623843.
+2021-03-05T12:30:12.759Z - info: Querying MemberAggregatedSkills for userId=40623843
+2021-03-05T12:30:13.746Z - info: No MemberAggregatedSkills item found 40623843
+2021-03-05T12:30:13.746Z - debug: Updated 0 skills for 40623843
+2021-03-05T12:30:13.746Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:13.746Z - debug: Getting existing skills for user: 40624612.
+2021-03-05T12:30:13.746Z - info: Querying MemberAggregatedSkills for userId=40624612
+2021-03-05T12:30:14.748Z - info: MemberAggregatedSkills item found 40624612.
+2021-03-05T12:30:14.748Z - debug: Updated 0 skills for 40624612
+2021-03-05T12:30:14.748Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:14.748Z - debug: Getting existing skills for user: 40628681.
+2021-03-05T12:30:14.748Z - info: Querying MemberAggregatedSkills for userId=40628681
+2021-03-05T12:30:15.716Z - info: MemberAggregatedSkills item found 40628681.
+2021-03-05T12:30:15.717Z - debug: Updated 0 skills for 40628681
+2021-03-05T12:30:15.717Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:15.717Z - debug: Getting existing skills for user: 40632304.
+2021-03-05T12:30:15.717Z - info: Querying MemberAggregatedSkills for userId=40632304
+2021-03-05T12:30:16.742Z - info: MemberAggregatedSkills item found 40632304.
+2021-03-05T12:30:16.743Z - debug: Updated 0 skills for 40632304
+2021-03-05T12:30:16.743Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:16.743Z - debug: Getting existing skills for user: 40639688.
+2021-03-05T12:30:16.743Z - info: Querying MemberAggregatedSkills for userId=40639688
+2021-03-05T12:30:17.674Z - info: MemberAggregatedSkills item found 40639688.
+2021-03-05T12:30:17.674Z - debug: Updated 0 skills for 40639688
+2021-03-05T12:30:17.674Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:17.675Z - debug: Getting existing skills for user: 40644692.
+2021-03-05T12:30:17.675Z - info: Querying MemberAggregatedSkills for userId=40644692
+2021-03-05T12:30:19.029Z - info: No MemberAggregatedSkills item found 40644692
+2021-03-05T12:30:19.029Z - debug: Updated 0 skills for 40644692
+2021-03-05T12:30:19.029Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:19.029Z - debug: Getting existing skills for user: 40646499.
+2021-03-05T12:30:19.029Z - info: Querying MemberAggregatedSkills for userId=40646499
+2021-03-05T12:30:20.632Z - info: No MemberAggregatedSkills item found 40646499
+2021-03-05T12:30:20.632Z - debug: Updated 0 skills for 40646499
+2021-03-05T12:30:20.633Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:20.633Z - debug: Getting existing skills for user: 40649345.
+2021-03-05T12:30:20.633Z - info: Querying MemberAggregatedSkills for userId=40649345
+2021-03-05T12:30:21.656Z - info: MemberAggregatedSkills item found 40649345.
+2021-03-05T12:30:21.656Z - debug: Updated 0 skills for 40649345
+2021-03-05T12:30:21.656Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:21.656Z - debug: Getting existing skills for user: 40652696.
+2021-03-05T12:30:21.656Z - info: Querying MemberAggregatedSkills for userId=40652696
+2021-03-05T12:30:22.564Z - info: No MemberAggregatedSkills item found 40652696
+2021-03-05T12:30:22.565Z - debug: Updated 0 skills for 40652696
+2021-03-05T12:30:22.565Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:22.565Z - debug: Getting existing skills for user: 40653552.
+2021-03-05T12:30:22.565Z - info: Querying MemberAggregatedSkills for userId=40653552
+2021-03-05T12:30:23.460Z - info: No MemberAggregatedSkills item found 40653552
+2021-03-05T12:30:23.460Z - debug: Updated 0 skills for 40653552
+2021-03-05T12:30:23.460Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:23.460Z - debug: Getting existing skills for user: 40671293.
+2021-03-05T12:30:23.460Z - info: Querying MemberAggregatedSkills for userId=40671293
+2021-03-05T12:30:24.437Z - info: No MemberAggregatedSkills item found 40671293
+2021-03-05T12:30:24.437Z - debug: Updated 0 skills for 40671293
+2021-03-05T12:30:24.437Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:24.437Z - debug: Getting existing skills for user: 40685689.
+2021-03-05T12:30:24.437Z - info: Querying MemberAggregatedSkills for userId=40685689
+2021-03-05T12:30:25.448Z - info: No MemberAggregatedSkills item found 40685689
+2021-03-05T12:30:25.448Z - debug: Updated 0 skills for 40685689
+2021-03-05T12:30:25.449Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:25.449Z - debug: Getting existing skills for user: 40687077.
+2021-03-05T12:30:25.449Z - info: Querying MemberAggregatedSkills for userId=40687077
+2021-03-05T12:30:26.381Z - info: No MemberAggregatedSkills item found 40687077
+2021-03-05T12:30:26.381Z - debug: Updated 0 skills for 40687077
+2021-03-05T12:30:26.381Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:26.381Z - debug: Getting existing skills for user: 40697084.
+2021-03-05T12:30:26.381Z - info: Querying MemberAggregatedSkills for userId=40697084
+2021-03-05T12:30:27.404Z - info: No MemberAggregatedSkills item found 40697084
+2021-03-05T12:30:27.405Z - debug: Updated 0 skills for 40697084
+2021-03-05T12:30:27.405Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:27.405Z - debug: Getting existing skills for user: 40699617.
+2021-03-05T12:30:27.405Z - info: Querying MemberAggregatedSkills for userId=40699617
+2021-03-05T12:30:28.396Z - info: No MemberAggregatedSkills item found 40699617
+2021-03-05T12:30:28.396Z - debug: Updated 0 skills for 40699617
+2021-03-05T12:30:28.396Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:28.397Z - debug: Getting existing skills for user: 40710016.
+2021-03-05T12:30:28.397Z - info: Querying MemberAggregatedSkills for userId=40710016
+2021-03-05T12:30:29.350Z - info: No MemberAggregatedSkills item found 40710016
+2021-03-05T12:30:29.351Z - debug: Updated 0 skills for 40710016
+2021-03-05T12:30:29.351Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:29.351Z - debug: Getting existing skills for user: 40716091.
+2021-03-05T12:30:29.351Z - info: Querying MemberAggregatedSkills for userId=40716091
+2021-03-05T12:30:30.248Z - info: No MemberAggregatedSkills item found 40716091
+2021-03-05T12:30:30.248Z - debug: Updated 0 skills for 40716091
+2021-03-05T12:30:30.249Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:30.249Z - debug: Getting existing skills for user: 40717778.
+2021-03-05T12:30:30.249Z - info: Querying MemberAggregatedSkills for userId=40717778
+2021-03-05T12:30:31.196Z - info: No MemberAggregatedSkills item found 40717778
+2021-03-05T12:30:31.196Z - debug: Updated 0 skills for 40717778
+2021-03-05T12:30:31.196Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:31.196Z - debug: Getting existing skills for user: 40731433.
+2021-03-05T12:30:31.196Z - info: Querying MemberAggregatedSkills for userId=40731433
+2021-03-05T12:30:32.090Z - info: No MemberAggregatedSkills item found 40731433
+2021-03-05T12:30:32.090Z - debug: Updated 0 skills for 40731433
+2021-03-05T12:30:32.090Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:32.090Z - debug: Getting existing skills for user: 40751143.
+2021-03-05T12:30:32.091Z - info: Querying MemberAggregatedSkills for userId=40751143
+2021-03-05T12:30:32.985Z - info: No MemberAggregatedSkills item found 40751143
+2021-03-05T12:30:32.985Z - debug: Updated 0 skills for 40751143
+2021-03-05T12:30:32.985Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:32.985Z - debug: Getting existing skills for user: 40774176.
+2021-03-05T12:30:32.985Z - info: Querying MemberAggregatedSkills for userId=40774176
+2021-03-05T12:30:33.890Z - info: MemberAggregatedSkills item found 40774176.
+2021-03-05T12:30:33.890Z - debug: Updated 0 skills for 40774176
+2021-03-05T12:30:33.890Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:33.890Z - debug: Getting existing skills for user: 40788931.
+2021-03-05T12:30:33.890Z - info: Querying MemberAggregatedSkills for userId=40788931
+2021-03-05T12:30:34.801Z - info: No MemberAggregatedSkills item found 40788931
+2021-03-05T12:30:34.801Z - debug: Updated 0 skills for 40788931
+2021-03-05T12:30:34.801Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:34.802Z - debug: Getting existing skills for user: 40790723.
+2021-03-05T12:30:34.802Z - info: Querying MemberAggregatedSkills for userId=40790723
+2021-03-05T12:30:36.305Z - info: MemberAggregatedSkills item found 40790723.
+2021-03-05T12:30:36.305Z - debug: Updated 0 skills for 40790723
+2021-03-05T12:30:36.306Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:36.306Z - debug: Getting existing skills for user: 40791489.
+2021-03-05T12:30:36.306Z - info: Querying MemberAggregatedSkills for userId=40791489
+2021-03-05T12:30:37.180Z - info: No MemberAggregatedSkills item found 40791489
+2021-03-05T12:30:37.185Z - debug: Updated 0 skills for 40791489
+2021-03-05T12:30:37.185Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:37.185Z - debug: Getting existing skills for user: 40792455.
+2021-03-05T12:30:37.185Z - info: Querying MemberAggregatedSkills for userId=40792455
+2021-03-05T12:30:38.098Z - info: MemberAggregatedSkills item found 40792455.
+2021-03-05T12:30:38.098Z - debug: Updated 0 skills for 40792455
+2021-03-05T12:30:38.098Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:38.098Z - debug: Getting existing skills for user: 40799970.
+2021-03-05T12:30:38.098Z - info: Querying MemberAggregatedSkills for userId=40799970
+2021-03-05T12:30:39.066Z - info: MemberAggregatedSkills item found 40799970.
+2021-03-05T12:30:39.067Z - debug: Updated 0 skills for 40799970
+2021-03-05T12:30:39.067Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:39.067Z - debug: Getting existing skills for user: 40808944.
+2021-03-05T12:30:39.067Z - info: Querying MemberAggregatedSkills for userId=40808944
+2021-03-05T12:30:39.991Z - info: No MemberAggregatedSkills item found 40808944
+2021-03-05T12:30:39.991Z - debug: Updated 0 skills for 40808944
+2021-03-05T12:30:39.991Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:39.991Z - debug: Getting existing skills for user: 40847996.
+2021-03-05T12:30:39.991Z - info: Querying MemberAggregatedSkills for userId=40847996
+2021-03-05T12:30:41.524Z - info: MemberAggregatedSkills item found 40847996.
+2021-03-05T12:30:41.524Z - debug: Updated 0 skills for 40847996
+2021-03-05T12:30:41.525Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:41.525Z - debug: Getting existing skills for user: 40859213.
+2021-03-05T12:30:41.525Z - info: Querying MemberAggregatedSkills for userId=40859213
+2021-03-05T12:30:42.664Z - info: MemberAggregatedSkills item found 40859213.
+2021-03-05T12:30:42.664Z - debug: Updated 0 skills for 40859213
+2021-03-05T12:30:42.664Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:42.665Z - debug: Getting existing skills for user: 40862418.
+2021-03-05T12:30:42.665Z - info: Querying MemberAggregatedSkills for userId=40862418
+2021-03-05T12:30:43.565Z - info: No MemberAggregatedSkills item found 40862418
+2021-03-05T12:30:43.566Z - debug: Updated 0 skills for 40862418
+2021-03-05T12:30:43.566Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:43.566Z - debug: Getting existing skills for user: 40872380.
+2021-03-05T12:30:43.566Z - info: Querying MemberAggregatedSkills for userId=40872380
+2021-03-05T12:30:44.460Z - info: No MemberAggregatedSkills item found 40872380
+2021-03-05T12:30:44.460Z - debug: Updated 0 skills for 40872380
+2021-03-05T12:30:44.460Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:44.460Z - debug: Getting existing skills for user: 40876299.
+2021-03-05T12:30:44.460Z - info: Querying MemberAggregatedSkills for userId=40876299
+2021-03-05T12:30:45.357Z - info: No MemberAggregatedSkills item found 40876299
+2021-03-05T12:30:45.365Z - debug: Updated 0 skills for 40876299
+2021-03-05T12:30:45.365Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:45.366Z - debug: Getting existing skills for user: 40876432.
+2021-03-05T12:30:45.366Z - info: Querying MemberAggregatedSkills for userId=40876432
+2021-03-05T12:30:46.496Z - info: No MemberAggregatedSkills item found 40876432
+2021-03-05T12:30:46.496Z - debug: Updated 0 skills for 40876432
+2021-03-05T12:30:46.496Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:46.497Z - debug: Getting existing skills for user: 40879740.
+2021-03-05T12:30:46.497Z - info: Querying MemberAggregatedSkills for userId=40879740
+2021-03-05T12:30:47.567Z - info: MemberAggregatedSkills item found 40879740.
+2021-03-05T12:30:47.572Z - debug: Updated 0 skills for 40879740
+2021-03-05T12:30:47.572Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:47.572Z - debug: Getting existing skills for user: 40880485.
+2021-03-05T12:30:47.573Z - info: Querying MemberAggregatedSkills for userId=40880485
+2021-03-05T12:30:48.466Z - info: No MemberAggregatedSkills item found 40880485
+2021-03-05T12:30:48.466Z - debug: Updated 0 skills for 40880485
+2021-03-05T12:30:48.466Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:48.466Z - debug: Getting existing skills for user: 40903447.
+2021-03-05T12:30:48.466Z - info: Querying MemberAggregatedSkills for userId=40903447
+2021-03-05T12:30:49.427Z - info: No MemberAggregatedSkills item found 40903447
+2021-03-05T12:30:49.427Z - debug: Updated 0 skills for 40903447
+2021-03-05T12:30:49.427Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:49.427Z - debug: Getting existing skills for user: 40908633.
+2021-03-05T12:30:49.427Z - info: Querying MemberAggregatedSkills for userId=40908633
+2021-03-05T12:30:50.350Z - info: MemberAggregatedSkills item found 40908633.
+2021-03-05T12:30:50.350Z - debug: Updated 0 skills for 40908633
+2021-03-05T12:30:50.350Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:50.350Z - debug: Getting existing skills for user: 40909994.
+2021-03-05T12:30:50.350Z - info: Querying MemberAggregatedSkills for userId=40909994
+2021-03-05T12:30:52.075Z - info: MemberAggregatedSkills item found 40909994.
+2021-03-05T12:30:52.075Z - debug: Updated 0 skills for 40909994
+2021-03-05T12:30:52.075Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:52.075Z - debug: Getting existing skills for user: 40911679.
+2021-03-05T12:30:52.075Z - info: Querying MemberAggregatedSkills for userId=40911679
+2021-03-05T12:30:52.986Z - info: No MemberAggregatedSkills item found 40911679
+2021-03-05T12:30:52.986Z - debug: Updated 0 skills for 40911679
+2021-03-05T12:30:52.986Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:52.986Z - debug: Getting existing skills for user: 40918427.
+2021-03-05T12:30:52.986Z - info: Querying MemberAggregatedSkills for userId=40918427
+2021-03-05T12:30:53.901Z - info: MemberAggregatedSkills item found 40918427.
+2021-03-05T12:30:53.901Z - debug: Updated 0 skills for 40918427
+2021-03-05T12:30:53.901Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:53.901Z - debug: Getting existing skills for user: 40934798.
+2021-03-05T12:30:53.901Z - info: Querying MemberAggregatedSkills for userId=40934798
+2021-03-05T12:30:54.846Z - info: No MemberAggregatedSkills item found 40934798
+2021-03-05T12:30:54.846Z - debug: Updated 0 skills for 40934798
+2021-03-05T12:30:54.846Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:54.846Z - debug: Getting existing skills for user: 40941433.
+2021-03-05T12:30:54.846Z - info: Querying MemberAggregatedSkills for userId=40941433
+2021-03-05T12:30:55.760Z - info: No MemberAggregatedSkills item found 40941433
+2021-03-05T12:30:55.760Z - debug: Updated 0 skills for 40941433
+2021-03-05T12:30:55.760Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:55.760Z - debug: Getting existing skills for user: 40944026.
+2021-03-05T12:30:55.760Z - info: Querying MemberAggregatedSkills for userId=40944026
+2021-03-05T12:30:56.679Z - info: No MemberAggregatedSkills item found 40944026
+2021-03-05T12:30:56.679Z - debug: Updated 0 skills for 40944026
+2021-03-05T12:30:56.679Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:56.679Z - debug: Getting existing skills for user: 40955969.
+2021-03-05T12:30:56.680Z - info: Querying MemberAggregatedSkills for userId=40955969
+2021-03-05T12:30:57.693Z - info: No MemberAggregatedSkills item found 40955969
+2021-03-05T12:30:57.694Z - debug: Updated 0 skills for 40955969
+2021-03-05T12:30:57.694Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:57.694Z - debug: Getting existing skills for user: 40961422.
+2021-03-05T12:30:57.694Z - info: Querying MemberAggregatedSkills for userId=40961422
+2021-03-05T12:30:58.896Z - info: No MemberAggregatedSkills item found 40961422
+2021-03-05T12:30:58.896Z - debug: Updated 0 skills for 40961422
+2021-03-05T12:30:58.896Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:58.897Z - debug: Getting existing skills for user: 40976108.
+2021-03-05T12:30:58.897Z - info: Querying MemberAggregatedSkills for userId=40976108
+2021-03-05T12:30:59.824Z - info: No MemberAggregatedSkills item found 40976108
+2021-03-05T12:30:59.825Z - debug: Updated 0 skills for 40976108
+2021-03-05T12:30:59.825Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:30:59.825Z - debug: Getting existing skills for user: 40977813.
+2021-03-05T12:30:59.825Z - info: Querying MemberAggregatedSkills for userId=40977813
+2021-03-05T12:31:00.982Z - info: No MemberAggregatedSkills item found 40977813
+2021-03-05T12:31:00.982Z - debug: Updated 0 skills for 40977813
+2021-03-05T12:31:00.982Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:00.982Z - debug: Getting existing skills for user: 40979055.
+2021-03-05T12:31:00.982Z - info: Querying MemberAggregatedSkills for userId=40979055
+2021-03-05T12:31:01.984Z - info: No MemberAggregatedSkills item found 40979055
+2021-03-05T12:31:01.985Z - debug: Updated 0 skills for 40979055
+2021-03-05T12:31:01.985Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:01.985Z - debug: Getting existing skills for user: 40979329.
+2021-03-05T12:31:01.985Z - info: Querying MemberAggregatedSkills for userId=40979329
+2021-03-05T12:31:02.871Z - info: MemberAggregatedSkills item found 40979329.
+2021-03-05T12:31:02.871Z - debug: Updated 0 skills for 40979329
+2021-03-05T12:31:02.871Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:02.871Z - debug: Getting existing skills for user: 40981648.
+2021-03-05T12:31:02.871Z - info: Querying MemberAggregatedSkills for userId=40981648
+2021-03-05T12:31:03.874Z - info: No MemberAggregatedSkills item found 40981648
+2021-03-05T12:31:03.874Z - debug: Updated 0 skills for 40981648
+2021-03-05T12:31:03.874Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:03.875Z - debug: Getting existing skills for user: 40983243.
+2021-03-05T12:31:03.875Z - info: Querying MemberAggregatedSkills for userId=40983243
+2021-03-05T12:31:04.798Z - info: No MemberAggregatedSkills item found 40983243
+2021-03-05T12:31:04.798Z - debug: Updated 0 skills for 40983243
+2021-03-05T12:31:04.798Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:04.798Z - debug: Getting existing skills for user: 40989810.
+2021-03-05T12:31:04.798Z - info: Querying MemberAggregatedSkills for userId=40989810
+2021-03-05T12:31:05.731Z - info: MemberAggregatedSkills item found 40989810.
+2021-03-05T12:31:05.732Z - debug: Updated 0 skills for 40989810
+2021-03-05T12:31:05.732Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:05.732Z - debug: Getting existing skills for user: 40997100.
+2021-03-05T12:31:05.732Z - info: Querying MemberAggregatedSkills for userId=40997100
+2021-03-05T12:31:07.481Z - info: No MemberAggregatedSkills item found 40997100
+2021-03-05T12:31:07.481Z - debug: Updated 0 skills for 40997100
+2021-03-05T12:31:07.481Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:07.482Z - debug: Getting existing skills for user: 40997487.
+2021-03-05T12:31:07.482Z - info: Querying MemberAggregatedSkills for userId=40997487
+2021-03-05T12:31:08.408Z - info: No MemberAggregatedSkills item found 40997487
+2021-03-05T12:31:08.409Z - debug: Updated 0 skills for 40997487
+2021-03-05T12:31:08.409Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:08.409Z - debug: Getting existing skills for user: 40999853.
+2021-03-05T12:31:08.409Z - info: Querying MemberAggregatedSkills for userId=40999853
+2021-03-05T12:31:09.299Z - info: MemberAggregatedSkills item found 40999853.
+2021-03-05T12:31:09.299Z - debug: Updated 0 skills for 40999853
+2021-03-05T12:31:09.299Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:09.299Z - debug: Getting existing skills for user: 41028896.
+2021-03-05T12:31:09.299Z - info: Querying MemberAggregatedSkills for userId=41028896
+2021-03-05T12:31:10.406Z - info: MemberAggregatedSkills item found 41028896.
+2021-03-05T12:31:10.407Z - debug: Updated 0 skills for 41028896
+2021-03-05T12:31:10.407Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:10.407Z - debug: Getting existing skills for user: 41030775.
+2021-03-05T12:31:10.407Z - info: Querying MemberAggregatedSkills for userId=41030775
+2021-03-05T12:31:11.443Z - info: No MemberAggregatedSkills item found 41030775
+2021-03-05T12:31:11.444Z - debug: Updated 0 skills for 41030775
+2021-03-05T12:31:11.444Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:11.444Z - debug: Getting existing skills for user: 41045804.
+2021-03-05T12:31:11.444Z - info: Querying MemberAggregatedSkills for userId=41045804
+2021-03-05T12:31:12.993Z - info: MemberAggregatedSkills item found 41045804.
+2021-03-05T12:31:12.994Z - debug: Updated 0 skills for 41045804
+2021-03-05T12:31:12.994Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:12.994Z - debug: Getting existing skills for user: 41049763.
+2021-03-05T12:31:12.994Z - info: Querying MemberAggregatedSkills for userId=41049763
+2021-03-05T12:31:13.983Z - info: MemberAggregatedSkills item found 41049763.
+2021-03-05T12:31:13.983Z - debug: Updated 0 skills for 41049763
+2021-03-05T12:31:13.983Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:13.984Z - debug: Getting existing skills for user: 41065697.
+2021-03-05T12:31:13.984Z - info: Querying MemberAggregatedSkills for userId=41065697
+2021-03-05T12:31:14.983Z - info: MemberAggregatedSkills item found 41065697.
+2021-03-05T12:31:14.983Z - debug: Updated 0 skills for 41065697
+2021-03-05T12:31:14.983Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:14.983Z - debug: Getting existing skills for user: 90000082.
+2021-03-05T12:31:14.983Z - info: Querying MemberAggregatedSkills for userId=90000082
+2021-03-05T12:31:16.099Z - info: No MemberAggregatedSkills item found 90000082
+2021-03-05T12:31:16.099Z - debug: Updated 0 skills for 90000082
+2021-03-05T12:31:16.099Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:16.099Z - debug: Getting existing skills for user: 90013490.
+2021-03-05T12:31:16.100Z - info: Querying MemberAggregatedSkills for userId=90013490
+2021-03-05T12:31:17.120Z - info: No MemberAggregatedSkills item found 90013490
+2021-03-05T12:31:17.120Z - debug: Updated 0 skills for 90013490
+2021-03-05T12:31:17.120Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:17.120Z - debug: Getting existing skills for user: 90013525.
+2021-03-05T12:31:17.120Z - info: Querying MemberAggregatedSkills for userId=90013525
+2021-03-05T12:31:18.015Z - info: No MemberAggregatedSkills item found 90013525
+2021-03-05T12:31:18.016Z - debug: Updated 0 skills for 90013525
+2021-03-05T12:31:18.016Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:18.016Z - debug: Getting existing skills for user: 90016229.
+2021-03-05T12:31:18.018Z - info: Querying MemberAggregatedSkills for userId=90016229
+2021-03-05T12:31:18.942Z - info: MemberAggregatedSkills item found 90016229.
+2021-03-05T12:31:18.944Z - debug: Updated 0 skills for 90016229
+2021-03-05T12:31:18.944Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:18.944Z - debug: Getting existing skills for user: 90017572.
+2021-03-05T12:31:18.944Z - info: Querying MemberAggregatedSkills for userId=90017572
+2021-03-05T12:31:19.986Z - info: No MemberAggregatedSkills item found 90017572
+2021-03-05T12:31:19.986Z - debug: Updated 0 skills for 90017572
+2021-03-05T12:31:19.986Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:19.986Z - debug: Getting existing skills for user: 90018264.
+2021-03-05T12:31:19.986Z - info: Querying MemberAggregatedSkills for userId=90018264
+2021-03-05T12:31:21.042Z - info: No MemberAggregatedSkills item found 90018264
+2021-03-05T12:31:21.042Z - debug: Updated 0 skills for 90018264
+2021-03-05T12:31:21.042Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:21.042Z - debug: Getting existing skills for user: 90018272.
+2021-03-05T12:31:21.042Z - info: Querying MemberAggregatedSkills for userId=90018272
+2021-03-05T12:31:22.008Z - info: MemberAggregatedSkills item found 90018272.
+2021-03-05T12:31:22.009Z - debug: Updated 0 skills for 90018272
+2021-03-05T12:31:22.009Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:22.009Z - debug: Getting existing skills for user: 90031645.
+2021-03-05T12:31:22.009Z - info: Querying MemberAggregatedSkills for userId=90031645
+2021-03-05T12:31:23.705Z - info: No MemberAggregatedSkills item found 90031645
+2021-03-05T12:31:23.705Z - debug: Updated 0 skills for 90031645
+2021-03-05T12:31:23.705Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:23.705Z - debug: Getting existing skills for user: 90032686.
+2021-03-05T12:31:23.705Z - info: Querying MemberAggregatedSkills for userId=90032686
+2021-03-05T12:31:24.657Z - info: MemberAggregatedSkills item found 90032686.
+2021-03-05T12:31:24.657Z - debug: Updated 0 skills for 90032686
+2021-03-05T12:31:24.657Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:24.657Z - debug: Getting existing skills for user: 90036076.
+2021-03-05T12:31:24.657Z - info: Querying MemberAggregatedSkills for userId=90036076
+2021-03-05T12:31:25.543Z - info: No MemberAggregatedSkills item found 90036076
+2021-03-05T12:31:25.543Z - debug: Updated 0 skills for 90036076
+2021-03-05T12:31:25.543Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:25.543Z - debug: Getting existing skills for user: 90046869.
+2021-03-05T12:31:25.543Z - info: Querying MemberAggregatedSkills for userId=90046869
+2021-03-05T12:31:26.473Z - info: No MemberAggregatedSkills item found 90046869
+2021-03-05T12:31:26.473Z - debug: Updated 0 skills for 90046869
+2021-03-05T12:31:26.473Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:26.473Z - debug: Getting existing skills for user: 90046920.
+2021-03-05T12:31:26.473Z - info: Querying MemberAggregatedSkills for userId=90046920
+2021-03-05T12:31:27.375Z - info: MemberAggregatedSkills item found 90046920.
+2021-03-05T12:31:27.382Z - debug: Updated 0 skills for 90046920
+2021-03-05T12:31:27.382Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:27.382Z - debug: Getting existing skills for user: 90057686.
+2021-03-05T12:31:27.382Z - info: Querying MemberAggregatedSkills for userId=90057686
+2021-03-05T12:31:28.331Z - info: No MemberAggregatedSkills item found 90057686
+2021-03-05T12:31:28.331Z - debug: Updated 0 skills for 90057686
+2021-03-05T12:31:28.331Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:28.332Z - debug: Getting existing skills for user: 90061144.
+2021-03-05T12:31:28.332Z - info: Querying MemberAggregatedSkills for userId=90061144
+2021-03-05T12:31:29.269Z - info: MemberAggregatedSkills item found 90061144.
+2021-03-05T12:31:29.269Z - debug: Updated 0 skills for 90061144
+2021-03-05T12:31:29.269Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:29.269Z - debug: Getting existing skills for user: 90062549.
+2021-03-05T12:31:29.269Z - info: Querying MemberAggregatedSkills for userId=90062549
+2021-03-05T12:31:30.299Z - info: MemberAggregatedSkills item found 90062549.
+2021-03-05T12:31:30.299Z - debug: Updated 0 skills for 90062549
+2021-03-05T12:31:30.299Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:30.299Z - debug: Getting existing skills for user: 90070857.
+2021-03-05T12:31:30.299Z - info: Querying MemberAggregatedSkills for userId=90070857
+2021-03-05T12:31:31.290Z - info: No MemberAggregatedSkills item found 90070857
+2021-03-05T12:31:31.291Z - debug: Updated 0 skills for 90070857
+2021-03-05T12:31:31.291Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:31.291Z - debug: Getting existing skills for user: 90073107.
+2021-03-05T12:31:31.291Z - info: Querying MemberAggregatedSkills for userId=90073107
+2021-03-05T12:31:32.190Z - info: No MemberAggregatedSkills item found 90073107
+2021-03-05T12:31:32.190Z - debug: Updated 0 skills for 90073107
+2021-03-05T12:31:32.190Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:32.192Z - info: Writing rest of the 154 items of size 9724
+2021-03-05T12:31:32.193Z - debug: Acquiring Informix Connection
+Connecting topcoder_dw
+2021-03-05T12:31:33.379Z - debug: Aquired Informix Connection
+2021-03-05T12:31:33.380Z - info: Query all challenge user skills, between 2021-02-10 and 2021-03-01 days.
+SELECT  pr.user_id as userId,
+        pr.project_id as challengeId,
+        pt.name as name, pr.review_complete_timestamp
+        FROM tcs_dw:project_result pr
+        INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
+        INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
+        WHERE  pr.passed_review_ind = 1 AND pr.review_complete_timestamp BETWEEN DATE("2021-02-10") and (DATE("2021-03-01") + 1)
+executeQuery - start   0.5561634598546215
+executeQuery - success 0.5561634598546215
+Disconnecting topcoder_dw
+2021-03-05T12:31:37.854Z - debug: *******************************************
+2021-03-05T12:31:37.854Z - debug: Updating batch starting from 2021-02-10 to 2021-03-01
+2021-03-05T12:31:37.854Z - debug: [object Object]
+2021-03-05T12:31:37.854Z - debug: Found 169 new users with updated skills.
+2021-03-05T12:31:37.854Z - debug: Getting existing skills for user: 8544935.
+2021-03-05T12:31:37.854Z - info: Querying MemberAggregatedSkills for userId=8544935
+Closed the database connection
+2021-03-05T12:31:39.695Z - info: MemberAggregatedSkills item found 8544935.
+2021-03-05T12:31:39.695Z - debug: Updated 0 skills for 8544935
+2021-03-05T12:31:39.696Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:39.696Z - debug: Getting existing skills for user: 20095816.
+2021-03-05T12:31:39.696Z - info: Querying MemberAggregatedSkills for userId=20095816
+2021-03-05T12:31:40.916Z - info: MemberAggregatedSkills item found 20095816.
+2021-03-05T12:31:40.916Z - debug: Updated 0 skills for 20095816
+2021-03-05T12:31:40.916Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:40.916Z - debug: Getting existing skills for user: 22652995.
+2021-03-05T12:31:40.916Z - info: Querying MemberAggregatedSkills for userId=22652995
+2021-03-05T12:31:41.899Z - info: No MemberAggregatedSkills item found 22652995
+2021-03-05T12:31:41.899Z - debug: Updated 0 skills for 22652995
+2021-03-05T12:31:41.899Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:41.899Z - debug: Getting existing skills for user: 22654954.
+2021-03-05T12:31:41.900Z - info: Querying MemberAggregatedSkills for userId=22654954
+2021-03-05T12:31:42.792Z - info: No MemberAggregatedSkills item found 22654954
+2021-03-05T12:31:42.792Z - debug: Updated 0 skills for 22654954
+2021-03-05T12:31:42.792Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:42.792Z - debug: Getting existing skills for user: 22680616.
+2021-03-05T12:31:42.792Z - info: Querying MemberAggregatedSkills for userId=22680616
+2021-03-05T12:31:43.765Z - info: No MemberAggregatedSkills item found 22680616
+2021-03-05T12:31:43.765Z - debug: Updated 0 skills for 22680616
+2021-03-05T12:31:43.765Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:43.765Z - debug: Getting existing skills for user: 22691991.
+2021-03-05T12:31:43.765Z - info: Querying MemberAggregatedSkills for userId=22691991
+2021-03-05T12:31:44.690Z - info: No MemberAggregatedSkills item found 22691991
+2021-03-05T12:31:44.690Z - debug: Updated 0 skills for 22691991
+2021-03-05T12:31:44.690Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:44.690Z - debug: Getting existing skills for user: 22697646.
+2021-03-05T12:31:44.690Z - info: Querying MemberAggregatedSkills for userId=22697646
+2021-03-05T12:31:45.676Z - info: No MemberAggregatedSkills item found 22697646
+2021-03-05T12:31:45.677Z - debug: Updated 0 skills for 22697646
+2021-03-05T12:31:45.677Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:45.677Z - debug: Getting existing skills for user: 22706873.
+2021-03-05T12:31:45.677Z - info: Querying MemberAggregatedSkills for userId=22706873
+2021-03-05T12:31:46.666Z - info: No MemberAggregatedSkills item found 22706873
+2021-03-05T12:31:46.666Z - debug: Updated 0 skills for 22706873
+2021-03-05T12:31:46.667Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:46.667Z - debug: Getting existing skills for user: 22713337.
+2021-03-05T12:31:46.667Z - info: Querying MemberAggregatedSkills for userId=22713337
+2021-03-05T12:31:47.694Z - info: MemberAggregatedSkills item found 22713337.
+2021-03-05T12:31:47.694Z - debug: Updated 0 skills for 22713337
+2021-03-05T12:31:47.694Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:47.694Z - debug: Getting existing skills for user: 22721181.
+2021-03-05T12:31:47.694Z - info: Querying MemberAggregatedSkills for userId=22721181
+2021-03-05T12:31:48.619Z - info: MemberAggregatedSkills item found 22721181.
+2021-03-05T12:31:48.619Z - debug: Updated 0 skills for 22721181
+2021-03-05T12:31:48.619Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:48.620Z - debug: Getting existing skills for user: 22742764.
+2021-03-05T12:31:48.620Z - info: Querying MemberAggregatedSkills for userId=22742764
+2021-03-05T12:31:49.520Z - info: No MemberAggregatedSkills item found 22742764
+2021-03-05T12:31:49.521Z - debug: Updated 0 skills for 22742764
+2021-03-05T12:31:49.521Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:49.521Z - debug: Getting existing skills for user: 22743661.
+2021-03-05T12:31:49.521Z - info: Querying MemberAggregatedSkills for userId=22743661
+2021-03-05T12:31:50.572Z - info: No MemberAggregatedSkills item found 22743661
+2021-03-05T12:31:50.572Z - debug: Updated 0 skills for 22743661
+2021-03-05T12:31:50.572Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:50.572Z - debug: Getting existing skills for user: 22781893.
+2021-03-05T12:31:50.573Z - info: Querying MemberAggregatedSkills for userId=22781893
+2021-03-05T12:31:51.540Z - info: No MemberAggregatedSkills item found 22781893
+2021-03-05T12:31:51.540Z - debug: Updated 0 skills for 22781893
+2021-03-05T12:31:51.540Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:51.540Z - debug: Getting existing skills for user: 22786480.
+2021-03-05T12:31:51.540Z - info: Querying MemberAggregatedSkills for userId=22786480
+2021-03-05T12:31:52.490Z - info: MemberAggregatedSkills item found 22786480.
+2021-03-05T12:31:52.490Z - debug: Updated 0 skills for 22786480
+2021-03-05T12:31:52.490Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:52.490Z - debug: Getting existing skills for user: 22836207.
+2021-03-05T12:31:52.490Z - info: Querying MemberAggregatedSkills for userId=22836207
+2021-03-05T12:31:53.550Z - info: No MemberAggregatedSkills item found 22836207
+2021-03-05T12:31:53.550Z - debug: Updated 0 skills for 22836207
+2021-03-05T12:31:53.550Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:53.550Z - debug: Getting existing skills for user: 22836556.
+2021-03-05T12:31:53.550Z - info: Querying MemberAggregatedSkills for userId=22836556
+2021-03-05T12:31:55.305Z - info: No MemberAggregatedSkills item found 22836556
+2021-03-05T12:31:55.306Z - debug: Updated 0 skills for 22836556
+2021-03-05T12:31:55.306Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:55.306Z - debug: Getting existing skills for user: 22848836.
+2021-03-05T12:31:55.306Z - info: Querying MemberAggregatedSkills for userId=22848836
+2021-03-05T12:31:56.481Z - info: MemberAggregatedSkills item found 22848836.
+2021-03-05T12:31:56.481Z - debug: Updated 0 skills for 22848836
+2021-03-05T12:31:56.481Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:56.481Z - debug: Getting existing skills for user: 22850956.
+2021-03-05T12:31:56.481Z - info: Querying MemberAggregatedSkills for userId=22850956
+2021-03-05T12:31:57.402Z - info: MemberAggregatedSkills item found 22850956.
+2021-03-05T12:31:57.402Z - debug: Updated 0 skills for 22850956
+2021-03-05T12:31:57.402Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:57.403Z - debug: Getting existing skills for user: 22854046.
+2021-03-05T12:31:57.403Z - info: Querying MemberAggregatedSkills for userId=22854046
+2021-03-05T12:31:58.442Z - info: MemberAggregatedSkills item found 22854046.
+2021-03-05T12:31:58.443Z - debug: Updated 0 skills for 22854046
+2021-03-05T12:31:58.443Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:58.443Z - debug: Getting existing skills for user: 22866415.
+2021-03-05T12:31:58.443Z - info: Querying MemberAggregatedSkills for userId=22866415
+2021-03-05T12:31:59.362Z - info: MemberAggregatedSkills item found 22866415.
+2021-03-05T12:31:59.367Z - debug: Updated 0 skills for 22866415
+2021-03-05T12:31:59.367Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:31:59.367Z - debug: Getting existing skills for user: 22875240.
+2021-03-05T12:31:59.367Z - info: Querying MemberAggregatedSkills for userId=22875240
+2021-03-05T12:32:00.296Z - info: MemberAggregatedSkills item found 22875240.
+2021-03-05T12:32:00.296Z - debug: Updated 0 skills for 22875240
+2021-03-05T12:32:00.296Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:00.297Z - debug: Getting existing skills for user: 22887344.
+2021-03-05T12:32:00.297Z - info: Querying MemberAggregatedSkills for userId=22887344
+2021-03-05T12:32:01.217Z - info: No MemberAggregatedSkills item found 22887344
+2021-03-05T12:32:01.217Z - debug: Updated 0 skills for 22887344
+2021-03-05T12:32:01.217Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:01.217Z - debug: Getting existing skills for user: 23050055.
+2021-03-05T12:32:01.217Z - info: Querying MemberAggregatedSkills for userId=23050055
+2021-03-05T12:32:02.221Z - info: MemberAggregatedSkills item found 23050055.
+2021-03-05T12:32:02.221Z - debug: Updated 0 skills for 23050055
+2021-03-05T12:32:02.221Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:02.221Z - debug: Getting existing skills for user: 23050755.
+2021-03-05T12:32:02.221Z - info: Querying MemberAggregatedSkills for userId=23050755
+2021-03-05T12:32:03.239Z - info: No MemberAggregatedSkills item found 23050755
+2021-03-05T12:32:03.239Z - debug: Updated 0 skills for 23050755
+2021-03-05T12:32:03.239Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:03.240Z - debug: Getting existing skills for user: 23102829.
+2021-03-05T12:32:03.240Z - info: Querying MemberAggregatedSkills for userId=23102829
+2021-03-05T12:32:04.169Z - info: MemberAggregatedSkills item found 23102829.
+2021-03-05T12:32:04.169Z - debug: Updated 0 skills for 23102829
+2021-03-05T12:32:04.170Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:04.170Z - debug: Getting existing skills for user: 23124329.
+2021-03-05T12:32:04.170Z - info: Querying MemberAggregatedSkills for userId=23124329
+2021-03-05T12:32:05.209Z - info: No MemberAggregatedSkills item found 23124329
+2021-03-05T12:32:05.209Z - debug: Updated 0 skills for 23124329
+2021-03-05T12:32:05.209Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:05.209Z - debug: Getting existing skills for user: 23131895.
+2021-03-05T12:32:05.210Z - info: Querying MemberAggregatedSkills for userId=23131895
+2021-03-05T12:32:06.221Z - info: No MemberAggregatedSkills item found 23131895
+2021-03-05T12:32:06.221Z - debug: Updated 0 skills for 23131895
+2021-03-05T12:32:06.221Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:06.221Z - debug: Getting existing skills for user: 23136923.
+2021-03-05T12:32:06.221Z - info: Querying MemberAggregatedSkills for userId=23136923
+2021-03-05T12:32:07.239Z - info: No MemberAggregatedSkills item found 23136923
+2021-03-05T12:32:07.239Z - debug: Updated 0 skills for 23136923
+2021-03-05T12:32:07.239Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:07.239Z - debug: Getting existing skills for user: 23154661.
+2021-03-05T12:32:07.239Z - info: Querying MemberAggregatedSkills for userId=23154661
+2021-03-05T12:32:08.260Z - info: MemberAggregatedSkills item found 23154661.
+2021-03-05T12:32:08.260Z - debug: Updated 0 skills for 23154661
+2021-03-05T12:32:08.260Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:08.260Z - debug: Getting existing skills for user: 23166766.
+2021-03-05T12:32:08.261Z - info: Querying MemberAggregatedSkills for userId=23166766
+2021-03-05T12:32:09.155Z - info: MemberAggregatedSkills item found 23166766.
+2021-03-05T12:32:09.155Z - debug: Updated 0 skills for 23166766
+2021-03-05T12:32:09.155Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:09.155Z - debug: Getting existing skills for user: 23175096.
+2021-03-05T12:32:09.155Z - info: Querying MemberAggregatedSkills for userId=23175096
+2021-03-05T12:32:10.738Z - info: MemberAggregatedSkills item found 23175096.
+2021-03-05T12:32:10.739Z - debug: Updated 0 skills for 23175096
+2021-03-05T12:32:10.739Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:10.739Z - debug: Getting existing skills for user: 23180060.
+2021-03-05T12:32:10.739Z - info: Querying MemberAggregatedSkills for userId=23180060
+2021-03-05T12:32:11.655Z - info: No MemberAggregatedSkills item found 23180060
+2021-03-05T12:32:11.655Z - debug: Updated 0 skills for 23180060
+2021-03-05T12:32:11.655Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:11.655Z - debug: Getting existing skills for user: 23188548.
+2021-03-05T12:32:11.655Z - info: Querying MemberAggregatedSkills for userId=23188548
+2021-03-05T12:32:12.708Z - info: No MemberAggregatedSkills item found 23188548
+2021-03-05T12:32:12.708Z - debug: Updated 0 skills for 23188548
+2021-03-05T12:32:12.708Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:12.708Z - debug: Getting existing skills for user: 23189218.
+2021-03-05T12:32:12.708Z - info: Querying MemberAggregatedSkills for userId=23189218
+2021-03-05T12:32:13.697Z - info: MemberAggregatedSkills item found 23189218.
+2021-03-05T12:32:13.697Z - debug: Updated 0 skills for 23189218
+2021-03-05T12:32:13.698Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:13.698Z - debug: Getting existing skills for user: 23193045.
+2021-03-05T12:32:13.698Z - info: Querying MemberAggregatedSkills for userId=23193045
+2021-03-05T12:32:14.715Z - info: No MemberAggregatedSkills item found 23193045
+2021-03-05T12:32:14.716Z - debug: Updated 0 skills for 23193045
+2021-03-05T12:32:14.716Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:14.716Z - debug: Getting existing skills for user: 23200120.
+2021-03-05T12:32:14.716Z - info: Querying MemberAggregatedSkills for userId=23200120
+2021-03-05T12:32:15.700Z - info: MemberAggregatedSkills item found 23200120.
+2021-03-05T12:32:15.700Z - debug: Updated 0 skills for 23200120
+2021-03-05T12:32:15.700Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:15.700Z - debug: Getting existing skills for user: 23270826.
+2021-03-05T12:32:15.700Z - info: Querying MemberAggregatedSkills for userId=23270826
+2021-03-05T12:32:17.986Z - info: No MemberAggregatedSkills item found 23270826
+2021-03-05T12:32:17.986Z - debug: Updated 0 skills for 23270826
+2021-03-05T12:32:17.986Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:17.986Z - debug: Getting existing skills for user: 23278999.
+2021-03-05T12:32:17.987Z - info: Querying MemberAggregatedSkills for userId=23278999
+2021-03-05T12:32:18.915Z - info: MemberAggregatedSkills item found 23278999.
+2021-03-05T12:32:18.915Z - debug: Updated 0 skills for 23278999
+2021-03-05T12:32:18.915Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:18.916Z - debug: Getting existing skills for user: 23285787.
+2021-03-05T12:32:18.916Z - info: Querying MemberAggregatedSkills for userId=23285787
+2021-03-05T12:32:19.833Z - info: MemberAggregatedSkills item found 23285787.
+2021-03-05T12:32:19.833Z - debug: Updated 0 skills for 23285787
+2021-03-05T12:32:19.834Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:19.834Z - debug: Getting existing skills for user: 23294853.
+2021-03-05T12:32:19.834Z - info: Querying MemberAggregatedSkills for userId=23294853
+2021-03-05T12:32:20.858Z - info: MemberAggregatedSkills item found 23294853.
+2021-03-05T12:32:20.858Z - debug: Updated 0 skills for 23294853
+2021-03-05T12:32:20.858Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:20.859Z - debug: Getting existing skills for user: 23306361.
+2021-03-05T12:32:20.859Z - info: Querying MemberAggregatedSkills for userId=23306361
+2021-03-05T12:32:21.872Z - info: No MemberAggregatedSkills item found 23306361
+2021-03-05T12:32:21.872Z - debug: Updated 0 skills for 23306361
+2021-03-05T12:32:21.873Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:21.873Z - debug: Getting existing skills for user: 40019198.
+2021-03-05T12:32:21.873Z - info: Querying MemberAggregatedSkills for userId=40019198
+2021-03-05T12:32:22.911Z - info: No MemberAggregatedSkills item found 40019198
+2021-03-05T12:32:22.911Z - debug: Updated 0 skills for 40019198
+2021-03-05T12:32:22.911Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:22.911Z - debug: Getting existing skills for user: 40026862.
+2021-03-05T12:32:22.911Z - info: Querying MemberAggregatedSkills for userId=40026862
+2021-03-05T12:32:23.875Z - info: No MemberAggregatedSkills item found 40026862
+2021-03-05T12:32:23.875Z - debug: Updated 0 skills for 40026862
+2021-03-05T12:32:23.875Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:23.875Z - debug: Getting existing skills for user: 40042161.
+2021-03-05T12:32:23.875Z - info: Querying MemberAggregatedSkills for userId=40042161
+2021-03-05T12:32:24.846Z - info: No MemberAggregatedSkills item found 40042161
+2021-03-05T12:32:24.846Z - debug: Updated 0 skills for 40042161
+2021-03-05T12:32:24.846Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:24.846Z - debug: Getting existing skills for user: 40066152.
+2021-03-05T12:32:24.846Z - info: Querying MemberAggregatedSkills for userId=40066152
+2021-03-05T12:32:26.469Z - info: No MemberAggregatedSkills item found 40066152
+2021-03-05T12:32:26.469Z - debug: Updated 0 skills for 40066152
+2021-03-05T12:32:26.469Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:26.469Z - debug: Getting existing skills for user: 40066242.
+2021-03-05T12:32:26.469Z - info: Querying MemberAggregatedSkills for userId=40066242
+2021-03-05T12:32:27.536Z - info: No MemberAggregatedSkills item found 40066242
+2021-03-05T12:32:27.536Z - debug: Updated 0 skills for 40066242
+2021-03-05T12:32:27.536Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:27.536Z - debug: Getting existing skills for user: 40106840.
+2021-03-05T12:32:27.536Z - info: Querying MemberAggregatedSkills for userId=40106840
+2021-03-05T12:32:28.471Z - info: MemberAggregatedSkills item found 40106840.
+2021-03-05T12:32:28.472Z - debug: Updated 0 skills for 40106840
+2021-03-05T12:32:28.472Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:28.472Z - debug: Getting existing skills for user: 40107271.
+2021-03-05T12:32:28.472Z - info: Querying MemberAggregatedSkills for userId=40107271
+2021-03-05T12:32:29.678Z - info: No MemberAggregatedSkills item found 40107271
+2021-03-05T12:32:29.678Z - debug: Updated 0 skills for 40107271
+2021-03-05T12:32:29.678Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:29.678Z - debug: Getting existing skills for user: 40107974.
+2021-03-05T12:32:29.678Z - info: Querying MemberAggregatedSkills for userId=40107974
+2021-03-05T12:32:30.653Z - info: No MemberAggregatedSkills item found 40107974
+2021-03-05T12:32:30.653Z - debug: Updated 0 skills for 40107974
+2021-03-05T12:32:30.653Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:30.653Z - debug: Getting existing skills for user: 40144969.
+2021-03-05T12:32:30.653Z - info: Querying MemberAggregatedSkills for userId=40144969
+2021-03-05T12:32:31.566Z - info: No MemberAggregatedSkills item found 40144969
+2021-03-05T12:32:31.566Z - debug: Updated 0 skills for 40144969
+2021-03-05T12:32:31.566Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:31.566Z - debug: Getting existing skills for user: 40146090.
+2021-03-05T12:32:31.566Z - info: Querying MemberAggregatedSkills for userId=40146090
+2021-03-05T12:32:32.535Z - info: MemberAggregatedSkills item found 40146090.
+2021-03-05T12:32:32.535Z - debug: Updated 0 skills for 40146090
+2021-03-05T12:32:32.535Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:32.536Z - debug: Getting existing skills for user: 40162040.
+2021-03-05T12:32:32.536Z - info: Querying MemberAggregatedSkills for userId=40162040
+2021-03-05T12:32:33.455Z - info: No MemberAggregatedSkills item found 40162040
+2021-03-05T12:32:33.455Z - debug: Updated 0 skills for 40162040
+2021-03-05T12:32:33.455Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:33.456Z - debug: Getting existing skills for user: 40165501.
+2021-03-05T12:32:33.456Z - info: Querying MemberAggregatedSkills for userId=40165501
+2021-03-05T12:32:34.416Z - info: No MemberAggregatedSkills item found 40165501
+2021-03-05T12:32:34.416Z - debug: Updated 0 skills for 40165501
+2021-03-05T12:32:34.416Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:34.416Z - debug: Getting existing skills for user: 40240044.
+2021-03-05T12:32:34.416Z - info: Querying MemberAggregatedSkills for userId=40240044
+2021-03-05T12:32:35.375Z - info: MemberAggregatedSkills item found 40240044.
+2021-03-05T12:32:35.375Z - debug: Updated 0 skills for 40240044
+2021-03-05T12:32:35.375Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:35.375Z - debug: Getting existing skills for user: 40240522.
+2021-03-05T12:32:35.375Z - info: Querying MemberAggregatedSkills for userId=40240522
+2021-03-05T12:32:36.278Z - info: MemberAggregatedSkills item found 40240522.
+2021-03-05T12:32:36.278Z - debug: Updated 0 skills for 40240522
+2021-03-05T12:32:36.278Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:36.278Z - debug: Getting existing skills for user: 40309246.
+2021-03-05T12:32:36.279Z - info: Querying MemberAggregatedSkills for userId=40309246
+2021-03-05T12:32:37.178Z - info: No MemberAggregatedSkills item found 40309246
+2021-03-05T12:32:37.178Z - debug: Updated 0 skills for 40309246
+2021-03-05T12:32:37.178Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:37.178Z - debug: Getting existing skills for user: 40321546.
+2021-03-05T12:32:37.179Z - info: Querying MemberAggregatedSkills for userId=40321546
+2021-03-05T12:32:38.088Z - info: MemberAggregatedSkills item found 40321546.
+2021-03-05T12:32:38.088Z - debug: Updated 0 skills for 40321546
+2021-03-05T12:32:38.088Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:38.088Z - debug: Getting existing skills for user: 40325205.
+2021-03-05T12:32:38.089Z - info: Querying MemberAggregatedSkills for userId=40325205
+2021-03-05T12:32:39.007Z - info: MemberAggregatedSkills item found 40325205.
+2021-03-05T12:32:39.007Z - debug: Updated 0 skills for 40325205
+2021-03-05T12:32:39.007Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:39.007Z - debug: Getting existing skills for user: 40375260.
+2021-03-05T12:32:39.007Z - info: Querying MemberAggregatedSkills for userId=40375260
+2021-03-05T12:32:39.941Z - info: MemberAggregatedSkills item found 40375260.
+2021-03-05T12:32:39.941Z - debug: Updated 0 skills for 40375260
+2021-03-05T12:32:39.941Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:39.941Z - debug: Getting existing skills for user: 40456600.
+2021-03-05T12:32:39.941Z - info: Querying MemberAggregatedSkills for userId=40456600
+2021-03-05T12:32:40.856Z - info: No MemberAggregatedSkills item found 40456600
+2021-03-05T12:32:40.856Z - debug: Updated 0 skills for 40456600
+2021-03-05T12:32:40.856Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:40.856Z - debug: Getting existing skills for user: 40511382.
+2021-03-05T12:32:40.856Z - info: Querying MemberAggregatedSkills for userId=40511382
+2021-03-05T12:32:42.407Z - info: MemberAggregatedSkills item found 40511382.
+2021-03-05T12:32:42.408Z - debug: Updated 0 skills for 40511382
+2021-03-05T12:32:42.408Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:42.408Z - debug: Getting existing skills for user: 40533125.
+2021-03-05T12:32:42.408Z - info: Querying MemberAggregatedSkills for userId=40533125
+2021-03-05T12:32:43.362Z - info: No MemberAggregatedSkills item found 40533125
+2021-03-05T12:32:43.362Z - debug: Updated 0 skills for 40533125
+2021-03-05T12:32:43.362Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:43.362Z - debug: Getting existing skills for user: 40571635.
+2021-03-05T12:32:43.362Z - info: Querying MemberAggregatedSkills for userId=40571635
+2021-03-05T12:32:44.263Z - info: No MemberAggregatedSkills item found 40571635
+2021-03-05T12:32:44.263Z - debug: Updated 0 skills for 40571635
+2021-03-05T12:32:44.263Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:44.263Z - debug: Getting existing skills for user: 40572147.
+2021-03-05T12:32:44.264Z - info: Querying MemberAggregatedSkills for userId=40572147
+2021-03-05T12:32:45.170Z - info: MemberAggregatedSkills item found 40572147.
+2021-03-05T12:32:45.170Z - debug: Updated 0 skills for 40572147
+2021-03-05T12:32:45.170Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:45.170Z - debug: Getting existing skills for user: 40582286.
+2021-03-05T12:32:45.170Z - info: Querying MemberAggregatedSkills for userId=40582286
+2021-03-05T12:32:46.173Z - info: No MemberAggregatedSkills item found 40582286
+2021-03-05T12:32:46.174Z - debug: Updated 0 skills for 40582286
+2021-03-05T12:32:46.174Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:46.174Z - debug: Getting existing skills for user: 40587818.
+2021-03-05T12:32:46.174Z - info: Querying MemberAggregatedSkills for userId=40587818
+2021-03-05T12:32:47.067Z - info: No MemberAggregatedSkills item found 40587818
+2021-03-05T12:32:47.067Z - debug: Updated 0 skills for 40587818
+2021-03-05T12:32:47.067Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:47.067Z - debug: Getting existing skills for user: 40589634.
+2021-03-05T12:32:47.068Z - info: Querying MemberAggregatedSkills for userId=40589634
+2021-03-05T12:32:48.026Z - info: MemberAggregatedSkills item found 40589634.
+2021-03-05T12:32:48.027Z - debug: Updated 0 skills for 40589634
+2021-03-05T12:32:48.027Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:48.027Z - debug: Getting existing skills for user: 40597094.
+2021-03-05T12:32:48.027Z - info: Querying MemberAggregatedSkills for userId=40597094
+2021-03-05T12:32:49.143Z - info: No MemberAggregatedSkills item found 40597094
+2021-03-05T12:32:49.143Z - debug: Updated 0 skills for 40597094
+2021-03-05T12:32:49.143Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:49.143Z - debug: Getting existing skills for user: 40612623.
+2021-03-05T12:32:49.143Z - info: Querying MemberAggregatedSkills for userId=40612623
+2021-03-05T12:32:50.073Z - info: MemberAggregatedSkills item found 40612623.
+2021-03-05T12:32:50.073Z - debug: Updated 0 skills for 40612623
+2021-03-05T12:32:50.073Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:50.073Z - debug: Getting existing skills for user: 40624612.
+2021-03-05T12:32:50.073Z - info: Querying MemberAggregatedSkills for userId=40624612
+2021-03-05T12:32:51.050Z - info: MemberAggregatedSkills item found 40624612.
+2021-03-05T12:32:51.050Z - debug: Updated 0 skills for 40624612
+2021-03-05T12:32:51.050Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:51.051Z - debug: Getting existing skills for user: 40627047.
+2021-03-05T12:32:51.051Z - info: Querying MemberAggregatedSkills for userId=40627047
+2021-03-05T12:32:52.188Z - info: No MemberAggregatedSkills item found 40627047
+2021-03-05T12:32:52.188Z - debug: Updated 0 skills for 40627047
+2021-03-05T12:32:52.189Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:52.189Z - debug: Getting existing skills for user: 40628681.
+2021-03-05T12:32:52.189Z - info: Querying MemberAggregatedSkills for userId=40628681
+2021-03-05T12:32:53.211Z - info: MemberAggregatedSkills item found 40628681.
+2021-03-05T12:32:53.212Z - debug: Updated 0 skills for 40628681
+2021-03-05T12:32:53.212Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:53.212Z - debug: Getting existing skills for user: 40632304.
+2021-03-05T12:32:53.212Z - info: Querying MemberAggregatedSkills for userId=40632304
+2021-03-05T12:32:54.138Z - info: MemberAggregatedSkills item found 40632304.
+2021-03-05T12:32:54.138Z - debug: Updated 0 skills for 40632304
+2021-03-05T12:32:54.138Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:54.138Z - debug: Getting existing skills for user: 40639688.
+2021-03-05T12:32:54.138Z - info: Querying MemberAggregatedSkills for userId=40639688
+2021-03-05T12:32:55.048Z - info: MemberAggregatedSkills item found 40639688.
+2021-03-05T12:32:55.048Z - debug: Updated 0 skills for 40639688
+2021-03-05T12:32:55.048Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:55.048Z - debug: Getting existing skills for user: 40649345.
+2021-03-05T12:32:55.048Z - info: Querying MemberAggregatedSkills for userId=40649345
+2021-03-05T12:32:55.992Z - info: MemberAggregatedSkills item found 40649345.
+2021-03-05T12:32:55.993Z - debug: Updated 0 skills for 40649345
+2021-03-05T12:32:55.993Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:55.993Z - debug: Getting existing skills for user: 40678912.
+2021-03-05T12:32:55.993Z - info: Querying MemberAggregatedSkills for userId=40678912
+2021-03-05T12:32:57.256Z - info: MemberAggregatedSkills item found 40678912.
+2021-03-05T12:32:57.257Z - debug: Updated 0 skills for 40678912
+2021-03-05T12:32:57.257Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:57.257Z - debug: Getting existing skills for user: 40711382.
+2021-03-05T12:32:57.257Z - info: Querying MemberAggregatedSkills for userId=40711382
+2021-03-05T12:32:58.968Z - info: No MemberAggregatedSkills item found 40711382
+2021-03-05T12:32:58.968Z - debug: Updated 0 skills for 40711382
+2021-03-05T12:32:58.968Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:58.969Z - debug: Getting existing skills for user: 40727367.
+2021-03-05T12:32:58.969Z - info: Querying MemberAggregatedSkills for userId=40727367
+2021-03-05T12:32:59.912Z - info: No MemberAggregatedSkills item found 40727367
+2021-03-05T12:32:59.913Z - debug: Updated 0 skills for 40727367
+2021-03-05T12:32:59.913Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:32:59.913Z - debug: Getting existing skills for user: 40729567.
+2021-03-05T12:32:59.913Z - info: Querying MemberAggregatedSkills for userId=40729567
+2021-03-05T12:33:00.913Z - info: MemberAggregatedSkills item found 40729567.
+2021-03-05T12:33:00.913Z - debug: Updated 0 skills for 40729567
+2021-03-05T12:33:00.913Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:00.913Z - debug: Getting existing skills for user: 40733460.
+2021-03-05T12:33:00.913Z - info: Querying MemberAggregatedSkills for userId=40733460
+2021-03-05T12:33:02.141Z - info: No MemberAggregatedSkills item found 40733460
+2021-03-05T12:33:02.142Z - debug: Updated 0 skills for 40733460
+2021-03-05T12:33:02.142Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:02.142Z - debug: Getting existing skills for user: 40774176.
+2021-03-05T12:33:02.142Z - info: Querying MemberAggregatedSkills for userId=40774176
+2021-03-05T12:33:03.164Z - info: MemberAggregatedSkills item found 40774176.
+2021-03-05T12:33:03.164Z - debug: Updated 0 skills for 40774176
+2021-03-05T12:33:03.164Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:03.164Z - debug: Getting existing skills for user: 40790723.
+2021-03-05T12:33:03.164Z - info: Querying MemberAggregatedSkills for userId=40790723
+2021-03-05T12:33:04.189Z - info: MemberAggregatedSkills item found 40790723.
+2021-03-05T12:33:04.189Z - debug: Updated 0 skills for 40790723
+2021-03-05T12:33:04.189Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:04.189Z - debug: Getting existing skills for user: 40791489.
+2021-03-05T12:33:04.189Z - info: Querying MemberAggregatedSkills for userId=40791489
+2021-03-05T12:33:05.151Z - info: No MemberAggregatedSkills item found 40791489
+2021-03-05T12:33:05.151Z - debug: Updated 0 skills for 40791489
+2021-03-05T12:33:05.151Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:05.151Z - debug: Getting existing skills for user: 40792455.
+2021-03-05T12:33:05.151Z - info: Querying MemberAggregatedSkills for userId=40792455
+2021-03-05T12:33:06.142Z - info: MemberAggregatedSkills item found 40792455.
+2021-03-05T12:33:06.142Z - debug: Updated 0 skills for 40792455
+2021-03-05T12:33:06.142Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:06.142Z - debug: Getting existing skills for user: 40799970.
+2021-03-05T12:33:06.142Z - info: Querying MemberAggregatedSkills for userId=40799970
+2021-03-05T12:33:07.189Z - info: MemberAggregatedSkills item found 40799970.
+2021-03-05T12:33:07.189Z - debug: Updated 0 skills for 40799970
+2021-03-05T12:33:07.189Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:07.190Z - debug: Getting existing skills for user: 40808944.
+2021-03-05T12:33:07.190Z - info: Querying MemberAggregatedSkills for userId=40808944
+2021-03-05T12:33:08.248Z - info: No MemberAggregatedSkills item found 40808944
+2021-03-05T12:33:08.258Z - debug: Updated 0 skills for 40808944
+2021-03-05T12:33:08.258Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:08.258Z - debug: Getting existing skills for user: 40823517.
+2021-03-05T12:33:08.258Z - info: Querying MemberAggregatedSkills for userId=40823517
+2021-03-05T12:33:09.329Z - info: No MemberAggregatedSkills item found 40823517
+2021-03-05T12:33:09.329Z - debug: Updated 0 skills for 40823517
+2021-03-05T12:33:09.329Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:09.329Z - debug: Getting existing skills for user: 40847996.
+2021-03-05T12:33:09.329Z - info: Querying MemberAggregatedSkills for userId=40847996
+2021-03-05T12:33:10.461Z - info: MemberAggregatedSkills item found 40847996.
+2021-03-05T12:33:10.461Z - debug: Updated 0 skills for 40847996
+2021-03-05T12:33:10.461Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:10.461Z - debug: Getting existing skills for user: 40858533.
+2021-03-05T12:33:10.461Z - info: Querying MemberAggregatedSkills for userId=40858533
+2021-03-05T12:33:11.456Z - info: MemberAggregatedSkills item found 40858533.
+2021-03-05T12:33:11.456Z - debug: Updated 0 skills for 40858533
+2021-03-05T12:33:11.456Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:11.456Z - debug: Getting existing skills for user: 40859213.
+2021-03-05T12:33:11.456Z - info: Querying MemberAggregatedSkills for userId=40859213
+2021-03-05T12:33:12.436Z - info: MemberAggregatedSkills item found 40859213.
+2021-03-05T12:33:12.436Z - debug: Updated 0 skills for 40859213
+2021-03-05T12:33:12.436Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:12.436Z - debug: Getting existing skills for user: 40862418.
+2021-03-05T12:33:12.436Z - info: Querying MemberAggregatedSkills for userId=40862418
+2021-03-05T12:33:13.577Z - info: No MemberAggregatedSkills item found 40862418
+2021-03-05T12:33:13.577Z - debug: Updated 0 skills for 40862418
+2021-03-05T12:33:13.577Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:13.577Z - debug: Getting existing skills for user: 40876299.
+2021-03-05T12:33:13.577Z - info: Querying MemberAggregatedSkills for userId=40876299
+2021-03-05T12:33:15.269Z - info: No MemberAggregatedSkills item found 40876299
+2021-03-05T12:33:15.270Z - debug: Updated 0 skills for 40876299
+2021-03-05T12:33:15.270Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:15.270Z - debug: Getting existing skills for user: 40876432.
+2021-03-05T12:33:15.270Z - info: Querying MemberAggregatedSkills for userId=40876432
+2021-03-05T12:33:16.199Z - info: No MemberAggregatedSkills item found 40876432
+2021-03-05T12:33:16.199Z - debug: Updated 0 skills for 40876432
+2021-03-05T12:33:16.200Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:16.200Z - debug: Getting existing skills for user: 40878648.
+2021-03-05T12:33:16.200Z - info: Querying MemberAggregatedSkills for userId=40878648
+2021-03-05T12:33:17.140Z - info: MemberAggregatedSkills item found 40878648.
+2021-03-05T12:33:17.140Z - debug: Updated 0 skills for 40878648
+2021-03-05T12:33:17.140Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:17.140Z - debug: Getting existing skills for user: 40879740.
+2021-03-05T12:33:17.140Z - info: Querying MemberAggregatedSkills for userId=40879740
+2021-03-05T12:33:18.110Z - info: MemberAggregatedSkills item found 40879740.
+2021-03-05T12:33:18.110Z - debug: Updated 0 skills for 40879740
+2021-03-05T12:33:18.110Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:18.110Z - debug: Getting existing skills for user: 40893185.
+2021-03-05T12:33:18.110Z - info: Querying MemberAggregatedSkills for userId=40893185
+2021-03-05T12:33:19.019Z - info: MemberAggregatedSkills item found 40893185.
+2021-03-05T12:33:19.020Z - debug: Updated 0 skills for 40893185
+2021-03-05T12:33:19.020Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:19.020Z - debug: Getting existing skills for user: 40893805.
+2021-03-05T12:33:19.020Z - info: Querying MemberAggregatedSkills for userId=40893805
+2021-03-05T12:33:19.940Z - info: No MemberAggregatedSkills item found 40893805
+2021-03-05T12:33:19.940Z - debug: Updated 0 skills for 40893805
+2021-03-05T12:33:19.940Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:19.940Z - debug: Getting existing skills for user: 40903447.
+2021-03-05T12:33:19.940Z - info: Querying MemberAggregatedSkills for userId=40903447
+2021-03-05T12:33:20.862Z - info: No MemberAggregatedSkills item found 40903447
+2021-03-05T12:33:20.862Z - debug: Updated 0 skills for 40903447
+2021-03-05T12:33:20.862Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:20.862Z - debug: Getting existing skills for user: 40908633.
+2021-03-05T12:33:20.862Z - info: Querying MemberAggregatedSkills for userId=40908633
+2021-03-05T12:33:21.884Z - info: MemberAggregatedSkills item found 40908633.
+2021-03-05T12:33:21.884Z - debug: Updated 0 skills for 40908633
+2021-03-05T12:33:21.884Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:21.884Z - debug: Getting existing skills for user: 40909994.
+2021-03-05T12:33:21.884Z - info: Querying MemberAggregatedSkills for userId=40909994
+2021-03-05T12:33:22.841Z - info: MemberAggregatedSkills item found 40909994.
+2021-03-05T12:33:22.841Z - debug: Updated 0 skills for 40909994
+2021-03-05T12:33:22.841Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:22.841Z - debug: Getting existing skills for user: 40918427.
+2021-03-05T12:33:22.841Z - info: Querying MemberAggregatedSkills for userId=40918427
+2021-03-05T12:33:23.782Z - info: MemberAggregatedSkills item found 40918427.
+2021-03-05T12:33:23.782Z - debug: Updated 0 skills for 40918427
+2021-03-05T12:33:23.782Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:23.782Z - debug: Getting existing skills for user: 40921340.
+2021-03-05T12:33:23.782Z - info: Querying MemberAggregatedSkills for userId=40921340
+2021-03-05T12:33:24.725Z - info: MemberAggregatedSkills item found 40921340.
+2021-03-05T12:33:24.726Z - debug: Updated 0 skills for 40921340
+2021-03-05T12:33:24.726Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:24.726Z - debug: Getting existing skills for user: 40929475.
+2021-03-05T12:33:24.726Z - info: Querying MemberAggregatedSkills for userId=40929475
+2021-03-05T12:33:25.790Z - info: No MemberAggregatedSkills item found 40929475
+2021-03-05T12:33:25.790Z - debug: Updated 0 skills for 40929475
+2021-03-05T12:33:25.790Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:25.790Z - debug: Getting existing skills for user: 40933716.
+2021-03-05T12:33:25.791Z - info: Querying MemberAggregatedSkills for userId=40933716
+2021-03-05T12:33:26.799Z - info: No MemberAggregatedSkills item found 40933716
+2021-03-05T12:33:26.799Z - debug: Updated 0 skills for 40933716
+2021-03-05T12:33:26.799Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:26.799Z - debug: Getting existing skills for user: 40934798.
+2021-03-05T12:33:26.799Z - info: Querying MemberAggregatedSkills for userId=40934798
+2021-03-05T12:33:27.729Z - info: No MemberAggregatedSkills item found 40934798
+2021-03-05T12:33:27.729Z - debug: Updated 0 skills for 40934798
+2021-03-05T12:33:27.729Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:27.729Z - debug: Getting existing skills for user: 40940470.
+2021-03-05T12:33:27.730Z - info: Querying MemberAggregatedSkills for userId=40940470
+2021-03-05T12:33:28.685Z - info: MemberAggregatedSkills item found 40940470.
+2021-03-05T12:33:28.685Z - debug: Updated 0 skills for 40940470
+2021-03-05T12:33:28.685Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:28.685Z - debug: Getting existing skills for user: 40944026.
+2021-03-05T12:33:28.685Z - info: Querying MemberAggregatedSkills for userId=40944026
+2021-03-05T12:33:29.640Z - info: No MemberAggregatedSkills item found 40944026
+2021-03-05T12:33:29.640Z - debug: Updated 0 skills for 40944026
+2021-03-05T12:33:29.640Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:29.640Z - debug: Getting existing skills for user: 40955969.
+2021-03-05T12:33:29.640Z - info: Querying MemberAggregatedSkills for userId=40955969
+2021-03-05T12:33:31.331Z - info: No MemberAggregatedSkills item found 40955969
+2021-03-05T12:33:31.331Z - debug: Updated 0 skills for 40955969
+2021-03-05T12:33:31.331Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:31.331Z - debug: Getting existing skills for user: 40961422.
+2021-03-05T12:33:31.331Z - info: Querying MemberAggregatedSkills for userId=40961422
+2021-03-05T12:33:32.738Z - info: No MemberAggregatedSkills item found 40961422
+2021-03-05T12:33:32.738Z - debug: Updated 0 skills for 40961422
+2021-03-05T12:33:32.738Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:32.738Z - debug: Getting existing skills for user: 40963044.
+2021-03-05T12:33:32.738Z - info: Querying MemberAggregatedSkills for userId=40963044
+2021-03-05T12:33:33.748Z - info: No MemberAggregatedSkills item found 40963044
+2021-03-05T12:33:33.748Z - debug: Updated 0 skills for 40963044
+2021-03-05T12:33:33.748Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:33.749Z - debug: Getting existing skills for user: 40966659.
+2021-03-05T12:33:33.749Z - info: Querying MemberAggregatedSkills for userId=40966659
+2021-03-05T12:33:34.789Z - info: No MemberAggregatedSkills item found 40966659
+2021-03-05T12:33:34.798Z - debug: Updated 0 skills for 40966659
+2021-03-05T12:33:34.798Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:34.798Z - debug: Getting existing skills for user: 40976108.
+2021-03-05T12:33:34.799Z - info: Querying MemberAggregatedSkills for userId=40976108
+2021-03-05T12:33:35.853Z - info: No MemberAggregatedSkills item found 40976108
+2021-03-05T12:33:35.854Z - debug: Updated 0 skills for 40976108
+2021-03-05T12:33:35.854Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:35.854Z - debug: Getting existing skills for user: 40979055.
+2021-03-05T12:33:35.854Z - info: Querying MemberAggregatedSkills for userId=40979055
+2021-03-05T12:33:36.865Z - info: No MemberAggregatedSkills item found 40979055
+2021-03-05T12:33:36.865Z - debug: Updated 0 skills for 40979055
+2021-03-05T12:33:36.866Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:36.866Z - debug: Getting existing skills for user: 40979329.
+2021-03-05T12:33:36.866Z - info: Querying MemberAggregatedSkills for userId=40979329
+2021-03-05T12:33:37.921Z - info: MemberAggregatedSkills item found 40979329.
+2021-03-05T12:33:37.921Z - debug: Updated 0 skills for 40979329
+2021-03-05T12:33:37.922Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:37.922Z - debug: Getting existing skills for user: 40983243.
+2021-03-05T12:33:37.922Z - info: Querying MemberAggregatedSkills for userId=40983243
+2021-03-05T12:33:38.873Z - info: No MemberAggregatedSkills item found 40983243
+2021-03-05T12:33:38.874Z - debug: Updated 0 skills for 40983243
+2021-03-05T12:33:38.874Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:38.874Z - debug: Getting existing skills for user: 40989810.
+2021-03-05T12:33:38.874Z - info: Querying MemberAggregatedSkills for userId=40989810
+2021-03-05T12:33:39.880Z - info: MemberAggregatedSkills item found 40989810.
+2021-03-05T12:33:39.880Z - debug: Updated 0 skills for 40989810
+2021-03-05T12:33:39.880Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:39.880Z - debug: Getting existing skills for user: 40997100.
+2021-03-05T12:33:39.881Z - info: Querying MemberAggregatedSkills for userId=40997100
+2021-03-05T12:33:40.797Z - info: No MemberAggregatedSkills item found 40997100
+2021-03-05T12:33:40.798Z - debug: Updated 0 skills for 40997100
+2021-03-05T12:33:40.798Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:40.798Z - debug: Getting existing skills for user: 40999853.
+2021-03-05T12:33:40.798Z - info: Querying MemberAggregatedSkills for userId=40999853
+2021-03-05T12:33:41.875Z - info: MemberAggregatedSkills item found 40999853.
+2021-03-05T12:33:41.875Z - debug: Updated 0 skills for 40999853
+2021-03-05T12:33:41.875Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:41.875Z - debug: Getting existing skills for user: 41000101.
+2021-03-05T12:33:41.875Z - info: Querying MemberAggregatedSkills for userId=41000101
+2021-03-05T12:33:42.823Z - info: No MemberAggregatedSkills item found 41000101
+2021-03-05T12:33:42.823Z - debug: Updated 0 skills for 41000101
+2021-03-05T12:33:42.823Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:42.823Z - debug: Getting existing skills for user: 41004536.
+2021-03-05T12:33:42.823Z - info: Querying MemberAggregatedSkills for userId=41004536
+2021-03-05T12:33:43.803Z - info: No MemberAggregatedSkills item found 41004536
+2021-03-05T12:33:43.806Z - debug: Updated 0 skills for 41004536
+2021-03-05T12:33:43.806Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:43.806Z - debug: Getting existing skills for user: 41023353.
+2021-03-05T12:33:43.806Z - info: Querying MemberAggregatedSkills for userId=41023353
+2021-03-05T12:33:44.803Z - info: MemberAggregatedSkills item found 41023353.
+2021-03-05T12:33:44.803Z - debug: Updated 0 skills for 41023353
+2021-03-05T12:33:44.803Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:44.803Z - debug: Getting existing skills for user: 41024475.
+2021-03-05T12:33:44.803Z - info: Querying MemberAggregatedSkills for userId=41024475
+2021-03-05T12:33:45.844Z - info: MemberAggregatedSkills item found 41024475.
+2021-03-05T12:33:45.845Z - debug: Updated 0 skills for 41024475
+2021-03-05T12:33:45.845Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:45.845Z - debug: Getting existing skills for user: 41028896.
+2021-03-05T12:33:45.845Z - info: Querying MemberAggregatedSkills for userId=41028896
+2021-03-05T12:33:47.894Z - info: MemberAggregatedSkills item found 41028896.
+2021-03-05T12:33:47.894Z - debug: Updated 0 skills for 41028896
+2021-03-05T12:33:47.895Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:47.895Z - debug: Getting existing skills for user: 41044390.
+2021-03-05T12:33:47.895Z - info: Querying MemberAggregatedSkills for userId=41044390
+2021-03-05T12:33:48.920Z - info: MemberAggregatedSkills item found 41044390.
+2021-03-05T12:33:48.920Z - debug: Updated 0 skills for 41044390
+2021-03-05T12:33:48.920Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:48.920Z - debug: Getting existing skills for user: 41044925.
+2021-03-05T12:33:48.920Z - info: Querying MemberAggregatedSkills for userId=41044925
+2021-03-05T12:33:50.147Z - info: MemberAggregatedSkills item found 41044925.
+2021-03-05T12:33:50.147Z - debug: Updated 0 skills for 41044925
+2021-03-05T12:33:50.147Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:50.148Z - debug: Getting existing skills for user: 41045804.
+2021-03-05T12:33:50.148Z - info: Querying MemberAggregatedSkills for userId=41045804
+2021-03-05T12:33:51.171Z - info: MemberAggregatedSkills item found 41045804.
+2021-03-05T12:33:51.171Z - debug: Updated 0 skills for 41045804
+2021-03-05T12:33:51.171Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:51.172Z - debug: Getting existing skills for user: 41049763.
+2021-03-05T12:33:51.172Z - info: Querying MemberAggregatedSkills for userId=41049763
+2021-03-05T12:33:52.195Z - info: MemberAggregatedSkills item found 41049763.
+2021-03-05T12:33:52.195Z - debug: Updated 0 skills for 41049763
+2021-03-05T12:33:52.195Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:52.196Z - debug: Getting existing skills for user: 41052792.
+2021-03-05T12:33:52.196Z - info: Querying MemberAggregatedSkills for userId=41052792
+2021-03-05T12:33:53.233Z - info: No MemberAggregatedSkills item found 41052792
+2021-03-05T12:33:53.233Z - debug: Updated 0 skills for 41052792
+2021-03-05T12:33:53.233Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:53.233Z - debug: Getting existing skills for user: 41056556.
+2021-03-05T12:33:53.233Z - info: Querying MemberAggregatedSkills for userId=41056556
+2021-03-05T12:33:54.255Z - info: No MemberAggregatedSkills item found 41056556
+2021-03-05T12:33:54.255Z - debug: Updated 0 skills for 41056556
+2021-03-05T12:33:54.255Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:54.256Z - debug: Getting existing skills for user: 41062629.
+2021-03-05T12:33:54.256Z - info: Querying MemberAggregatedSkills for userId=41062629
+2021-03-05T12:33:55.273Z - info: MemberAggregatedSkills item found 41062629.
+2021-03-05T12:33:55.273Z - debug: Updated 0 skills for 41062629
+2021-03-05T12:33:55.274Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:55.274Z - debug: Getting existing skills for user: 41065697.
+2021-03-05T12:33:55.274Z - info: Querying MemberAggregatedSkills for userId=41065697
+2021-03-05T12:33:56.557Z - info: MemberAggregatedSkills item found 41065697.
+2021-03-05T12:33:56.557Z - debug: Updated 0 skills for 41065697
+2021-03-05T12:33:56.557Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:56.557Z - debug: Getting existing skills for user: 90000082.
+2021-03-05T12:33:56.557Z - info: Querying MemberAggregatedSkills for userId=90000082
+2021-03-05T12:33:58.134Z - info: No MemberAggregatedSkills item found 90000082
+2021-03-05T12:33:58.135Z - debug: Updated 0 skills for 90000082
+2021-03-05T12:33:58.135Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:58.135Z - debug: Getting existing skills for user: 90013490.
+2021-03-05T12:33:58.135Z - info: Querying MemberAggregatedSkills for userId=90013490
+2021-03-05T12:33:59.090Z - info: No MemberAggregatedSkills item found 90013490
+2021-03-05T12:33:59.091Z - debug: Updated 0 skills for 90013490
+2021-03-05T12:33:59.091Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:33:59.091Z - debug: Getting existing skills for user: 90013525.
+2021-03-05T12:33:59.091Z - info: Querying MemberAggregatedSkills for userId=90013525
+2021-03-05T12:34:00.185Z - info: No MemberAggregatedSkills item found 90013525
+2021-03-05T12:34:00.186Z - debug: Updated 0 skills for 90013525
+2021-03-05T12:34:00.186Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:00.186Z - debug: Getting existing skills for user: 90016229.
+2021-03-05T12:34:00.186Z - info: Querying MemberAggregatedSkills for userId=90016229
+2021-03-05T12:34:01.223Z - info: MemberAggregatedSkills item found 90016229.
+2021-03-05T12:34:01.223Z - debug: Updated 0 skills for 90016229
+2021-03-05T12:34:01.223Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:01.223Z - debug: Getting existing skills for user: 90018264.
+2021-03-05T12:34:01.223Z - info: Querying MemberAggregatedSkills for userId=90018264
+2021-03-05T12:34:02.258Z - info: No MemberAggregatedSkills item found 90018264
+2021-03-05T12:34:02.258Z - debug: Updated 0 skills for 90018264
+2021-03-05T12:34:02.258Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:02.258Z - debug: Getting existing skills for user: 90018272.
+2021-03-05T12:34:02.258Z - info: Querying MemberAggregatedSkills for userId=90018272
+2021-03-05T12:34:03.893Z - info: MemberAggregatedSkills item found 90018272.
+2021-03-05T12:34:03.893Z - debug: Updated 0 skills for 90018272
+2021-03-05T12:34:03.893Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:03.893Z - debug: Getting existing skills for user: 90021957.
+2021-03-05T12:34:03.893Z - info: Querying MemberAggregatedSkills for userId=90021957
+2021-03-05T12:34:05.029Z - info: MemberAggregatedSkills item found 90021957.
+2021-03-05T12:34:05.030Z - debug: Updated 0 skills for 90021957
+2021-03-05T12:34:05.030Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:05.030Z - debug: Getting existing skills for user: 90023762.
+2021-03-05T12:34:05.030Z - info: Querying MemberAggregatedSkills for userId=90023762
+2021-03-05T12:34:06.326Z - info: No MemberAggregatedSkills item found 90023762
+2021-03-05T12:34:06.326Z - debug: Updated 0 skills for 90023762
+2021-03-05T12:34:06.326Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:06.326Z - debug: Getting existing skills for user: 90032686.
+2021-03-05T12:34:06.326Z - info: Querying MemberAggregatedSkills for userId=90032686
+2021-03-05T12:34:07.389Z - info: MemberAggregatedSkills item found 90032686.
+2021-03-05T12:34:07.389Z - debug: Updated 0 skills for 90032686
+2021-03-05T12:34:07.389Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:07.389Z - debug: Getting existing skills for user: 90046920.
+2021-03-05T12:34:07.389Z - info: Querying MemberAggregatedSkills for userId=90046920
+2021-03-05T12:34:08.499Z - info: MemberAggregatedSkills item found 90046920.
+2021-03-05T12:34:08.507Z - debug: Updated 0 skills for 90046920
+2021-03-05T12:34:08.508Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:08.508Z - debug: Getting existing skills for user: 90059161.
+2021-03-05T12:34:08.508Z - info: Querying MemberAggregatedSkills for userId=90059161
+2021-03-05T12:34:09.708Z - info: No MemberAggregatedSkills item found 90059161
+2021-03-05T12:34:09.708Z - debug: Updated 0 skills for 90059161
+2021-03-05T12:34:09.708Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:09.708Z - debug: Getting existing skills for user: 90060084.
+2021-03-05T12:34:09.708Z - info: Querying MemberAggregatedSkills for userId=90060084
+2021-03-05T12:34:10.701Z - info: MemberAggregatedSkills item found 90060084.
+2021-03-05T12:34:10.701Z - debug: Updated 0 skills for 90060084
+2021-03-05T12:34:10.701Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:10.701Z - debug: Getting existing skills for user: 90061144.
+2021-03-05T12:34:10.701Z - info: Querying MemberAggregatedSkills for userId=90061144
+2021-03-05T12:34:11.700Z - info: MemberAggregatedSkills item found 90061144.
+2021-03-05T12:34:11.700Z - debug: Updated 0 skills for 90061144
+2021-03-05T12:34:11.700Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:11.700Z - debug: Getting existing skills for user: 90062549.
+2021-03-05T12:34:11.700Z - info: Querying MemberAggregatedSkills for userId=90062549
+2021-03-05T12:34:12.698Z - info: MemberAggregatedSkills item found 90062549.
+2021-03-05T12:34:12.698Z - debug: Updated 0 skills for 90062549
+2021-03-05T12:34:12.698Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:12.698Z - debug: Getting existing skills for user: 90068262.
+2021-03-05T12:34:12.698Z - info: Querying MemberAggregatedSkills for userId=90068262
+2021-03-05T12:34:13.700Z - info: No MemberAggregatedSkills item found 90068262
+2021-03-05T12:34:13.700Z - debug: Updated 0 skills for 90068262
+2021-03-05T12:34:13.700Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:13.700Z - debug: Getting existing skills for user: 90071334.
+2021-03-05T12:34:13.700Z - info: Querying MemberAggregatedSkills for userId=90071334
+2021-03-05T12:34:15.042Z - info: No MemberAggregatedSkills item found 90071334
+2021-03-05T12:34:15.042Z - debug: Updated 0 skills for 90071334
+2021-03-05T12:34:15.043Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:15.043Z - debug: Getting existing skills for user: 90071382.
+2021-03-05T12:34:15.043Z - info: Querying MemberAggregatedSkills for userId=90071382
+2021-03-05T12:34:16.081Z - info: No MemberAggregatedSkills item found 90071382
+2021-03-05T12:34:16.081Z - debug: Updated 0 skills for 90071382
+2021-03-05T12:34:16.081Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:16.081Z - debug: Getting existing skills for user: 90071386.
+2021-03-05T12:34:16.082Z - info: Querying MemberAggregatedSkills for userId=90071386
+2021-03-05T12:34:17.092Z - info: No MemberAggregatedSkills item found 90071386
+2021-03-05T12:34:17.092Z - debug: Updated 0 skills for 90071386
+2021-03-05T12:34:17.092Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:17.092Z - debug: Getting existing skills for user: 90071394.
+2021-03-05T12:34:17.092Z - info: Querying MemberAggregatedSkills for userId=90071394
+2021-03-05T12:34:18.232Z - info: No MemberAggregatedSkills item found 90071394
+2021-03-05T12:34:18.232Z - debug: Updated 0 skills for 90071394
+2021-03-05T12:34:18.232Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:18.232Z - debug: Getting existing skills for user: 90071489.
+2021-03-05T12:34:18.232Z - info: Querying MemberAggregatedSkills for userId=90071489
+2021-03-05T12:34:19.843Z - info: No MemberAggregatedSkills item found 90071489
+2021-03-05T12:34:19.843Z - debug: Updated 0 skills for 90071489
+2021-03-05T12:34:19.844Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:19.844Z - debug: Getting existing skills for user: 90071958.
+2021-03-05T12:34:19.844Z - info: Querying MemberAggregatedSkills for userId=90071958
+2021-03-05T12:34:20.973Z - info: No MemberAggregatedSkills item found 90071958
+2021-03-05T12:34:20.974Z - debug: Updated 0 skills for 90071958
+2021-03-05T12:34:20.974Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:20.974Z - debug: Getting existing skills for user: 90072183.
+2021-03-05T12:34:20.974Z - info: Querying MemberAggregatedSkills for userId=90072183
+2021-03-05T12:34:22.096Z - info: No MemberAggregatedSkills item found 90072183
+2021-03-05T12:34:22.096Z - debug: Updated 0 skills for 90072183
+2021-03-05T12:34:22.096Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:22.097Z - debug: Getting existing skills for user: 90072325.
+2021-03-05T12:34:22.097Z - info: Querying MemberAggregatedSkills for userId=90072325
+2021-03-05T12:34:23.224Z - info: No MemberAggregatedSkills item found 90072325
+2021-03-05T12:34:23.224Z - debug: Updated 0 skills for 90072325
+2021-03-05T12:34:23.224Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:23.224Z - debug: Getting existing skills for user: 90072342.
+2021-03-05T12:34:23.224Z - info: Querying MemberAggregatedSkills for userId=90072342
+2021-03-05T12:34:24.191Z - info: No MemberAggregatedSkills item found 90072342
+2021-03-05T12:34:24.191Z - debug: Updated 0 skills for 90072342
+2021-03-05T12:34:24.192Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:24.192Z - debug: Getting existing skills for user: 90072732.
+2021-03-05T12:34:24.192Z - info: Querying MemberAggregatedSkills for userId=90072732
+2021-03-05T12:34:25.106Z - info: No MemberAggregatedSkills item found 90072732
+2021-03-05T12:34:25.106Z - debug: Updated 0 skills for 90072732
+2021-03-05T12:34:25.106Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:25.106Z - debug: Getting existing skills for user: 90072790.
+2021-03-05T12:34:25.106Z - info: Querying MemberAggregatedSkills for userId=90072790
+2021-03-05T12:34:26.088Z - info: No MemberAggregatedSkills item found 90072790
+2021-03-05T12:34:26.088Z - debug: Updated 0 skills for 90072790
+2021-03-05T12:34:26.088Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:26.088Z - debug: Getting existing skills for user: 90073075.
+2021-03-05T12:34:26.088Z - info: Querying MemberAggregatedSkills for userId=90073075
+2021-03-05T12:34:27.127Z - info: No MemberAggregatedSkills item found 90073075
+2021-03-05T12:34:27.127Z - debug: Updated 0 skills for 90073075
+2021-03-05T12:34:27.127Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:27.127Z - debug: Getting existing skills for user: 90073504.
+2021-03-05T12:34:27.127Z - info: Querying MemberAggregatedSkills for userId=90073504
+2021-03-05T12:34:28.051Z - info: No MemberAggregatedSkills item found 90073504
+2021-03-05T12:34:28.060Z - debug: Updated 0 skills for 90073504
+2021-03-05T12:34:28.060Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:28.060Z - debug: Getting existing skills for user: 90074100.
+2021-03-05T12:34:28.060Z - info: Querying MemberAggregatedSkills for userId=90074100
+2021-03-05T12:34:29.131Z - info: No MemberAggregatedSkills item found 90074100
+2021-03-05T12:34:29.131Z - debug: Updated 0 skills for 90074100
+2021-03-05T12:34:29.131Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:29.131Z - debug: Getting existing skills for user: 90074150.
+2021-03-05T12:34:29.131Z - info: Querying MemberAggregatedSkills for userId=90074150
+2021-03-05T12:34:30.058Z - info: No MemberAggregatedSkills item found 90074150
+2021-03-05T12:34:30.058Z - debug: Updated 0 skills for 90074150
+2021-03-05T12:34:30.058Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:30.058Z - debug: Getting existing skills for user: 90074506.
+2021-03-05T12:34:30.058Z - info: Querying MemberAggregatedSkills for userId=90074506
+2021-03-05T12:34:30.990Z - info: No MemberAggregatedSkills item found 90074506
+2021-03-05T12:34:30.990Z - debug: Updated 0 skills for 90074506
+2021-03-05T12:34:30.990Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:30.990Z - debug: Getting existing skills for user: 90074519.
+2021-03-05T12:34:30.990Z - info: Querying MemberAggregatedSkills for userId=90074519
+2021-03-05T12:34:31.926Z - info: No MemberAggregatedSkills item found 90074519
+2021-03-05T12:34:31.927Z - debug: Updated 0 skills for 90074519
+2021-03-05T12:34:31.934Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:31.934Z - debug: Getting existing skills for user: 90074521.
+2021-03-05T12:34:31.934Z - info: Querying MemberAggregatedSkills for userId=90074521
+2021-03-05T12:34:33.116Z - info: No MemberAggregatedSkills item found 90074521
+2021-03-05T12:34:33.116Z - debug: Updated 0 skills for 90074521
+2021-03-05T12:34:33.116Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:33.116Z - debug: Getting existing skills for user: 90074688.
+2021-03-05T12:34:33.116Z - info: Querying MemberAggregatedSkills for userId=90074688
+2021-03-05T12:34:34.055Z - info: No MemberAggregatedSkills item found 90074688
+2021-03-05T12:34:34.055Z - debug: Updated 0 skills for 90074688
+2021-03-05T12:34:34.055Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:34.055Z - debug: Getting existing skills for user: 90074689.
+2021-03-05T12:34:34.055Z - info: Querying MemberAggregatedSkills for userId=90074689
+2021-03-05T12:34:36.022Z - info: No MemberAggregatedSkills item found 90074689
+2021-03-05T12:34:36.022Z - debug: Updated 0 skills for 90074689
+2021-03-05T12:34:36.022Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:36.022Z - debug: Getting existing skills for user: 90074802.
+2021-03-05T12:34:36.022Z - info: Querying MemberAggregatedSkills for userId=90074802
+2021-03-05T12:34:36.986Z - info: No MemberAggregatedSkills item found 90074802
+2021-03-05T12:34:36.986Z - debug: Updated 0 skills for 90074802
+2021-03-05T12:34:36.987Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:36.987Z - debug: Getting existing skills for user: 90074929.
+2021-03-05T12:34:36.987Z - info: Querying MemberAggregatedSkills for userId=90074929
+2021-03-05T12:34:37.911Z - info: No MemberAggregatedSkills item found 90074929
+2021-03-05T12:34:37.922Z - debug: Updated 0 skills for 90074929
+2021-03-05T12:34:37.923Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:37.923Z - debug: Getting existing skills for user: 90075141.
+2021-03-05T12:34:37.923Z - info: Querying MemberAggregatedSkills for userId=90075141
+2021-03-05T12:34:39.011Z - info: No MemberAggregatedSkills item found 90075141
+2021-03-05T12:34:39.011Z - debug: Updated 0 skills for 90075141
+2021-03-05T12:34:39.011Z - debug: 
+------------------------------------------------------------------"
+2021-03-05T12:34:39.012Z - info: Writing rest of the 169 items of size 11787
