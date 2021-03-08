@@ -2,7 +2,7 @@ var { DateTime } = require("luxon");
 const userBatch = require("../services/userBatch");
 const tagsMap = require("../services/tagService")
 const logger = require("../common/logger");
-const skillUpdater = require("../patch/skilUpdater")
+const skillUpdater = require("../loaders/skilUpdater")
 
 /**
  *

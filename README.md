@@ -21,8 +21,8 @@ docker-compose -f local/db-docker-compose.yaml up -d
 
 Beside Informix and DynamoDB local, the above command will also create a container to initialize the DynamoDB:
 
-1. Create three tables: `MemberEnteredSkills`, `Externals.Stackoverflow`, and `MemberAggregatedSkills`.
-2. Insert sample data into the `MemberEnteredSkills` and `Externals.Stackoverflow` tables.
+1. Create three tables: `MemberAggregatedSkills`.
+2. Insert sample data into the `MemberAggregatedSkills` 
 
 Before moving on to the next step, you should run `docker-compose -f local/db-docker-compose.yaml ps` to verify the exit
 code for that container is 0, which means DynamoDB is initialized successfully.
