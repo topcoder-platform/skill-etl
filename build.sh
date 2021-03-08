@@ -21,7 +21,7 @@ docker build -t $TAG \
   --build-arg TIMEOUT=$TIMEOUT \
   --build-arg DYNAMODB_ENDPOINT=$DYNAMODB_ENDPOINT \
   --build-arg MAX_DAYS_FOR_CHALLENGE_SKILLS=$MAX_DAYS_FOR_CHALLENGE_SKILLS \
-  --build-arg API_TAGS_API_V3=$API_TAGS_API_V3 .
+  --build-arg TAGS_API_V3=$API_TAGS_API_V3 .
   
 # Copies "node_modules" from the created image, if necessary for caching.
 docker create --name app $TAG
