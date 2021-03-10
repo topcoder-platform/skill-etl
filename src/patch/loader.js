@@ -12,8 +12,7 @@ const skillUpdater = require("../loaders/skilUpdater")
  */
 
 async function runLoader(patchStartDate, patchEndDate, JI) {
-    logger.debug(` ** Skills Loader Started **`)
-    logger.debug(`*******************************************`);
+    logger.debug(` ************************** Skills Loader Started ************************`)
     logger.debug( `Updating new user batch starting from ${patchStartDate} to ${patchEndDate}, each batch consists of ${JI} days` );
     const tags = await tagsMap.getTagsfromAPI();
     logger.debug(`Loaded ${Object.keys(tags).length} tags.`);
@@ -33,6 +32,7 @@ async function runLoader(patchStartDate, patchEndDate, JI) {
         await skillUpdater.updateSkills(batchStartDate, batchEndDate, tags);
         batchStartDate = batchEndDate.plus({ days: 1 });
     }
+     logger.debug(` ************************** Skills Loader Finished ************************`)
 }
 
 module.exports = {

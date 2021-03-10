@@ -5,9 +5,8 @@
 const config = require('config')
 const dynamo = require('dynamodb')
 const joi = require('joi')
-//dynamo.AWS.config.update(config.get('DYNAMODB'))
-dynamo.AWS.config.update({region: 'us-east-1'
-});
+dynamo.AWS.config.update(config.get('DYNAMODB'))
+//dynamo.AWS.config.update({region: 'us-east-1'});
 
 
 /**
@@ -48,13 +47,13 @@ const MemberEnteredSkills = dynamo.define('MemberEnteredSkills', {
 /**
  * The member aggregated input model.
  */
-const MemberAggregatedSkills = dynamo.define("MemberAggregatedSkillsNewETL", {
+const MemberAggregatedSkills = dynamo.define("MemberAggregatedSkills", {
   hashKey: "userId",
   schema: {
     userId: joi.number().integer().required(),
     skills: joi.string(),
   },
-  tableName: "MemberAggregatedSkillsNewETL",
+  tableName: "MemberAggregatedSkills",
 });
 
 module.exports = {

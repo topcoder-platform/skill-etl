@@ -67,8 +67,8 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
     //const usersWithNewSkills = { 40623428: [ "docker", "aws", "node.js", "axure", "user experience (ux)", "express", ], 22778049: ["axure", "node.js", "user experience (ux)"], }; //, "88774597": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
     //const usersWithNewSkills = { 40159097: ["api testing", "appium", "chatter"], 88774597: ["facebook", "chatter", "appium"] }; //, "88774597": [ ".net", ], "8547899": [ "servlet", "applet", "node.js", ], "10336829": [ ".net", ], "16096823": [ ".net", ], "40152905": [ ".net", ], "40153455": [ ".net", ], }
     const users = await userBatch.getUsersBatch(batchStartDate.toISODate(), batchEndDate.toISODate());
-    logger.debug(`*******************************************`);
-    logger.debug(`Updating batch starting from ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}`);
+    logger.debug(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
+    logger.debug(`## Updating batch starting from ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}`);
     logger.debug(`Found ${Object.keys(users).length} new users with updated skills.\n `)
     logger.debug(prettier.format(JSON.stringify(users), { semi: false, parser: "json" }) )  
   
@@ -88,15 +88,16 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
         }
       
         if (strLength(JSON.stringify(updateSkills)) > MAX_BYTES) {
-            logger.info(`Writing records because there are more than ${MAX_BYTES} bytes in the array`);
-            logger.info( `Writing ${userSkills.length} items to MemberAggregatedSkills table.` );
-            logger.debug(JSON.stringify(userSkills));
-            await writeAggregatedSkills(userSkills);
-            userSkills = [];
+          logger.info(`Records exceeding ${MAX_BYTES} bytes in the array, so writing to DB`);         
+          logger.info( `Writing ${ userSkills.length } items to MemberAggregatedSkills table for the batch ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}.` );
+          logger.debug(JSON.stringify(userSkills));
+          await writeAggregatedSkills(userSkills);
+          userSkills = [];
         }
     }
     logger.info( `Writing rest of the ${userSkills.length} items of size ${strLength(JSON.stringify(userSkills))}` );
-    logger.debug( prettier.format(JSON.stringify(userSkills), { semi: false, parser: "json" }) );
+    logger.info( `Writing ${ userSkills.length } items to MemberAggregatedSkills table for the batch ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}.` );
+    logger.debug(prettier.format(JSON.stringify(userSkills), { semi: false, parser: "json" }));
     await writeAggregatedSkills(userSkills);
 }
 
