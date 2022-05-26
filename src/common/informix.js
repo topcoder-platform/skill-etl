@@ -39,7 +39,6 @@ async function getConnection () {
  */
 async function executeQuery (c, sql) {
   return new Promise((resolve, reject) => {
-    console.log(sql)
     c.executeQuery(sql,(err, data) => {
         //logger.debug("Query result");
         //logger.debug(JSON.stringify(data));

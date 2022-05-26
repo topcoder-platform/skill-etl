@@ -24,10 +24,9 @@ function groupSkillsByUser(users) {
 /**
  * Query user challenge input.
  * @param maxDaysBefore - only fetch the input where project_result.review_complete_timestamp is within the given days in the past.
- * @param tagsMap - tags map to map skill name to skill id.
  * @returns {Promise<[*]>}
  */
-async function getUserSkills(maxDaysBefore, tagsMap) {
+async function getUserSkills(maxDaysBefore) {
   
   const USER_CHALLENGE_SKILL_QUERY = `SELECT  pr.user_id as userId,
         "ss" || pr.project_id as challengeId,
