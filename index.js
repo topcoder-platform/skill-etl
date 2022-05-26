@@ -1,9 +1,9 @@
 const logger = require('./src/common/logger')
-const tagsMap = require('./src/common/tagsMap')
+const tagsMap = require('./src/services/tagService')
 const {updateChallengeSkills} = require("./src/loaders/memberAggregatedSkills");
 
 async function main () {
-  const tags = await tagsMap.loadTagsMap();  
+  const tags = await tagsMap.getTagsfromAPI();  
   logger.info(`Loaded ${Object.keys(tags).length} tags.`);
   updateChallengeSkills(tags);
 }
