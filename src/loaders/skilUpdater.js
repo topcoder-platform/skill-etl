@@ -133,6 +133,7 @@ async function getAutomatedTestingChallengeVerifiedSkills(
 }
 
 async function updateSkills(batchStartDate, batchEndDate, tags) {
+  let userSkills = [];
   const MAX_BYTES = 1048576; // 1MB
 
   // let users = {
@@ -151,10 +152,12 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   logger.info(
     `Getting users with submissions that passed review, and tags on those challenges.`
   );
-  let users = await userBatch.getUsersBatch(
-    batchStartDate.toISODate(),
-    batchEndDate.toISODate()
-  );
+  // let users = await userBatch.getUsersBatch(
+  //   batchStartDate.toISODate(),
+  //   batchEndDate.toISODate()
+  // );
+
+  let users = {};
 
   logger.info(`userSkills: ${JSON.stringify(users)}`);
 

@@ -34,5 +34,14 @@ module.exports = {
   MAX_DAYS_FOR_CHALLENGE_SKILLS:
     parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1,
   AUTOMATED_GRADING_PASS_THRESHOLD:
-    process.env.AUTOMATED_GRADING_PASS_THRESHOLD || 80,
+    process.env.AUTOMATED_GRADING_PASS_THRESHOLD || -1,
+  AUTH0_URL:
+    process.env.AUTH0_URL || "https://topcoder-dev.auth0.com/oauth/token",
+  AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE || "https://m2m.topcoder-dev.com/",
+  AUTH0_PROXY_SERVER_URL:
+    process.env.AUTH0_PROXY_SERVER_URL ||
+    "https://auth0proxy.topcoder-dev.com/token",
+  TOKEN_CACHE_TIME: 86400000,
+  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID || "",
+  AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET || "",
 };
