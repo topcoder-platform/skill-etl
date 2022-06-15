@@ -131,3 +131,4 @@ The hadoop app loads and transforms three sources of data into one aggregated ta
 The requirement to only extract skills from no more than two days ago may help with this situation. The problem is, the other two sources do not have a timestamp limit.
 
 In this implementation, the etl tool first load the skills from Informix, then query the other DynamoDB tables to update the skills. Possible drawback is the app essentially will miss skills that exist in the DynamoDB tables but not in Informix.
+
