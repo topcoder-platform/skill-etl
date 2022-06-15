@@ -34,7 +34,7 @@ module.exports = {
   MAX_DAYS_FOR_CHALLENGE_SKILLS:
     parseInt(process.env.MAX_DAYS_FOR_CHALLENGE_SKILLS, 10) || 1,
   AUTOMATED_GRADING_PASS_THRESHOLD:
-    process.env.AUTOMATED_GRADING_PASS_THRESHOLD || -1,
+    process.env.AUTOMATED_GRADING_PASS_THRESHOLD || 80,
   AUTH0_URL:
     process.env.AUTH0_URL || "https://topcoder-dev.auth0.com/oauth/token",
   AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE || "https://m2m.topcoder-dev.com/",
