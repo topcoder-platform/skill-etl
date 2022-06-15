@@ -188,17 +188,18 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   );
 
   for (const id in users) {
-    let updatedSkills = {},
-      userId = parseInt(id);
+    let updatedSkills = {}, userId = parseInt(id);
     logger.debug(`Getting existing skills for user: ${userId}.`);
 
     const existingSkills = await getMemberAggregatedSkills(userId);
-
+    logger.debug(`Existing Skills of user ${userId} are ${JSON.stringify(existingSkills)}`)
     logger.debug(
-      `Updated ${Object.keys(updatedSkills).length} skills for ${userId}`
+      `And the user has ${Object.keys(updatedSkills).length} updated skills.`
     );
 
     updatedSkills = mergeChallengeSkills(existingSkills, users[userId], tags);
+
+    logger.debug(`Final list of skills of user ${userId} is ${JSON.stringify(updatedSkills)}.`)
 
     if (!_.isEmpty(updatedSkills)) {
       userSkills.push({ userId: userId, skills: updatedSkills });
