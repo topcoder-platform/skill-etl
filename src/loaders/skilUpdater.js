@@ -29,7 +29,7 @@ function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
   logger.info(`Tags Map ${JSON.stringify(tagsMap)}`)
   let finalSkills = Object.assign({}, existingSkills);
   for (const tag of newUserSkills) {
-    const tagId = tagsMap[tag];
+    const tagId = tagsMap[tag.trim().toLowerCase()];
     if (tagId) {
       let e = existingSkills ? existingSkills[tagId] : null;
       if (e) {
