@@ -25,6 +25,8 @@ async function writeAggregatedSkills(skills) {
 }
 
 function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
+  logger.info(`Merging existing skills ${JSON.stringify(existingSkills)} with new skills ${newUserSkills}`);
+  logger.info(`Tags Map ${JSON.stringify(tagsMap)}`)
   let finalSkills = Object.assign({}, existingSkills);
   for (const tag of newUserSkills) {
     const tagId = tagsMap[tag];
@@ -152,12 +154,12 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   logger.info(
     `Getting users with submissions that passed review, and tags on those challenges.`
   );
-  let users = await userBatch.getUsersBatch(
-    batchStartDate.toISODate(),
-    batchEndDate.toISODate()
-  );
+  // let users = await userBatch.getUsersBatch(
+  //   batchStartDate.toISODate(),
+  //   batchEndDate.toISODate()
+  // );
 
-  // let users = {};
+  let users = {};
 
   logger.info(`userSkills: ${JSON.stringify(users)}`);
 
