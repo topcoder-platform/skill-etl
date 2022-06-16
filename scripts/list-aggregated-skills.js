@@ -3,7 +3,7 @@
  */
 
 const logger = require('../src/common/logger')
-const { MemberAggregatedSkills } = require('../src/common/dynamodb')
+const { MemberAggregatedSkills } = require('../src/models/dynamodb')
 
 MemberAggregatedSkills.scan().loadAll().exec((err, data) => {
   if (err) {

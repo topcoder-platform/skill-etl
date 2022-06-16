@@ -3,7 +3,7 @@
  */
 
 const logger = require('../src/common/logger')
-const { dynamo, MemberEnteredSkills, ExternalsStackoverflow } = require('../src/common/dynamodb')
+const { dynamo, MemberEnteredSkills, ExternalsStackoverflow } = require('../src/models/dynamodb')
 const data = require('./dynamodb-data.json')
 
 async function main () {

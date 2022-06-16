@@ -38,8 +38,6 @@ async function getConnection () {
  * @returns {Promise<[*]>}
  */
 async function executeQuery (c, sql) {
-  logger.debug('******** SQL *********')
-  logger.debug(sql)  
   return new Promise((resolve, reject) => {
     c.executeQuery(sql,(err, data) => {
         //logger.debug("Query result");

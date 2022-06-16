@@ -3,9 +3,9 @@
  */
 
 const _ = require("underscore");
-
 const logger = require("../common/logger");
 const { getConnection, executeQuery } = require("../common/informix");
+const { SOURCES } = require("../common/constants");
 
 function groupSkillsByUser(users) {
   let grouped = {};
@@ -24,24 +24,24 @@ function groupSkillsByUser(users) {
 /**
  * Query user challenge input.
  * @param maxDaysBefore - only fetch the input where project_result.review_complete_timestamp is within the given days in the past.
+ * @param tagsMap - tags map to map skill name to skill id.
  * @returns {Promise<[*]>}
  */
-async function getUserSkills(maxDaysBefore) {
+async function getUsersBatch(startDate, endDate) {
   const USER_CHALLENGE_SKILL_QUERY = `SELECT  pr.user_id as userId,
-        "ss" || pr.project_id as challengeId,
+        pr.project_id as challengeId,
         pt.name as name, pr.review_complete_timestamp
         FROM tcs_dw:project_result pr
         INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
         INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
-        WHERE pr.passed_review_ind = 1 AND pr.review_complete_timestamp > (CURRENT -  ${maxDaysBefore} UNITS DAY)`;
+        WHERE  pr.passed_review_ind = 1 AND pr.review_complete_timestamp BETWEEN DATE("${startDate}") and (DATE("${endDate}") + 1)`;
 
   const conn = await getConnection();
   try {
     logger.info(
-      `Query all challenge user skills, for last ${maxDaysBefore} days.`
+      `Query all challenge user skills, between ${startDate} and ${endDate} days.`
     );
     const users = await executeQuery(conn, USER_CHALLENGE_SKILL_QUERY);
-    logger.info(`Found ${users.length} users.`);
     return groupSkillsByUser(users);
   } finally {
     conn.disconnect();
@@ -49,5 +49,5 @@ async function getUserSkills(maxDaysBefore) {
 }
 
 module.exports = {
-  getUserSkills,
+  getUsersBatch,
 };

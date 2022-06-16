@@ -21,8 +21,8 @@ docker-compose -f local/db-docker-compose.yaml up -d
 
 Beside Informix and DynamoDB local, the above command will also create a container to initialize the DynamoDB:
 
-1. Create three tables: `MemberEnteredSkills`, `Externals.Stackoverflow`, and `MemberAggregatedSkills`.
-2. Insert sample data into the `MemberEnteredSkills` and `Externals.Stackoverflow` tables.
+1. Create three tables: `MemberAggregatedSkills`.
+2. Insert sample data into the `MemberAggregatedSkills` 
 
 Before moving on to the next step, you should run `docker-compose -f local/db-docker-compose.yaml ps` to verify the exit
 code for that container is 0, which means DynamoDB is initialized successfully.
@@ -131,3 +131,5 @@ The hadoop app loads and transforms three sources of data into one aggregated ta
 The requirement to only extract skills from no more than two days ago may help with this situation. The problem is, the other two sources do not have a timestamp limit.
 
 In this implementation, the etl tool first load the skills from Informix, then query the other DynamoDB tables to update the skills. Possible drawback is the app essentially will miss skills that exist in the DynamoDB tables but not in Informix.
+
+
