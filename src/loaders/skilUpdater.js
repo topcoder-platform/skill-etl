@@ -25,8 +25,12 @@ async function writeAggregatedSkills(skills) {
 }
 
 function mergeChallengeSkills(existingSkills, newUserSkills, tagsMap) {
-  logger.info(`Merging existing skills ${JSON.stringify(existingSkills)} with new skills ${newUserSkills}`);
-  logger.info(`Tags Map ${JSON.stringify(tagsMap)}`)
+  logger.info(
+    `Merging existing skills ${JSON.stringify(
+      existingSkills
+    )} with new skills ${newUserSkills}`
+  );
+  logger.info(`Tags Map ${JSON.stringify(tagsMap)}`);
   let finalSkills = Object.assign({}, existingSkills);
   for (const tag of newUserSkills) {
     const tagId = tagsMap[tag.trim().toLowerCase()];
@@ -90,6 +94,11 @@ async function getAutomatedTestingChallengeVerifiedSkills(
       lastUpdateThreshold
     );
 
+    logger.info(
+      `Found ${
+        submissionIds != null ? submissionIds.length : 0
+      } submissions that passed review`
+    );
     for (const submissionId of submissionIds) {
       const data = await submissionService.getChallengeIdForSubmission(
         submissionId
@@ -190,18 +199,25 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   );
 
   for (const id in users) {
-    let updatedSkills = {}, userId = parseInt(id);
+    let updatedSkills = {},
+      userId = parseInt(id);
     logger.debug(`Getting existing skills for user: ${userId}.`);
 
     const existingSkills = await getMemberAggregatedSkills(userId);
-    logger.debug(`Existing Skills of user ${userId} are ${JSON.stringify(existingSkills)}`)
+    logger.debug(
+      `Existing Skills of user ${userId} are ${JSON.stringify(existingSkills)}`
+    );
     logger.debug(
       `And the user has ${Object.keys(updatedSkills).length} updated skills.`
     );
 
     updatedSkills = mergeChallengeSkills(existingSkills, users[userId], tags);
 
-    logger.debug(`Final list of skills of user ${userId} is ${JSON.stringify(updatedSkills)}.`)
+    logger.debug(
+      `Final list of skills of user ${userId} is ${JSON.stringify(
+        updatedSkills
+      )}.`
+    );
 
     if (!_.isEmpty(updatedSkills)) {
       userSkills.push({ userId: userId, skills: updatedSkills });
