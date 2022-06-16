@@ -58,7 +58,7 @@ jobs:
     <<: *defaults
     environment:
       DEPLOY_ENV: "PROD"
-      LOGICAL_ENV: "dev"
+      LOGICAL_ENV: "prod"
       APPNAME: "skills-etl"
     steps: *builddeploy_steps
 
@@ -72,8 +72,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
-                - feat/reviews
+                - master
       # Production builds are exectuted 
       # when PR is merged to the master
       # Don't change anything in this configuration
