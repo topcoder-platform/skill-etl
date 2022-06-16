@@ -72,7 +72,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - free
       # Production builds are exectuted 
       # when PR is merged to the master
       # Don't change anything in this configuration
@@ -84,7 +84,7 @@ workflows:
           filters:
             branches:
               only:
-                - master 
+                - develop
       # Simple testing is executed for any branch other than "develop" and
       # "master".
      
