@@ -21,6 +21,7 @@ async function getReviewTypeId(name) {
   try {
     const response = await axios(requestConfig);
     const reviewTypes = response.data;
+    logger.info(`ReviewTypes: ${JSON.stringify(reviewTypes)}`)
     return reviewTypes != null && reviewTypes.length > 0
       ? reviewTypes[0].id
       : null;
