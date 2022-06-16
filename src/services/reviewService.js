@@ -21,7 +21,7 @@ async function getReviewTypeId(name) {
   try {
     const response = await axios(requestConfig);
     const reviewTypes = response.data;
-    logger.info(`ReviewTypes: ${JSON.stringify(reviewTypes)}`)
+    logger.info(`ReviewTypes: ${JSON.stringify(reviewTypes)}`);
     return reviewTypes != null && reviewTypes.length > 0
       ? reviewTypes[0].id
       : null;
@@ -54,9 +54,15 @@ async function getReviews(status, typeId, updateThreshold, pageNo = 1) {
     const reviews = response.data;
     for (let review of reviews) {
       if (new Date(review.updated).getTime() < updateThreshold) {
+        logger.info(
+          `Skipping remaining challenges as submission before threshold: ${updateThreshold}`
+        );
         return passingSubmissions;
       }
       if (review.score >= PASS_THRESHOLD) {
+        logger.info(
+          `Skipping submission ${review.submissionId} as its score ${review.score} is below threshold.`
+        );
         passingSubmissions.push(review.submissionId);
       }
     }
