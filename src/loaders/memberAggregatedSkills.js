@@ -2,7 +2,7 @@
  * This file defines methods for querying member entered input from DynamoDB.
  */
 var { DateTime } = require("luxon");
-const logger = require('../common/logger')
+const logger = require("../common/logger");
 const config = require("config");
 const skillUpdater = require("../loaders/skilUpdater");
 

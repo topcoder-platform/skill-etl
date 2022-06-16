@@ -2,10 +2,10 @@
  * This file defines the methods used to extract user challenge input from Informix database.
  */
 
-const _ = require('underscore')
-const logger = require('../common/logger')
-const { getConnection, executeQuery } = require('../common/informix')
-const { SOURCES } = require('../common/constants')
+const _ = require("underscore");
+const logger = require("../common/logger");
+const { getConnection, executeQuery } = require("../common/informix");
+const { SOURCES } = require("../common/constants");
 
 function groupSkillsByUser(users) {
   let grouped = {};
@@ -35,17 +35,19 @@ async function getUsersBatch(startDate, endDate) {
         INNER JOIN tcs_dw:project p ON p.project_id = pr.project_id
         INNER JOIN tcs_dw:project_technology pt ON pt.project_id = p.project_id
         WHERE  pr.passed_review_ind = 1 AND pr.review_complete_timestamp BETWEEN DATE("${startDate}") and (DATE("${endDate}") + 1)`;
-  
-  const conn = await getConnection()
-  try {    
-    logger.info(`Query all challenge user skills, between ${startDate} and ${endDate} days.`);
-    const users = await executeQuery(conn, USER_CHALLENGE_SKILL_QUERY)
+
+  const conn = await getConnection();
+  try {
+    logger.info(
+      `Query all challenge user skills, between ${startDate} and ${endDate} days.`
+    );
+    const users = await executeQuery(conn, USER_CHALLENGE_SKILL_QUERY);
     return groupSkillsByUser(users);
   } finally {
-    conn.disconnect()
+    conn.disconnect();
   }
 }
 
 module.exports = {
-  getUsersBatch
+  getUsersBatch,
 };
