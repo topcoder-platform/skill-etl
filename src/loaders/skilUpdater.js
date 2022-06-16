@@ -112,12 +112,15 @@ async function getAutomatedTestingChallengeVerifiedSkills(
         let challengeTags = await challengeService.getChallengeTags(
           challengeId
         );
+        logger.info(`Challenge Tags ${JSON.stringify(challengeTags)}`);
         if (challengeTags == null) {
           logger.error(`Unable to get challenge tags for challenge ${id}`);
         } else {
           challengeTags = challengeTags.filter(
             (tag) => tag != "Automated Testing"
           );
+
+          logger.info(`Filtered out "Automated Testing" tag ${challengeTags}`);
 
           if (userSkills[memberId] == null) {
             userSkills[memberId] = challengeTags;
@@ -126,6 +129,7 @@ async function getAutomatedTestingChallengeVerifiedSkills(
           }
 
           userSkills[memberId] = [...new Set(userSkills[memberId])];
+          logger.info(`Updated userSkills ${JSON.stringify(userSkills)}`);
         }
       }
     }
@@ -163,12 +167,12 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   logger.info(
     `Getting users with submissions that passed review, and tags on those challenges.`
   );
-  // let users = await userBatch.getUsersBatch(
-  //   batchStartDate.toISODate(),
-  //   batchEndDate.toISODate()
-  // );
+  let users = await userBatch.getUsersBatch(
+    batchStartDate.toISODate(),
+    batchEndDate.toISODate()
+  );
 
-  let users = {};
+  // let users = {};
 
   logger.info(`userSkills: ${JSON.stringify(users)}`);
 
