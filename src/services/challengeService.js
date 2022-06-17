@@ -13,11 +13,13 @@ async function getChallengeTags(id) {
     logger.debug(`Getting challenge tags for challenge ${id}`);
     const response = await axios(requestConfig);
     const challenge = response.data;
+    logger.debug(`Challenge data: ${JSON.stringify(challenge)}`);
 
     const tags = challenge != null ? challenge.tags : null;
 
     return tags;
   } catch (err) {
+    console.log("Error", err);
     return null;
   }
 }
