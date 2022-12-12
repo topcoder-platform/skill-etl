@@ -166,11 +166,7 @@ async function updateSkills(batchStartDate, batchEndDate, tags, challengeId) {
   logger.info(
     `Getting users with submissions that passed review, and tags on those challenges.`
   );
-  let users = await userBatch.getUsersBatch(
-    batchStartDate.toISODate(),
-    batchEndDate.toISODate(),
-    challengeId
-  );
+  let users = await userBatch.getUsersBatch(challengeId);
 
   // let users = {};
 
