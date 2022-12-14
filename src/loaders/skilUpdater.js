@@ -95,8 +95,7 @@ async function getAutomatedTestingChallengeVerifiedSkills(
     );
 
     logger.info(
-      `Found ${
-        submissionIds != null ? submissionIds.length : 0
+      `Found ${submissionIds != null ? submissionIds.length : 0
       } submissions that passed review`
     );
     for (const submissionId of submissionIds) {
@@ -147,7 +146,7 @@ async function getAutomatedTestingChallengeVerifiedSkills(
   return userSkills;
 }
 
-async function updateSkills(batchStartDate, batchEndDate, tags) {
+async function updateSkills(batchStartDate, batchEndDate, tags, challengeId) {
   let userSkills = [];
   const MAX_BYTES = 1048576; // 1MB
 
@@ -167,10 +166,7 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
   logger.info(
     `Getting users with submissions that passed review, and tags on those challenges.`
   );
-  let users = await userBatch.getUsersBatch(
-    batchStartDate.toISODate(),
-    batchEndDate.toISODate()
-  );
+  let users = await userBatch.getUsersBatch(challengeId);
 
   // let users = {};
 
@@ -232,8 +228,7 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
         `Records exceeding ${MAX_BYTES} bytes in the array, so writing to DB`
       );
       logger.info(
-        `Writing ${
-          userSkills.length
+        `Writing ${userSkills.length
         } items to MemberAggregatedSkills table for the batch ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}.`
       );
       logger.debug(JSON.stringify(userSkills));
@@ -247,8 +242,7 @@ async function updateSkills(batchStartDate, batchEndDate, tags) {
     )}`
   );
   logger.info(
-    `Writing ${
-      userSkills.length
+    `Writing ${userSkills.length
     } items to MemberAggregatedSkills table for the batch ${batchStartDate.toISODate()} to ${batchEndDate.toISODate()}.`
   );
   logger.debug(
