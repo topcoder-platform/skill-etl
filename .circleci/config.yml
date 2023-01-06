@@ -42,7 +42,7 @@ builddeploy_steps: &builddeploy_steps
         source awsenvconf
         ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-deployvar
         source buildenvvar
-        ./master_deploy.sh -d FARGATE -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-global-appvar,${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}
+        ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-global-appvar,${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}
 jobs:
   # Build & Deploy against development backend
   "build-dev":
@@ -58,7 +58,7 @@ jobs:
     <<: *defaults
     environment:
       DEPLOY_ENV: "PROD"
-      LOGICAL_ENV: "dev"
+      LOGICAL_ENV: "prod"
       APPNAME: "skills-etl"
     steps: *builddeploy_steps
 
@@ -73,7 +73,6 @@ workflows:
             branches:
               only:
                 - develop
-                - fix/ci
       # Production builds are exectuted 
       # when PR is merged to the master
       # Don't change anything in this configuration
@@ -85,7 +84,7 @@ workflows:
           filters:
             branches:
               only:
-                - master 
-      # Simple testing is executed for any branch other than "develop" and
-      # "master".
+                - master
+                - main
+
      

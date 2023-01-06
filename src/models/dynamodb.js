@@ -6,7 +6,7 @@ const config = require('config')
 const dynamo = require('dynamodb')
 const joi = require('joi')
 dynamo.AWS.config.update(config.get('DYNAMODB'))
-//dynamo.AWS.config.update({region: 'us-east-1'});
+dynamo.AWS.config.update({region: 'us-east-1'});
 
 
 /**
